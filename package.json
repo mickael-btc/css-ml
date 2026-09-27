@@ -1,5 +1,5 @@
 {
-  "name": "css-digit-net",
+  "name": "css-ml",
   "private": true,
   "description": "A neural network that recognizes hand-drawn digits in pure CSS. Zero JavaScript.",
   "type": "module",

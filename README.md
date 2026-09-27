@@ -1,8 +1,8 @@
-# CSS Digit Net
+# CSS ML
 
 A neural network that recognizes hand-drawn digits, running entirely in CSS. **Zero bytes of JavaScript.**
 
-**Live: https://css-digit-net.vercel.app** · or open `index.html`, draw a digit on the 8×8 grid, and the browser's style engine classifies it.
+**Live: https://css-ml.vercel.app** · or open `index.html`, draw a digit on the 8×8 grid, and the browser's style engine classifies it.
 
 - **Network:** 64 → 64 → 32 → 10 MLP with ReLU, 6,570 integer weights
 - **Page:** one self-contained 280 KB HTML file with no `<script>`, no event handlers, and no external requests
