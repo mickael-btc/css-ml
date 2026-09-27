@@ -1,0 +1,14 @@
+{
+  "name": "css-digit-net",
+  "private": true,
+  "description": "A neural network that recognizes hand-drawn digits in pure CSS. Zero JavaScript.",
+  "type": "module",
+  "scripts": {
+    "train": "python3 scripts/train.py",
+    "build": "python3 scripts/build.py",
+    "test": "node tests/browser.test.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  }
+}
