@@ -15,6 +15,7 @@ Same idea, zero JavaScript, one folder each:
 | Demo | What the CSS does |
 |---|---|
 | [Latent space](https://css-ml.vercel.app/latent-space) · [`latent-space/`](latent-space) | A VAE decoder draws a 16×16 digit for any point you pick on a 2D map |
+| [Autoencoder](https://css-ml.vercel.app/autoencoder) · [`autoencoder/`](autoencoder) | Draw a digit: an encoder squeezes it into 2 numbers (a dot on the map) and a decoder draws it back |
 | [Tic-tac-toe](https://css-ml.vercel.app/tic-tac-toe) · [`tic-tac-toe/`](tic-tac-toe) | A neural network plays O and never loses (checked against every possible game) |
 | [Rock paper scissors](https://css-ml.vercel.app/rock-paper-scissors) · [`rock-paper-scissors/`](rock-paper-scissors) | An online model learns your habits while you play and counters them |
 | [Connect four](https://css-ml.vercel.app/connect-four) · [`connect-four/`](connect-four) | A neural network plays yellow, helped by three hard-coded tactical rules |

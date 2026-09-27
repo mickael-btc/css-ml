@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "installCommand": "",
-  "buildCommand": "mkdir -p dist && cp index.html dist/index.html && for d in latent-space tic-tac-toe rock-paper-scissors connect-four playground; do mkdir -p dist/$d && cp $d/index.html dist/$d/index.html; done",
+  "buildCommand": "mkdir -p dist && cp index.html dist/index.html && for d in latent-space tic-tac-toe rock-paper-scissors connect-four playground autoencoder; do mkdir -p dist/$d && cp $d/index.html dist/$d/index.html; done",
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false
