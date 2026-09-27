@@ -17,6 +17,7 @@ time a point is placed. reference.py is the same rule in numpy, for the test.
 The page itself (layout and styles) lives in page.html.
 """
 from collections import defaultdict
+import sys
 from pathlib import Path
 from string import Template
 
@@ -25,6 +26,9 @@ from reference import (EPOCHS, F_PLANE, F_POINTS, FEATURES, MARGIN, PLANE, PLANE
 
 SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
+sys.path.append(str(ROOT.parent / "scripts"))  # shared demo nav
+
+from nav import nav_css, nav_html  # noqa: E402
 N = POINTS * POINTS
 K = len(FEATURES)
 
@@ -183,6 +187,8 @@ def main():
 
     radios, bars = epochs_html()
     html = Template((SCRIPTS / "page.html").read_text()).substitute(
+        nav_css=nav_css(),
+        nav=nav_html("playground"),
         network_css=css.render(),
         epochs=EPOCHS,
         bars=EPOCHS + 1,

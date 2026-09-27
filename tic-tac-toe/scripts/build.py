@@ -17,6 +17,7 @@ You are X and O is a neural network. Every value is a registered custom property
 The network is unrolled four times, once per O move. The page lives in page.html.
 """
 import json
+import sys
 from pathlib import Path
 from string import Template
 
@@ -26,6 +27,9 @@ from train import LINES, MASK, TIE_SCALE
 
 SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
+sys.path.append(str(ROOT.parent / "scripts"))  # shared demo nav
+
+from nav import nav_css, nav_html  # noqa: E402
 
 X_TURNS = 5   # X plays at most five times
 O_TURNS = 4   # O answers the first four
@@ -257,6 +261,8 @@ def main():
     )
     template = Template((SCRIPTS / "page.html").read_text())
     html = template.substitute(
+        nav_css=nav_css(),
+        nav=nav_html("tic-tac-toe"),
         network_css=css.render() + "\n" + turn_css(),
         arch=arch,
         n_params=f"{n_params:,}",

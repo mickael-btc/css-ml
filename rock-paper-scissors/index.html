@@ -12358,6 +12358,14 @@ button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 footer { color: var(--muted); font-size: 12px; max-width: 80ch; }
 footer a { color: var(--fg); text-underline-offset: 3px; }
 footer a:hover { color: var(--accent); }
+.demos { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; border-top: 1px solid var(--line); padding-top: 18px; font-size: 12px; }
+.demos span { color: var(--muted); margin-right: 4px; }
+.demos a { color: var(--fg); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; }
+.demos a[aria-current] { color: var(--accent); border-color: var(--accent); }
+@media (hover: hover) { .demos a[href]:hover { border-color: var(--fg); } }
+.demos a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.demos a:last-child { margin-left: auto; }
+@media (max-width: 660px) { .demos a:last-child { margin-left: 0; } }
 </style>
 </head>
 <body>
@@ -12507,7 +12515,8 @@ footer a:hover { color: var(--accent); }
     </div>
   </div>
 </section>
-<footer>Every round is a group of radio buttons. Counts, scores and decisions are integer <code>calc()</code> expressions over them, and each round only reads the rounds before it. <a href="../">Digit recognizer</a> · <a href="https://github.com/mickael-btc/css-ml">Source on GitHub</a>.</footer>
+<footer>Every round is a group of radio buttons. Counts, scores and decisions are integer <code>calc()</code> expressions over them, and each round only reads the rounds before it.</footer>
+<nav class="demos" aria-label="CSS ML demos"><span>More in pure CSS</span><a href="../">Digit recognizer</a><a href="../latent-space">Latent space</a><a href="../autoencoder">Autoencoder</a><a href="../playground">Live training</a><a href="../tic-tac-toe">Tic-tac-toe</a><a href="../connect-four">Connect four</a><a aria-current="page">Rock paper scissors</a><a href="https://github.com/mickael-btc/css-ml">GitHub</a></nav>
 </div>
 </body>
 </html>

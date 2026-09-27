@@ -41,6 +41,9 @@ import numpy as np
 
 SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
+sys.path.append(str(ROOT.parent / "scripts"))  # shared demo nav
+
+from nav import nav_css, nav_html  # noqa: E402
 sys.path.insert(0, str(SCRIPTS))
 
 from game import (BLOCK, CELLS, COLS, DANGER, LINES, MASK, ROWS, THROUGH, TIE, TIE_SCALE, WIN,  # noqa: E402
@@ -313,6 +316,8 @@ def main():
     bars, cells, columns = board_html()
     template = Template((SCRIPTS / "page.html").read_text())
     html = template.substitute(
+        nav_css=nav_css(),
+        nav=nav_html("connect-four"),
         network_css=css.render() + "\n" + turn_css(),
         arch=arch,
         n_params=f"{n_params:,}",

@@ -107,6 +107,7 @@ code { font: inherit; color: var(--fg); }
 footer { color: var(--muted); font-size: 12px; max-width: 80ch; }
 footer a { color: var(--fg); text-underline-offset: 3px; }
 footer a:hover { color: var(--accent); }
+$nav_css
 </style>
 </head>
 <body>
@@ -135,7 +136,8 @@ $map_cells
 $pipeline
   </div>
 </section>
-<footer>The decoder is half of a variational autoencoder trained on MNIST: an encoder squeezed every training digit into two numbers, and the decoder learned to draw them back. Similar digits land close together, so the map is continuous. <a href="../">Digit recognizer</a> · <a href="https://github.com/mickael-btc/css-ml">Source on GitHub</a>.</footer>
+<footer>The decoder is half of a variational autoencoder trained on MNIST: an encoder squeezed every training digit into two numbers, and the decoder learned to draw them back. Similar digits land close together, so the map is continuous.</footer>
+$nav
 </div>
 </body>
 </html>

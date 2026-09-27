@@ -130,6 +130,7 @@ button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 footer { color: var(--muted); font-size: 12px; max-width: 80ch; }
 footer a { color: var(--fg); text-underline-offset: 3px; }
 @media (hover: hover) { footer a:hover { color: var(--accent); } }
+$nav_css
 </style>
 </head>
 <body>
@@ -180,7 +181,8 @@ $weight_rows
   </div>
   <p>Each line is a <code>calc()</code> over registered <code>&lt;integer&gt;</code> properties, written out $epochs times: $n_props properties that the browser recomputes on every click. The "≤" is a <code>clamp(0, …, 1)</code> step. The background is the model after the epoch you pick, scored again cell by cell. This is a perceptron, the 1958 ancestor of today's networks: one layer, trained the same way, with a margin.</p>
 </section>
-<footer>The same rule runs in numpy in <code>scripts/reference.py</code>, and the test checks every weight of every epoch against it in Chromium, Firefox and WebKit. <a href="../">Digit recognizer</a> · <a href="https://github.com/mickael-btc/css-ml">Source on GitHub</a>.</footer>
+<footer>The same rule runs in numpy in <code>scripts/reference.py</code>, and the test checks every weight of every epoch against it in Chromium, Firefox and WebKit.</footer>
+$nav
 </div>
 </body>
 </html>

@@ -15,6 +15,7 @@ for every round, what the model predicts and which move the CSS plays:
 
 Round R only reads rounds < R, so the CSS never looks at the move it is answering.
 """
+import sys
 from pathlib import Path
 from string import Template
 
@@ -22,6 +23,9 @@ from model import BASES, CONTEXTS, EXPERTS, PRIORITY, ROUNDS, TIE, WINDOW
 
 SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
+sys.path.append(str(ROOT.parent / "scripts"))  # shared demo nav
+
+from nav import nav_css, nav_html  # noqa: E402
 MOVES = ["Rock", "Paper", "Scissors"]
 GLYPHS = ["✊", "✋", "✌️"]
 NAMES = {
@@ -264,6 +268,8 @@ def main():
     add_visuals(css)
 
     html = Template((SCRIPTS / "page.html").read_text()).substitute(
+        nav_css=nav_css(),
+        nav=nav_html("rock-paper-scissors"),
         network_css=css.render(),
         rounds=ROUNDS,
         last=ROUNDS - 1,

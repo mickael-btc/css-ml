@@ -11,6 +11,7 @@ Every value is a registered CSS custom property (@property) on `.app`:
 The page itself (layout and styles) lives in page.html.
 """
 import json
+import sys
 from pathlib import Path
 from string import Template
 
@@ -20,6 +21,9 @@ from train import int_forward
 
 SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
+sys.path.append(str(ROOT.parent / "scripts"))  # shared demo nav
+
+from nav import nav_css, nav_html  # noqa: E402
 
 
 # ---------------------------------------------------------------- css helpers
@@ -183,6 +187,8 @@ def main():
 
     template = Template((SCRIPTS / "page.html").read_text())
     html = template.substitute(
+        nav_css=nav_css(),
+        nav=nav_html("latent-space"),
         network_css=css.render(),
         arch=arch,
         n_params=f"{n_params:,}",

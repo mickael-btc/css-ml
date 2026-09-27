@@ -171,6 +171,7 @@ button:focus-visible, .pen:has(:focus-visible) { outline: 2px solid var(--accent
 footer { color: var(--muted); font-size: 12px; max-width: 80ch; }
 footer a { color: var(--fg); text-underline-offset: 3px; }
 footer a:hover { color: var(--accent); }
+$nav_css
 </style>
 </head>
 <body>
@@ -227,7 +228,8 @@ $encoder_pipe
 $decoder_pipe
   </div>
 </section>
-<footer>A variational autoencoder trained with numpy on MNIST and font-rendered digits. The encoder reads your drawing the way the digit demo does (cropped, squared, resampled to 8×8) and its 2 numbers are snapped to the $map×$map map. During training only, a small digit classifier also read the 2 numbers, to keep each digit in its own region: $hand_hits of $hand_total hand-drawn test digits land on their own digit's colour. <a href="../">Digit recognizer</a> · <a href="../latent-space">Latent space</a> · <a href="https://github.com/mickael-btc/css-ml">Source on GitHub</a>.</footer>
+<footer>A variational autoencoder trained with numpy on MNIST and font-rendered digits. The encoder reads your drawing the way the digit demo does (cropped, squared, resampled to 8×8) and its 2 numbers are snapped to the $map×$map map. During training only, a small digit classifier also read the 2 numbers, to keep each digit in its own region: $hand_hits of $hand_total hand-drawn test digits land on their own digit's colour.</footer>
+$nav
 </div>
 </body>
 </html>

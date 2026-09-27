@@ -22,6 +22,7 @@ from string import Template
 
 import numpy as np
 
+from nav import nav_css, nav_html
 from norm import GRID, normalize
 from train import int_forward
 
@@ -275,6 +276,8 @@ def main():
 
     template = Template((SCRIPTS / "page.html").read_text())
     html = template.substitute(
+        nav_css=nav_css(),
+        nav=nav_html(""),
         network_css=css.render(),
         arch=arch,
         n_params=f"{n_params:,}",

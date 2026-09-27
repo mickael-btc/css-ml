@@ -17,6 +17,7 @@ The painting and normalisation code is copied from the digit demo (scripts/build
 the map and decoder from latent-space/. The page itself lives in page.html.
 """
 import json
+import sys
 from pathlib import Path
 from string import Template
 
@@ -27,6 +28,9 @@ from train import cell_of, int_forward
 
 SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
+sys.path.append(str(ROOT.parent / "scripts"))  # shared demo nav
+
+from nav import nav_css, nav_html  # noqa: E402
 
 N_PIXELS = GRID * GRID
 FOREVER = "9999999s"  # ~115 days: long enough that a painted pixel never fades
@@ -376,6 +380,8 @@ def main():
     hits, total_hand = model["on_map"]["handdrawn"]
     template = Template((SCRIPTS / "page.html").read_text())
     html = template.substitute(
+        nav_css=nav_css(),
+        nav=nav_html("autoencoder"),
         network_css=css.render(),
         enc_arch=enc_arch,
         dec_arch=dec_arch,
