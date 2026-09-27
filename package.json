@@ -6,7 +6,9 @@
   "scripts": {
     "train": "python3 scripts/train.py",
     "build": "python3 scripts/build.py",
-    "test": "node tests/browser.test.mjs"
+    "test": "node tests/browser.test.mjs",
+    "build:all": "npm run build && .venv/bin/python latent-space/scripts/build.py && .venv/bin/python tic-tac-toe/scripts/build.py && .venv/bin/python rock-paper-scissors/scripts/build.py",
+    "test:all": "npm test && node latent-space/tests/browser.test.mjs && node tic-tac-toe/tests/browser.test.mjs && node rock-paper-scissors/tests/browser.test.mjs"
   },
   "devDependencies": {
     "playwright": "^1.63.0"

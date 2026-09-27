@@ -8,6 +8,18 @@ A neural network that recognizes hand-drawn digits, running entirely in CSS. **Z
 - **Page:** one self-contained 300 KB HTML file with no `<script>`, no event handlers, and no external requests
 - **Browsers:** tested in Chromium, Firefox and WebKit, where the prediction matches the Python reference exactly
 
+## More demos
+
+Same idea, zero JavaScript, one folder each:
+
+| Demo | What the CSS does |
+|---|---|
+| [Latent space](https://css-ml.vercel.app/latent-space) · [`latent-space/`](latent-space) | A VAE decoder draws a 16×16 digit for any point you pick on a 2D map |
+| [Tic-tac-toe](https://css-ml.vercel.app/tic-tac-toe) · [`tic-tac-toe/`](tic-tac-toe) | A neural network plays O and never loses (checked against every possible game) |
+| [Rock paper scissors](https://css-ml.vercel.app/rock-paper-scissors) · [`rock-paper-scissors/`](rock-paper-scissors) | An online model learns your habits while you play and counters them |
+
+`npm run build:all` and `npm run test:all` build and test all four.
+
 ## How it works
 
 Every value is a [registered custom property](https://developer.mozilla.org/docs/Web/CSS/@property) (`@property --x { syntax: "<integer>" }`) on one element. The browser recomputes them whenever the drawing changes.
