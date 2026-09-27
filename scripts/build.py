@@ -6,7 +6,8 @@ Every value is a registered CSS custom property (@property) on `.app`, evaluated
 the browser's style engine each time a pixel changes:
 
   painting       --pN     press+drag (or hover mode) sets a pixel to 1; a ~115-day
-                          transition back to 0 keeps it painted
+                          transition back to 0 keeps it painted. Tapping a cell (a
+                          checkbox label) also sets it, for touch screens
   normalisation  --qN     crop to the bounding box, square it, resample to 8x8
   hidden layers  --aL_K   max(0, calc((bias + sum(w * input)) / R))    integer ReLU
   logits         --oC
@@ -70,19 +71,24 @@ class Stylesheet:
 # ---------------------------------------------------------------- the network, stage by stage
 
 def add_painting(css):
-    """Press and drag to paint, with no JavaScript.
+    """Press and drag to paint, or tap a cell, with no JavaScript.
 
-    While the mouse is down on the grid, the hovered cell's pixel jumps to 1 (0s transition).
+    Drag (--dN): while the mouse is down on the grid, the hovered cell jumps to 1 (0s transition).
     When the pointer moves on, it heads back to 0 over FOREVER, so the stroke stays.
     Clear removes `transition` altogether, which cancels every running transition: all pixels 0.
     Two separate :has() are needed for WebKit; hover mode exists because WebKit freezes
     :hover while a mouse button is held.
-    """
-    pixels = [f"p{i}" for i in range(N_PIXELS)]
-    for pixel in pixels:
-        css.register(pixel)
 
-    css.rule(".app", f"transition-property: {', '.join('--' + p for p in pixels)}; "
+    Tap (--kN): touch screens never move :hover with the finger, so each cell is also a <label>
+    for a hidden checkbox. --kN is not transitioned, so Clear (a form reset) unchecks it at once.
+    Drag is limited to (hover: hover): a tap would otherwise also fire it, and a tapped pixel could
+    then never be erased by tapping it again.
+    """
+    for i in range(N_PIXELS):
+        css.register(f"d{i}")
+        css.register(f"k{i}")
+
+    css.rule(".app", f"transition-property: {', '.join(f'--d{i}' for i in range(N_PIXELS))}; "
                      f"transition-duration: {FOREVER}; transition-timing-function: linear;")
 
     for i in range(N_PIXELS):
@@ -90,10 +96,16 @@ def add_painting(css):
         pressed = f".app:has(.grid:active):has(#c{i}:hover)"
         hovered = f".app:has(#pen:checked):has(#c{i}:hover)"
 
-        css.rule(f"{pressed}, {hovered}", f"--p{i}: 1; transition-duration: {durations};")
+        css.rule(f"@media (hover: hover) {{ {pressed}, {hovered}",
+                 f"--d{i}: 1; transition-duration: {durations}; }}")
+        css.rule(f".app:has(#k{i}:checked)", f"--k{i}: 1;")
         css.rule(f"#c{i}", f"--v: var(--p{i});")
 
     css.rule(".app:has(.clear:active)", "transition: none !important;")
+
+    pixels = [f"p{i}" for i in range(N_PIXELS)]
+    for i, pixel in enumerate(pixels):
+        css.define(pixel, f"max(var(--d{i}), var(--k{i}))")
 
     css.define("ink", total(var(p) for p in pixels))
     css.define("live", "clamp(0, var(--ink), 1)")  # 0 while the grid is empty
@@ -266,7 +278,10 @@ def main():
         network_css=css.render(),
         arch=arch,
         n_params=f"{n_params:,}",
-        grid_cells="\n".join(f'      <span class="px" id="c{i}"></span>' for i in range(N_PIXELS)),
+        grid_cells="\n".join(
+            f'      <input type="checkbox" id="k{i}" tabindex="-1"><label class="px" id="c{i}" for="k{i}"></label>'
+            for i in range(N_PIXELS)
+        ),
         score_rows="\n".join(
             f'      <div class="row"><span class="lbl">{c}</span><span class="bar"></span><span class="pct"></span></div>'
             for c in range(N_CLASSES)

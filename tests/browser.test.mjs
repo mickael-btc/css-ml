@@ -45,6 +45,20 @@ for (const [name, engine] of Object.entries({ chromium, firefox, webkit })) {
   failed ||= !ok;
   console.log(`${name.padEnd(8)} matches python ${same}/${X.length}  correct ${correct}/${X.length}  ` +
     `drag ink ${dragInk}  after clear ${clearInk}  ${ok ? 'ok' : 'FAIL'}`);
+
+  // touch screen: :hover never follows a finger, so each tap toggles that cell's checkbox
+  const touch = await browser.newPage({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: name !== 'firefox' });
+  await touch.goto(url);
+  const taps = [19, 27, 35, 43];
+  for (const i of taps) await touch.locator('#c' + i).tap();
+  const tapInk = +(await read(touch, '--ink'));
+  await touch.locator('#c' + taps[0]).tap();  // tapping again erases
+  const retapInk = +(await read(touch, '--ink'));
+  await touch.locator('.clear').tap();
+  const touchClear = +(await read(touch, '--ink'));
+  const touchOk = tapInk === taps.length && retapInk === taps.length - 1 && touchClear === 0;
+  failed ||= !touchOk;
+  console.log(`${name.padEnd(8)} touch: tap ink ${tapInk}  after re-tap ${retapInk}  after clear ${touchClear}  ${touchOk ? 'ok' : 'FAIL'}`);
   await browser.close();
 }
 process.exit(failed ? 1 : 0);

@@ -5,7 +5,7 @@ A neural network that recognizes hand-drawn digits, running entirely in CSS. **Z
 **Live: https://css-ml.vercel.app** · or open `index.html`, draw a digit on the 8×8 grid, and the browser's style engine classifies it.
 
 - **Network:** 64 → 64 → 32 → 10 MLP with ReLU, 6,570 integer weights
-- **Page:** one self-contained 280 KB HTML file with no `<script>`, no event handlers, and no external requests
+- **Page:** one self-contained 300 KB HTML file with no `<script>`, no event handlers, and no external requests
 - **Browsers:** tested in Chromium, Firefox and WebKit, where the prediction matches the Python reference exactly
 
 ## How it works
@@ -14,7 +14,7 @@ Every value is a [registered custom property](https://developer.mozilla.org/docs
 
 | Stage | CSS |
 |---|---|
-| **Drawing** | `.app:has(.grid:active):has(#c5:hover)` sets `--p5: 1` with a `0s` transition. Going back to 0 takes a ~115-day transition, so the pixel stays painted. **Clear** sets `transition: none`, which cancels every transition at once. |
+| **Drawing** | `.app:has(.grid:active):has(#c5:hover)` sets `--p5: 1` with a `0s` transition. Going back to 0 takes a ~115-day transition, so the pixel stays painted. **Clear** sets `transition: none`, which cancels every transition at once. On touch screens each cell is a `<label>` for a hidden checkbox, so a tap toggles it, and **Clear** is a `<button type="reset">`. |
 | **Normalization** | Finds the bounding box with `clamp()` and running products, makes it square, and resamples it to 8×8 with one-hot `clamp(0, 1 - (src - i)², 1)` selectors. You can draw at any size, anywhere. |
 | **Layers** | `--a0_k: max(0, calc((bias + w₀·var(--q0) + … ) / R))`, an integer ReLU. `<integer>` properties round, which gives the quantization. |
 | **Argmax** | `--w3: calc(clamp(0, o3 - o0, 1) * clamp(0, o3 - o1, 1) * …)` is 1 for the winning digit only. |
@@ -24,6 +24,8 @@ Every value is a [registered custom property](https://developer.mozilla.org/docs
 All intermediate values are integers below 2²⁴, so engines that do CSS math in 32-bit floats give the same answer. Each layer divides by an odd number, so rounding never lands on an exact `.5`.
 
 **Safari:** WebKit freezes `:hover` while a mouse button is held, so press-and-drag paints only the first cell. Click **Hover to draw** under the grid to paint by just moving the pointer.
+
+**Phones and tablets:** CSS `:hover` never follows a finger, so dragging can't be done without JavaScript. Tap cells to paint them instead, and tap a cell again to erase it.
 
 ## Accuracy
 

@@ -41,9 +41,11 @@ code { font: inherit; color: var(--fg); }
   display: grid; grid-template-columns: repeat(8, 1fr); gap: 3px;
   padding: 3px; background: var(--line); border-radius: 6px;
   user-select: none; -webkit-user-select: none; cursor: crosshair; touch-action: none;
+  position: relative; margin: 0; -webkit-tap-highlight-color: transparent;
 }
+.grid input { position: absolute; opacity: 0; pointer-events: none; width: 0; height: 0; margin: 0; }
 .px { aspect-ratio: 1; border-radius: 3px; background: color-mix(in oklab, var(--cell), var(--ink-c) calc(var(--v) * 100%)); }
-.px:hover { outline: 2px solid color-mix(in oklab, var(--cell), var(--ink-c) 35%); outline-offset: -2px; }
+@media (hover: hover) { .px:hover { outline: 2px solid color-mix(in oklab, var(--cell), var(--ink-c) 35%); outline-offset: -2px; } }
 .app:has(#pen:checked) .grid { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--accent); }
 .tools { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 button {
@@ -73,6 +75,11 @@ button:focus-visible, .pen:has(:focus-visible) { outline: 2px solid var(--accent
 .verdict .on::before { content: counter(c) "% confident"; color: var(--fg); }
 .verdict .off { opacity: calc(1 - var(--live)); grid-area: 1 / 1; }
 .verdict .on { grid-area: 1 / 1; }
+.verdict .touch { display: none; }
+@media (hover: none) {
+  .verdict .mouse, .pen { display: none; }
+  .verdict .touch { display: inline; }
+}
 .bars { display: grid; gap: 5px; }
 .row { display: grid; grid-template-columns: 2ch 1fr 4ch; gap: 12px; align-items: center; font-size: 13px; }
 .lbl { color: color-mix(in oklab, var(--muted), var(--accent) calc(var(--w) * 100%)); }
@@ -122,6 +129,8 @@ button:focus-visible, .pen:has(:focus-visible) { outline: 2px solid var(--accent
   .link { display: none; }
 }
 footer { color: var(--muted); font-size: 12px; max-width: 80ch; }
+footer a { color: var(--fg); text-underline-offset: 3px; }
+footer a:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -132,18 +141,18 @@ footer { color: var(--muted); font-size: 12px; max-width: 80ch; }
 </header>
 <div class="main">
   <div class="pad">
-    <div class="grid">
+    <form class="grid" id="pad">
 $grid_cells
-    </div>
+    </form>
     <div class="tools">
-      <button type="button" class="clear">Clear</button>
+      <button type="reset" form="pad" class="clear">Clear</button>
       <label class="pen" title="Paint by moving the pointer, no click needed. Use this in Safari or on a trackpad."><input type="checkbox" id="pen">Hover to draw</label>
     </div>
   </div>
   <div class="result">
     <div class="answer">
       <span class="digit" aria-live="polite"></span>
-      <div class="verdict"><span class="off">Press and drag on the grid, any size, anywhere.</span><span class="on"></span></div>
+      <div class="verdict"><span class="off"><span class="mouse">Press and drag on the grid</span><span class="touch">Tap cells to paint them</span>, any size, anywhere.</span><span class="on"></span></div>
     </div>
     <div class="bars">
 $score_rows
@@ -157,7 +166,7 @@ $score_rows
 $pipeline
   </div>
 </section>
-<footer>Your drawing is cropped, squared and resampled to 8×8, then passed through two ReLU layers. The winning digit is picked with clamp() masks and printed with a CSS counter. Trained on MNIST and font-rendered digits.</footer>
+<footer>Your drawing is cropped, squared and resampled to 8×8, then passed through two ReLU layers. The winning digit is picked with clamp() masks and printed with a CSS counter. Trained on MNIST and font-rendered digits. <a href="https://github.com/mickael-btc/css-ml">Source on GitHub</a>.</footer>
 </div>
 </body>
 </html>
