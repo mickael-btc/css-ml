@@ -70,3 +70,7 @@ The repo is ready for [Vercel](https://vercel.com/new): import it, no settings n
 - redirects every other path to `/`, so there is no 404 page
 
 Any static host works the same way: `index.html` is the whole site.
+
+## License
+
+[MIT](LICENSE)
