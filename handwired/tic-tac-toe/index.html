@@ -10883,6 +10883,14 @@ td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
 .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
 
 footer { color: var(--muted); font-size: 12px; max-width: 80ch; }
+header .lead { font-size: 17px; color: var(--fg); margin: 0; max-width: 60ch; }
+.explain { border-left: 3px solid var(--hand); padding: 4px 0 4px 16px; margin-top: -14px; }
+.explain ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 14px; color: var(--muted); max-width: 72ch; }
+.explain b { color: var(--fg); font-weight: 600; }
+details.deep { border-top: 1px solid var(--line); padding-top: 18px; }
+details.deep > summary { cursor: pointer; font-size: 14px; color: var(--muted); }
+details.deep > summary:hover { color: var(--fg); }
+details.deep[open] { display: grid; gap: 30px; }
 footer a, section a { color: var(--fg); text-underline-offset: 3px; }
 
 
@@ -10921,13 +10929,13 @@ footer a, section a { color: var(--fg); text-underline-offset: 3px; }
 </head>
 <body>
 <div class="app">
-<nav class="steps" aria-label="Handwired steps"><a href="../">Overview</a><a aria-current="page"><small>1</small>Tic-tac-toe</a><a href="../connect-four/"><small>1</small>Connect four</a><a href="../interpreter/"><small>2</small>Interpreter</a><a href="../tower/"><small>3</small>Tower</a><a href="../unfrozen/"><small>4</small>Unfrozen</a></nav>
+<nav class="steps" aria-label="Handwired steps"><a href="../">Overview</a><a aria-current="page"><small>1</small>Tic-tac-toe</a><a href="../connect-four/"><small>1</small>Connect four</a><a href="../interpreter/"><small>2</small>Swap the brain</a><a href="../tower/"><small>3</small>Nesting dolls</a><a href="../unfrozen/"><small>4</small>Rule that learns</a></nav>
 
 <header>
   <h1>Tic-tac-toe, one network</h1>
-  <p>You are X. O is a single 7-layer ReLU network: the <span class="learned">trained</span> 1,801-weight policy from the <a href="../../tic-tac-toe/">tic-tac-toe demo</a>, with its rules <span class="hand">compiled into weights</span> after it: which squares are free, the argmax, “stop once X has won”, and who won.</p>
-  <p>Every computed value in the stylesheet is <code>max(0, calc(…))</code> or a plain sum. No <code>clamp()</code>, no argmax in CSS. <b>0 bytes of JavaScript.</b></p>
+  <p class="lead">You play X. The computer plays O, and it never loses.</p>
 </header>
+<div class="explain"><ul><li><b>What's new:</b> in the original demo, a trained network picked the moves, and rules written by hand sat around it: “this square is taken”, “X has won”. Here those rules became part of the network. The whole player is <b>one network</b>.</li><li><b>What you'll notice:</b> nothing different, and that's the point. It plays exactly like the original, move for move. The rules turned into numbers without changing anything.</li><li><b>Try:</b> play a game. Every move goes through that one network.</li></ul></div>
 <div class="main">
   <div class="pad">
     <form id="game">
@@ -10952,9 +10960,10 @@ footer a, section a { color: var(--fg); text-underline-offset: 3px; }
   </div>
   <div class="result">
     <div class="status" aria-live="polite"><span class="start">Your move</span><span class="turn">Your turn</span><span class="owin">The network wins</span><span class="xwin">You win?!</span><span class="draw">Draw</span></div>
-    <p class="note">The network plays exactly like the original demo, move for move, because it contains it. What changed is that the code around the network is now network too.</p>
+    <p class="note">No rule is written in the CSS: the network decides everything, including when the game is over.</p>
   </div>
 </div>
+<details class="deep"><summary>How it works (for the curious)</summary>
 <section>
   <h2>The player, layer by layer</h2>
   <p>1,243 units and 5,434 nonzero weights. The trained layers come first; everything after the logits was written by hand. Each layer only reads the one before, so values needed later pass down through carry units, <code>max(0, x) = x</code>.</p>
@@ -10973,6 +10982,7 @@ footer a, section a { color: var(--fg); text-underline-offset: 3px; }
   </table></div>
 </section>
 <footer>Checked in numpy on all 5,478 reachable boards: the network's move equals the original demo's integer model on all 2,097 positions where O is to move, and the judge net's winner, draw and free squares are right on every board. The browser test replays the original fixture games in Chromium, Firefox and WebKit. Built by <code>handwired/scripts/rules.py</code> and <code>build_games.py</code>.</footer>
+</details>
 
 <nav class="demos" aria-label="CSS ML demos"><span>More in pure CSS</span><a href="../../">Digit recognizer</a><a href="../../latent-space">Latent space</a><a href="../../autoencoder">Autoencoder</a><a href="../../playground">Live training</a><a href="../../tic-tac-toe">Tic-tac-toe</a><a href="../../connect-four">Connect four</a><a href="../../rock-paper-scissors">Rock paper scissors</a><a aria-current="page">Handwired</a><a href="https://github.com/mickael-btc/css-ml">GitHub</a></nav>
 </div>

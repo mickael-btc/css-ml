@@ -17,9 +17,9 @@ from nav import nav_css, nav_html  # noqa: E402
 STEPS = [  # (folder, nav title, step label)
     ("tic-tac-toe", "Tic-tac-toe", "1"),
     ("connect-four", "Connect four", "1"),
-    ("interpreter", "Interpreter", "2"),
-    ("tower", "Tower", "3"),
-    ("unfrozen", "Unfrozen", "4"),
+    ("interpreter", "Swap the brain", "2"),
+    ("tower", "Nesting dolls", "3"),
+    ("unfrozen", "Rule that learns", "4"),
 ]
 
 

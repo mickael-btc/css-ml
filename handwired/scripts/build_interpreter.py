@@ -75,10 +75,10 @@ def build():
     n_model = len(weight_names)
     body = f"""
 <header>
-  <h1>A network that runs a network</h1>
-  <p>O is played by one fixed ReLU network, written into the stylesheet once. Its inputs are the board <em>and the {fmt(n_model)} weights of a tic-tac-toe model</em>. Its own {fmt(net.n_weights)} weights know the game's rules (free squares, lines, when to move) but not any model: the model's numbers come in as data, and the interpreter multiplies, adds and compares whatever arrives. <b>0 bytes of JavaScript.</b></p>
-  <p>Load a different model and the same interpreter plays like it.</p>
+  <h1>Swap the brain</h1>
+  <p class="lead">Think of a game console: the console never changes, you swap the cartridge.</p>
 </header>
+<div class="explain"><ul><li><b>The console</b> is one network, written once into the CSS. It knows the rules of tic-tac-toe, but it has no strategy of its own.</li><li><b>The cartridge</b> is a strategy, and a strategy is just a list of {fmt(n_model)} numbers. The three buttons swap cartridges.</li><li><b>Try:</b> pick <i>Random</i> and win easily. Pick <i>Hand-written</i>: it wins and blocks, but you can trap it. Pick <i>Trained</i>: you can't beat it. Same console every time; only the numbers changed.</li></ul></div>
 <form id="models" class="hidden-inputs">{model_radios}</form>
 <div class="pick">{model_labels}</div>
 <form id="game" class="game">
@@ -89,24 +89,26 @@ def build():
       <div class="board">
 {cells}
       </div>
-      <div class="tools"><button type="reset" form="game">New game</button><small>The numbers: the model's logits at its last move.</small></div>
+      <div class="tools"><button type="reset" form="game">New game</button><small>Small numbers: how much the strategy liked each square.</small></div>
     </div>
     <div class="result">
       <div class="status" aria-live="polite"><span class="start">Your move</span><span class="turn-s">Your turn</span><span class="owin">The model wins</span><span class="xwin">You win</span><span class="draw">Draw</span></div>
-      <figure class="weights"><div class="w1">{w1}</div><figcaption>layer 1 of the loaded model: 18 × 64 weights, as inputs</figcaption></figure>
-      <figure class="weights"><div class="w2">{w2}</div><figcaption>layer 2: 64 × 9 <span class="learned">positive</span> <span class="hand">negative</span></figcaption></figure>
+      <figure class="weights"><div class="w1">{w1}</div><figcaption>The cartridge: its numbers, one square each (orange positive, blue negative). Swap cartridges and watch them change.</figcaption></figure>
+      <figure class="weights"><div class="w2">{w2}</div><figcaption>…and the rest of them.</figcaption></figure>
     </div>
   </div>
 </div>
 {closing}
 </form>
+<details class="deep"><summary>How it works (for the curious)</summary>
 <section>
   <h2>The models</h2>
   <div class="scroll"><table><tr><th>Model</th><th></th></tr>{model_rows}</table></div>
   <p>Each one is an 18 → 64 → 9 network with int8 weights. The page keeps them as three CSS rules of {fmt(n_model)} numbers each and nothing else. Change the numbers and the same interpreter plays something else.</p>
 </section>
 <section>
-  <h2>Multiplying two inputs with ReLUs</h2>
+  <h2>The hard part: multiplying</h2>
+  <p>To use the cartridge, the console has to multiply its numbers, but a network can't multiply two of its inputs, only add them up. So it splits each number into pieces, like 5 = 4 + 1, and turns 5 × 7 into 4 × 7 + 1 × 7: just adding.</p>
   <p>A ReLU network can only add up its inputs with fixed weights, and here the model's weights are inputs too. So every <code>weight × activation</code> is built from ReLUs. The weights come in as unsigned bytes <code>u = w + 128</code>.</p>
   <div class="scroll"><table>
     <tr><th>Step</th><th>As ReLU</th></tr>
@@ -119,6 +121,7 @@ def build():
   {anatomy_html(net)}
 </section>
 <footer>Checked in numpy: for all three models, on every position and every X move (25,893 cases), the interpreter's logits and move equal the model's own forward pass. It is also exact on 300 random models with weights at the edges of the int8 range; those can push sums past 2²⁴, so the page only loads models that are checked to stay under it. The browser test plays each model's games in Chromium, Firefox and WebKit.</footer>
+</details>
 """
     styles = """
 .game, .turn, .step, .ui { display: contents; }

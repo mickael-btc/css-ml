@@ -11126,6 +11126,14 @@ td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
 .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
 
 footer { color: var(--muted); font-size: 12px; max-width: 80ch; }
+header .lead { font-size: 17px; color: var(--fg); margin: 0; max-width: 60ch; }
+.explain { border-left: 3px solid var(--hand); padding: 4px 0 4px 16px; margin-top: -14px; }
+.explain ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 14px; color: var(--muted); max-width: 72ch; }
+.explain b { color: var(--fg); font-weight: 600; }
+details.deep { border-top: 1px solid var(--line); padding-top: 18px; }
+details.deep > summary { cursor: pointer; font-size: 14px; color: var(--muted); }
+details.deep > summary:hover { color: var(--fg); }
+details.deep[open] { display: grid; gap: 30px; }
 footer a, section a { color: var(--fg); text-underline-offset: 3px; }
 
 
@@ -11166,13 +11174,13 @@ footer a, section a { color: var(--fg); text-underline-offset: 3px; }
 </head>
 <body>
 <div class="app">
-<nav class="steps" aria-label="Handwired steps"><a href="../">Overview</a><a href="../tic-tac-toe/"><small>1</small>Tic-tac-toe</a><a aria-current="page"><small>1</small>Connect four</a><a href="../interpreter/"><small>2</small>Interpreter</a><a href="../tower/"><small>3</small>Tower</a><a href="../unfrozen/"><small>4</small>Unfrozen</a></nav>
+<nav class="steps" aria-label="Handwired steps"><a href="../">Overview</a><a href="../tic-tac-toe/"><small>1</small>Tic-tac-toe</a><a aria-current="page"><small>1</small>Connect four</a><a href="../interpreter/"><small>2</small>Swap the brain</a><a href="../tower/"><small>3</small>Nesting dolls</a><a href="../unfrozen/"><small>4</small>Rule that learns</a></nav>
 
 <header>
-  <h1>Connect four, one turn is one network</h1>
-  <p>You are red. A whole turn is a single 13-layer ReLU network: your piece falling, the <span class="learned">trained</span> 11,783-weight policy from the <a href="../../connect-four/">connect-four demo</a>, its three tactics (win now, block, don't set up your win), the choice, and its piece falling, all <span class="hand">compiled into weights</span>. The page applies that network 21 times, once per turn.</p>
-  <p>Every computed value is <code>max(0, calc(…))</code>, a plain sum, or a copy of the last turn's board. <b>0 bytes of JavaScript.</b></p>
+  <h1>Connect four, one network per turn</h1>
+  <p class="lead">You play red. Yellow is one network that does a whole turn.</p>
 </header>
+<div class="explain"><ul><li><b>One turn, one network:</b> it drops your piece, thinks, checks whether it can win or must block you, and drops its own piece. All of that is a single network.</li><li><b>What you'll notice:</b> it plays exactly like the original connect-four demo. Before, its tactics were rules written by hand next to the network. Now they are part of it.</li><li><b>Try:</b> click a column to play.</li></ul></div>
 <form id="game" class="game">
 <div class="turn"><input type="radio" name="t0" id="m0_0" class="c0" tabindex="-1"><input type="radio" name="t0" id="m0_1" class="c1" tabindex="-1"><input type="radio" name="t0" id="m0_2" class="c2" tabindex="-1"><input type="radio" name="t0" id="m0_3" class="c3" tabindex="-1"><input type="radio" name="t0" id="m0_4" class="c4" tabindex="-1"><input type="radio" name="t0" id="m0_5" class="c5" tabindex="-1"><input type="radio" name="t0" id="m0_6" class="c6" tabindex="-1"><div class="step">
 <div class="turn"><input type="radio" name="t1" id="m1_0" class="c0" tabindex="-1"><input type="radio" name="t1" id="m1_1" class="c1" tabindex="-1"><input type="radio" name="t1" id="m1_2" class="c2" tabindex="-1"><input type="radio" name="t1" id="m1_3" class="c3" tabindex="-1"><input type="radio" name="t1" id="m1_4" class="c4" tabindex="-1"><input type="radio" name="t1" id="m1_5" class="c5" tabindex="-1"><input type="radio" name="t1" id="m1_6" class="c6" tabindex="-1"><div class="step">
@@ -11203,12 +11211,13 @@ footer a, section a { color: var(--fg); text-underline-offset: 3px; }
     </div>
     <div class="result">
       <div class="status" aria-live="polite"><span class="start">Your move</span><span class="turn-s">Your turn</span><span class="mewin">The network wins</span><span class="youwin">You win!</span><span class="draw">Draw</span></div>
-      <p class="note">It plays exactly like the original demo, move for move. The difference is that the original computes the tactics and the argmax with hand-written <code>clamp()</code> formulas; here they are 8,999 weights in the same network as the policy.</p>
+      <p class="note">The page runs the same network 21 times, once for each turn of the game.</p>
     </div>
   </div>
 </div>
 </div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
 </form>
+<details class="deep"><summary>How it works (for the curious)</summary>
 <section>
   <h2>One turn, layer by layer</h2>
   <p>4,451 units and 24,016 nonzero weights. Your column comes in as 7 inputs (one-hot, or all zero when you haven't played that turn yet); the board after both moves goes out. Each layer reads only the one before, so values needed later pass down through carry units.</p>
@@ -11226,6 +11235,7 @@ footer a, section a { color: var(--fg); text-underline-offset: 3px; }
   </table></div>
 </section>
 <footer>Checked in numpy: the move matches the original demo's integer model on 24,708 positions (its browser-test games plus 3,000 games against random and greedy players), and the turn net replays 400 random games turn by turn. The browser test replays the original fixture games in Chromium, Firefox and WebKit.</footer>
+</details>
 
 <nav class="demos" aria-label="CSS ML demos"><span>More in pure CSS</span><a href="../../">Digit recognizer</a><a href="../../latent-space">Latent space</a><a href="../../autoencoder">Autoencoder</a><a href="../../playground">Live training</a><a href="../../tic-tac-toe">Tic-tac-toe</a><a href="../../connect-four">Connect four</a><a href="../../rock-paper-scissors">Rock paper scissors</a><a aria-current="page">Handwired</a><a href="https://github.com/mickael-btc/css-ml">GitHub</a></nav>
 </div>

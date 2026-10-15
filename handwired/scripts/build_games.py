@@ -74,9 +74,9 @@ def build_ttt():
     body = f"""
 <header>
   <h1>Tic-tac-toe, one network</h1>
-  <p>You are X. O is a single {player.depth}-layer ReLU network: the <span class="learned">trained</span> {fmt(n_trained)}-weight policy from the <a href="../../tic-tac-toe/">tic-tac-toe demo</a>, with its rules <span class="hand">compiled into weights</span> after it: which squares are free, the argmax, “stop once X has won”, and who won.</p>
-  <p>Every computed value in the stylesheet is <code>max(0, calc(…))</code> or a plain sum. No <code>clamp()</code>, no argmax in CSS. <b>0 bytes of JavaScript.</b></p>
+  <p class="lead">You play X. The computer plays O, and it never loses.</p>
 </header>
+<div class="explain"><ul><li><b>What's new:</b> in the original demo, a trained network picked the moves, and rules written by hand sat around it: “this square is taken”, “X has won”. Here those rules became part of the network. The whole player is <b>one network</b>.</li><li><b>What you'll notice:</b> nothing different, and that's the point. It plays exactly like the original, move for move. The rules turned into numbers without changing anything.</li><li><b>Try:</b> play a game. Every move goes through that one network.</li></ul></div>
 <div class="main">
   <div class="pad">
     <form id="game">
@@ -89,9 +89,10 @@ def build_ttt():
   </div>
   <div class="result">
     <div class="status" aria-live="polite"><span class="start">Your move</span><span class="turn">Your turn</span><span class="owin">The network wins</span><span class="xwin">You win?!</span><span class="draw">Draw</span></div>
-    <p class="note">The network plays exactly like the original demo, move for move, because it contains it. What changed is that the code around the network is now network too.</p>
+    <p class="note">No rule is written in the CSS: the network decides everything, including when the game is over.</p>
   </div>
 </div>
+<details class="deep"><summary>How it works (for the curious)</summary>
 <section>
   <h2>The player, layer by layer</h2>
   <p>{fmt(player.n_units)} units and {fmt(player.n_weights)} nonzero weights. The trained layers come first; everything after the logits was written by hand. Each layer only reads the one before, so values needed later pass down through carry units, <code>max(0, x) = x</code>.</p>
@@ -110,6 +111,7 @@ def build_ttt():
   </table></div>
 </section>
 <footer>Checked in numpy on all 5,478 reachable boards: the network's move equals the original demo's integer model on all 2,097 positions where O is to move, and the judge net's winner, draw and free squares are right on every board. The browser test replays the original fixture games in Chromium, Firefox and WebKit. Built by <code>handwired/scripts/rules.py</code> and <code>build_games.py</code>.</footer>
+</details>
 """
     styles = """
 .main { display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: start; }
@@ -187,10 +189,10 @@ def build_c4():
     n_trained = trained_params(REPO / "connect-four" / "model.json")
     body = f"""
 <header>
-  <h1>Connect four, one turn is one network</h1>
-  <p>You are red. A whole turn is a single {turn.depth}-layer ReLU network: your piece falling, the <span class="learned">trained</span> {fmt(n_trained)}-weight policy from the <a href="../../connect-four/">connect-four demo</a>, its three tactics (win now, block, don't set up your win), the choice, and its piece falling, all <span class="hand">compiled into weights</span>. The page applies that network 21 times, once per turn.</p>
-  <p>Every computed value is <code>max(0, calc(…))</code>, a plain sum, or a copy of the last turn's board. <b>0 bytes of JavaScript.</b></p>
+  <h1>Connect four, one network per turn</h1>
+  <p class="lead">You play red. Yellow is one network that does a whole turn.</p>
 </header>
+<div class="explain"><ul><li><b>One turn, one network:</b> it drops your piece, thinks, checks whether it can win or must block you, and drops its own piece. All of that is a single network.</li><li><b>What you'll notice:</b> it plays exactly like the original connect-four demo. Before, its tactics were rules written by hand next to the network. Now they are part of it.</li><li><b>Try:</b> click a column to play.</li></ul></div>
 <form id="game" class="game">
 {opening}
 <div class="ui">
@@ -201,12 +203,13 @@ def build_c4():
     </div>
     <div class="result">
       <div class="status" aria-live="polite"><span class="start">Your move</span><span class="turn-s">Your turn</span><span class="mewin">The network wins</span><span class="youwin">You win!</span><span class="draw">Draw</span></div>
-      <p class="note">It plays exactly like the original demo, move for move. The difference is that the original computes the tactics and the argmax with hand-written <code>clamp()</code> formulas; here they are {fmt(weight_counts(turn)[1])} weights in the same network as the policy.</p>
+      <p class="note">The page runs the same network 21 times, once for each turn of the game.</p>
     </div>
   </div>
 </div>
 {closing}
 </form>
+<details class="deep"><summary>How it works (for the curious)</summary>
 <section>
   <h2>One turn, layer by layer</h2>
   <p>{fmt(turn.n_units)} units and {fmt(turn.n_weights)} nonzero weights. Your column comes in as 7 inputs (one-hot, or all zero when you haven't played that turn yet); the board after both moves goes out. Each layer reads only the one before, so values needed later pass down through carry units.</p>
@@ -224,6 +227,7 @@ def build_c4():
   </table></div>
 </section>
 <footer>Checked in numpy: the move matches the original demo's integer model on 24,708 positions (its browser-test games plus 3,000 games against random and greedy players), and the turn net replays 400 random games turn by turn. The browser test replays the original fixture games in Chromium, Firefox and WebKit.</footer>
+</details>
 """
     styles = """
 .game, .turn, .step, .ui { display: contents; }

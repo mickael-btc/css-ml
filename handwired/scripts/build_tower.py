@@ -87,23 +87,25 @@ def build():
 
     body = f"""
 <header>
-  <h1>A network running a copy of itself</h1>
-  <p><code>interpret(net)</code> compiles a ReLU network that takes another network's numbers as inputs and computes what it would. Then it is applied to its own output: <span class="hand">I1 = interpret(N)</span> runs a tiny net N, and <span class="hand">I2 = interpret(I1)</span> runs I1, which runs N. To I2, all {len(i_names)} of I1's numbers are just inputs. <b>0 bytes of JavaScript.</b></p>
+  <h1>Nesting dolls</h1>
+  <p class="lead">A console that runs a console, which runs a tiny network.</p>
 </header>
+<div class="explain"><ul><li><b>N</b> is a tiny network: 9 numbers that turn two inputs (0 or 1) into one answer. The buttons give it different jobs: XOR, AND, OR…</li><li><b>Console 1</b> runs N, reading its 9 numbers.</li><li><b>Console 2</b> runs console 1, reading console 1's {len(i_names)} numbers. So it runs N too, one level further down.</li><li><b>Try:</b> click the buttons. Both columns of the table always give the same answers. Pick <i>Custom</i> to set N's numbers yourself.</li></ul></div>
 <form class="hidden-inputs">{presets}{"".join(radios)}</form>
 <div class="main">
   <div class="left">
-    <h2>N, a 2 → 2 → 1 ReLU net</h2>
+    <h2>N, the tiny network</h2>
     <div class="presets">{preset_labels}</div>
     <div class="nums">{"".join(rows)}</div>
-    <p class="hint">N(x) = v₁·relu(w₁₁x₁ + w₂₁x₂ + b₁) + v₂·relu(w₁₂x₁ + w₂₂x₂ + b₂) + c. Pick Custom to set the numbers yourself.</p>
+    <p class="hint">Its 9 numbers. Pick Custom to change them.</p>
   </div>
   <div class="right">
-    <h2>What the interpreters compute</h2>
-    <table class="truth"><tr><th>x₁</th><th>x₂</th><th class="n">I1(x, N)</th><th class="n">I2(x, N, I1)</th></tr>{table}</table>
-    <p class="hint">Both columns are computed live, all four rows at once: 4 copies of I1 and 4 of I2.</p>
+    <h2>The answers</h2>
+    <table class="truth"><tr><th>x₁</th><th>x₂</th><th class="n">console 1</th><th class="n">console 2</th></tr>{table}</table>
+    <p class="hint">Computed live by your browser, for all four inputs at once.</p>
   </div>
 </div>
+<details class="deep"><summary>How it works (for the curious)</summary>
 <section>
   <h2>I1, as I2 sees it</h2>
   <p>The {len(i_names)} numbers of I1 (weights offset to unsigned, then biases), fed to I2 as inputs. I2 knows I1's wiring, which unit feeds which, but none of these values.</p>
@@ -115,6 +117,7 @@ def build():
   <p>Each level costs roughly the previous one's weights times their bit width. I3 is exact too (checked in numpy), but its activation bounds, which it needs for the products, reach 10¹⁸, far past what CSS computes exactly. So the tower stops at two in the browser.</p>
 </section>
 <footer>Checked in numpy for the five presets and 400 random N (every weight −4…3, every bias −4…4) on all four inputs: I1 and I2 equal N exactly, and every sum stays under 2²⁴. The browser test checks every preset and some custom N's in Chromium, Firefox and WebKit. Built by <code>handwired/scripts/tower.py</code>.</footer>
+</details>
 """
     styles = """
 .main { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start; }

@@ -19,31 +19,27 @@ def overview():
     tower = json.loads((NETS / "tower.json").read_text())
     s = tower["sizes"]
     cards = [
-        ("tic-tac-toe", "1", "Rules as weights: tic-tac-toe",
-         f"The trained policy plus its rules (free squares, argmax, “stop once X has won”, who won) as one {ttt.depth}-layer ReLU net. Every computed value in the CSS is <code>max(0, calc(…))</code> or a sum.",
-         "plays exactly like the original on all 2,097 positions"),
-        ("connect-four", "1", "Rules as weights: connect four",
-         f"A whole turn is one {turn.depth}-layer net of {fmt(turn.n_units)} units: gravity, the trained policy, the three tactics, the choice. Applied 21 times by nested elements.",
-         "matches the original on 24,708 positions"),
-        ("interpreter", "2", "A network that runs a network",
-         f"One fixed net of {fmt(interp.n_units)} units takes a board and the 1,801 weights of any 18 → 64 → 9 model as inputs. Load the trained model, a hand-written one or random weights: same CSS.",
-         "equals each model's forward pass in all 25,893 cases"),
-        ("tower", "3", "A network running a copy of itself",
-         f"<code>interpret(net)</code> applied to its own output: I1 runs a tiny net N, I2 runs I1 running N. {s[0]['units']} → {fmt(s[1]['units'])} units; I3 would be {fmt(s[2]['units'])}.",
-         "exact for every N in range, at both levels"),
-        ("unfrozen", "4", "Unfrozen: a rule that keeps learning",
-         "“Red inside the box” compiled to a 2 → 4 → 1 ReLU net, then all 17 numbers trained by backpropagation in CSS on points you place.",
-         "every weight at every epoch equals numpy"),
+        ("tic-tac-toe", "1", "Tic-tac-toe, one network",
+         "The computer player and all its rules in a single network. It plays exactly like before.", "Play →"),
+        ("connect-four", "1", "Connect four, one network per turn",
+         "One network drops the pieces, thinks, blocks and plays: a whole turn.", "Play →"),
+        ("interpreter", "2", "Swap the brain",
+         "A fixed “console” network plays whichever strategy you load into it, like swapping cartridges.", "Swap →"),
+        ("tower", "3", "Nesting dolls",
+         "A console running a console running a tiny network. Both give the same answers.", "Look →"),
+        ("unfrozen", "4", "A rule that keeps learning",
+         "A rule written by hand becomes a network, then keeps learning from the points you place.", "Teach it →"),
     ]
     items = "".join(f'<a class="card" href="{f}/"><small>step {n}</small><h2>{t}</h2><p>{d}</p><span>{c}</span></a>'
                     for f, n, t, d, c in cards)
     body = f"""
 <header>
   <h1>Handwired</h1>
-  <p>Regular code, rewritten as a neural network. Ideas from Cheng Lou's <a href="https://github.com/chenglou/handwired">handwired</a>: an <code>if</code> becomes ReLUs, <code>(a &gt; 4) ? 10 : 12</code> becomes <code>above4 = relu(a − 4) − relu(a − 5)</code>, <code>above4·10 + (1 − above4)·12</code>. No training, exact, and still differentiable.</p>
-  <p>Here it meets the rest of this repo, where networks run in the browser's style engine. Every page is pure CSS, <b>0 bytes of JavaScript</b>, and each one is tested to match its Python reference exactly in Chromium, Firefox and WebKit.</p>
+  <p class="lead">Normal code, turned into a neural network. Then networks that run other networks. All in CSS, with 0 bytes of JavaScript.</p>
 </header>
+<div class="explain"><ul><li><b>A neural network</b> is just thousands of tiny steps of “add these numbers, and if the result is negative, use 0”.</li><li><b>That's enough to write rules.</b> “Is this square free?” or “did someone win?” each become a few of those steps. So code can become a network, with no training.</li><li><b>And a network can run another network</b>, if you give it that network's numbers: like a console and its cartridge.</li><li>Idea from Cheng Lou's <a href="https://github.com/chenglou/handwired">handwired</a>. Each page is tested to give exactly the same answers as Python, in Chrome, Firefox and Safari.</li></ul></div>
 <div class="cards">{items}</div>
+<details class="deep"><summary>How it works (for the curious)</summary>
 <section>
   <h2>The compiler</h2>
   <p><code>handwired/scripts/hw.py</code> is about 450 lines. A program is built from inputs, constants, <code>+</code>, constant <code>×</code> and <code>relu</code>; helpers give integer logic (<code>ge</code>, <code>eq</code>, <code>AND</code>, <code>OR</code>, gating, a lexicographic argmax). <code>compile()</code> places each ReLU at 1 + the depth of its deepest input, carries values that are needed further down through identity units, and returns an ordinary layered integer MLP. The same net runs in numpy, and <code>to_css()</code> writes it out as registered <code>@property</code> integers.</p>
@@ -59,6 +55,7 @@ def overview():
   </table></div>
 </section>
 <footer>Rebuild with <code>.venv/bin/python handwired/scripts/build.py --nets</code>, test with <code>node handwired/tests/browser.test.mjs</code>. See <code>handwired/README.md</code>.</footer>
+</details>
 """
     styles = """
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
@@ -68,6 +65,7 @@ def overview():
 .card h2 { font-size: 15px; margin: 0; line-height: 1.3; }
 .card p { margin: 0; font-size: 13px; color: var(--muted); }
 .card span { font-size: 12px; color: var(--accent); }
+.explain a { color: var(--fg); }
 header a { color: var(--fg); text-underline-offset: 3px; }
 """
     kb = page("", "Handwired", "Regular code rewritten as neural networks, running in pure CSS: rules as weights, "

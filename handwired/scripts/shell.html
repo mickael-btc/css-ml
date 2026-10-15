@@ -77,6 +77,14 @@ td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
 .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
 
 footer { color: var(--muted); font-size: 12px; max-width: 80ch; }
+header .lead { font-size: 17px; color: var(--fg); margin: 0; max-width: 60ch; }
+.explain { border-left: 3px solid var(--hand); padding: 4px 0 4px 16px; margin-top: -14px; }
+.explain ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 14px; color: var(--muted); max-width: 72ch; }
+.explain b { color: var(--fg); font-weight: 600; }
+details.deep { border-top: 1px solid var(--line); padding-top: 18px; }
+details.deep > summary { cursor: pointer; font-size: 14px; color: var(--muted); }
+details.deep > summary:hover { color: var(--fg); }
+details.deep[open] { display: grid; gap: 30px; }
 footer a, section a { color: var(--fg); text-underline-offset: 3px; }
 
 $styles

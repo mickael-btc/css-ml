@@ -77,6 +77,14 @@ td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
 .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
 
 footer { color: var(--muted); font-size: 12px; max-width: 80ch; }
+header .lead { font-size: 17px; color: var(--fg); margin: 0; max-width: 60ch; }
+.explain { border-left: 3px solid var(--hand); padding: 4px 0 4px 16px; margin-top: -14px; }
+.explain ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 14px; color: var(--muted); max-width: 72ch; }
+.explain b { color: var(--fg); font-weight: 600; }
+details.deep { border-top: 1px solid var(--line); padding-top: 18px; }
+details.deep > summary { cursor: pointer; font-size: 14px; color: var(--muted); }
+details.deep > summary:hover { color: var(--fg); }
+details.deep[open] { display: grid; gap: 30px; }
 footer a, section a { color: var(--fg); text-underline-offset: 3px; }
 
 
@@ -87,6 +95,7 @@ footer a, section a { color: var(--fg); text-underline-offset: 3px; }
 .card h2 { font-size: 15px; margin: 0; line-height: 1.3; }
 .card p { margin: 0; font-size: 13px; color: var(--muted); }
 .card span { font-size: 12px; color: var(--accent); }
+.explain a { color: var(--fg); }
 header a { color: var(--fg); text-underline-offset: 3px; }
 
 .demos { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; border-top: 1px solid var(--line); padding-top: 18px; font-size: 12px; }
@@ -101,14 +110,15 @@ header a { color: var(--fg); text-underline-offset: 3px; }
 </head>
 <body>
 <div class="app">
-<nav class="steps" aria-label="Handwired steps"><a href="./" aria-current="page">Overview</a><a href="tic-tac-toe/"><small>1</small>Tic-tac-toe</a><a href="connect-four/"><small>1</small>Connect four</a><a href="interpreter/"><small>2</small>Interpreter</a><a href="tower/"><small>3</small>Tower</a><a href="unfrozen/"><small>4</small>Unfrozen</a></nav>
+<nav class="steps" aria-label="Handwired steps"><a href="./" aria-current="page">Overview</a><a href="tic-tac-toe/"><small>1</small>Tic-tac-toe</a><a href="connect-four/"><small>1</small>Connect four</a><a href="interpreter/"><small>2</small>Swap the brain</a><a href="tower/"><small>3</small>Nesting dolls</a><a href="unfrozen/"><small>4</small>Rule that learns</a></nav>
 
 <header>
   <h1>Handwired</h1>
-  <p>Regular code, rewritten as a neural network. Ideas from Cheng Lou's <a href="https://github.com/chenglou/handwired">handwired</a>: an <code>if</code> becomes ReLUs, <code>(a &gt; 4) ? 10 : 12</code> becomes <code>above4 = relu(a − 4) − relu(a − 5)</code>, <code>above4·10 + (1 − above4)·12</code>. No training, exact, and still differentiable.</p>
-  <p>Here it meets the rest of this repo, where networks run in the browser's style engine. Every page is pure CSS, <b>0 bytes of JavaScript</b>, and each one is tested to match its Python reference exactly in Chromium, Firefox and WebKit.</p>
+  <p class="lead">Normal code, turned into a neural network. Then networks that run other networks. All in CSS, with 0 bytes of JavaScript.</p>
 </header>
-<div class="cards"><a class="card" href="tic-tac-toe/"><small>step 1</small><h2>Rules as weights: tic-tac-toe</h2><p>The trained policy plus its rules (free squares, argmax, “stop once X has won”, who won) as one 7-layer ReLU net. Every computed value in the CSS is <code>max(0, calc(…))</code> or a sum.</p><span>plays exactly like the original on all 2,097 positions</span></a><a class="card" href="connect-four/"><small>step 1</small><h2>Rules as weights: connect four</h2><p>A whole turn is one 13-layer net of 4,451 units: gravity, the trained policy, the three tactics, the choice. Applied 21 times by nested elements.</p><span>matches the original on 24,708 positions</span></a><a class="card" href="interpreter/"><small>step 2</small><h2>A network that runs a network</h2><p>One fixed net of 13,608 units takes a board and the 1,801 weights of any 18 → 64 → 9 model as inputs. Load the trained model, a hand-written one or random weights: same CSS.</p><span>equals each model's forward pass in all 25,893 cases</span></a><a class="card" href="tower/"><small>step 3</small><h2>A network running a copy of itself</h2><p><code>interpret(net)</code> applied to its own output: I1 runs a tiny net N, I2 runs I1 running N. 34 → 1,866 units; I3 would be 191,288.</p><span>exact for every N in range, at both levels</span></a><a class="card" href="unfrozen/"><small>step 4</small><h2>Unfrozen: a rule that keeps learning</h2><p>“Red inside the box” compiled to a 2 → 4 → 1 ReLU net, then all 17 numbers trained by backpropagation in CSS on points you place.</p><span>every weight at every epoch equals numpy</span></a></div>
+<div class="explain"><ul><li><b>A neural network</b> is just thousands of tiny steps of “add these numbers, and if the result is negative, use 0”.</li><li><b>That's enough to write rules.</b> “Is this square free?” or “did someone win?” each become a few of those steps. So code can become a network, with no training.</li><li><b>And a network can run another network</b>, if you give it that network's numbers: like a console and its cartridge.</li><li>Idea from Cheng Lou's <a href="https://github.com/chenglou/handwired">handwired</a>. Each page is tested to give exactly the same answers as Python, in Chrome, Firefox and Safari.</li></ul></div>
+<div class="cards"><a class="card" href="tic-tac-toe/"><small>step 1</small><h2>Tic-tac-toe, one network</h2><p>The computer player and all its rules in a single network. It plays exactly like before.</p><span>Play →</span></a><a class="card" href="connect-four/"><small>step 1</small><h2>Connect four, one network per turn</h2><p>One network drops the pieces, thinks, blocks and plays: a whole turn.</p><span>Play →</span></a><a class="card" href="interpreter/"><small>step 2</small><h2>Swap the brain</h2><p>A fixed “console” network plays whichever strategy you load into it, like swapping cartridges.</p><span>Swap →</span></a><a class="card" href="tower/"><small>step 3</small><h2>Nesting dolls</h2><p>A console running a console running a tiny network. Both give the same answers.</p><span>Look →</span></a><a class="card" href="unfrozen/"><small>step 4</small><h2>A rule that keeps learning</h2><p>A rule written by hand becomes a network, then keeps learning from the points you place.</p><span>Teach it →</span></a></div>
+<details class="deep"><summary>How it works (for the curious)</summary>
 <section>
   <h2>The compiler</h2>
   <p><code>handwired/scripts/hw.py</code> is about 450 lines. A program is built from inputs, constants, <code>+</code>, constant <code>×</code> and <code>relu</code>; helpers give integer logic (<code>ge</code>, <code>eq</code>, <code>AND</code>, <code>OR</code>, gating, a lexicographic argmax). <code>compile()</code> places each ReLU at 1 + the depth of its deepest input, carries values that are needed further down through identity units, and returns an ordinary layered integer MLP. The same net runs in numpy, and <code>to_css()</code> writes it out as registered <code>@property</code> integers.</p>
@@ -124,6 +134,7 @@ header a { color: var(--fg); text-underline-offset: 3px; }
   </table></div>
 </section>
 <footer>Rebuild with <code>.venv/bin/python handwired/scripts/build.py --nets</code>, test with <code>node handwired/tests/browser.test.mjs</code>. See <code>handwired/README.md</code>.</footer>
+</details>
 
 <nav class="demos" aria-label="CSS ML demos"><span>More in pure CSS</span><a href="../">Digit recognizer</a><a href="../latent-space">Latent space</a><a href="../autoencoder">Autoencoder</a><a href="../playground">Live training</a><a href="../tic-tac-toe">Tic-tac-toe</a><a href="../connect-four">Connect four</a><a href="../rock-paper-scissors">Rock paper scissors</a><a aria-current="page">Handwired</a><a href="https://github.com/mickael-btc/css-ml">GitHub</a></nav>
 </div>

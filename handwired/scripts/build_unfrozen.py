@@ -130,9 +130,10 @@ def build():
 
     body = f"""
 <header>
-  <h1>Unfrozen: a rule that keeps learning</h1>
-  <p>Start from code: <code>red if |x| ≤ 3 and |y| ≤ 3</code>. Compiled by hand into a 2 → 4 → 1 ReLU net, each hidden unit measures how far past one side of the box a point is. Then all 17 of its numbers are <span class="learned">unfrozen</span>: the browser's style engine trains them by backpropagation, {EPOCHS} epochs, every time you place a point. <b>0 bytes of JavaScript.</b></p>
+  <h1>A rule that keeps learning</h1>
+  <p class="lead">Start from a rule written by hand, then let it learn.</p>
 </header>
+<div class="explain"><ul><li><b>The rule:</b> “red if it's inside the middle square”. It's written by hand as a tiny network, so it's right from the start.</li><li><b>Then it learns:</b> every time you place a point, the browser trains that network on your points, {EPOCHS} rounds, like any network.</li><li><b>Try:</b> put red dots in the middle square and blue dots around: 100% right away. Then add red dots just to the right of the square: the red area grows to take them in. Click <i>From random</i> to start without the rule, and it learns much worse.</li></ul></div>
 <form id="pts" class="main">
   <div class="pad">
     <div class="tools">
@@ -143,17 +144,17 @@ def build():
     </div>
     <div class="board"><div class="plane">{plane}</div><div class="pts">{"".join(pts)}</div></div>
     <div class="tools"><button type="reset">Clear</button><small>Click to place a point, click again to remove it.</small></div>
-    <p class="hint">Try: fill the box with red and the outside with blue, and the rule already gets them all right at epoch 0. Then put red points just right of the box, and watch the rule's numbers move to take them in. Switch to “From random” to see what the rule was worth.</p>
   </div>
   <div class="result">
     <div class="big"></div>
     <div class="sub"></div>
-    <div class="chart-wrap"><h3><span>errors per epoch</span><span>click or hover an epoch</span></h3>
-      {radios}<div class="chart">{bars}</div><div class="axis"><span>0 (the rule)</span><span>{EPOCHS}</span></div></div>
+    <div class="chart-wrap"><h3><span>mistakes after each round of learning</span><span>click a bar to see that round</span></h3>
+      {radios}<div class="chart">{bars}</div><div class="axis"><span>start (the rule)</span><span>{EPOCHS}</span></div></div>
     <div class="scroll"><table class="nums"><tr><th></th><th class="n">x</th><th class="n">y</th><th class="n">1</th><th class="n">out</th></tr>{"".join(rows)}</table></div>
-    <p class="hint">The 17 numbers at the shown epoch. Small: the hand-written value. <span class="hand">Blue</span>: moved by training.</p>
+    <p class="hint">The rule's 17 numbers. Small grey: as written by hand. <span class="hand">Blue</span>: changed by learning.</p>
   </div>
 </form>
+<details class="deep"><summary>How it works (for the curious)</summary>
 <section>
   <h2>How it trains</h2>
   <div class="scroll"><table>
@@ -166,6 +167,7 @@ def build():
   <p>Integers throughout. Every divisor is odd, so CSS's rounding matches Python's exactly, and the clamps keep every sum under 2²⁴. The first layer's step is five times smaller than the rest: with a big step a box edge overshoots, flips, and its ReLU dies.</p>
 </section>
 <footer>The browser test places the demo sets from <code>handwired/scripts/unfrozen.py</code> from both starts and checks all 17 numbers at every epoch, and every error count, against the numpy reference in Chromium, Firefox and WebKit.</footer>
+</details>
 """
     styles = f"""
 .main {{ display: grid; grid-template-columns: auto 1fr; gap: 36px; align-items: start; }}
