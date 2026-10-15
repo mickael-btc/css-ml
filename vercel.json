@@ -2,8 +2,8 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "installCommand": "",
-  "buildCommand": "mkdir -p dist && cp index.html dist/index.html && for d in latent-space tic-tac-toe rock-paper-scissors connect-four playground autoencoder; do mkdir -p dist/$d && cp $d/index.html dist/$d/index.html; done",
+  "buildCommand": "mkdir -p dist && cp index.html dist/index.html && for d in latent-space tic-tac-toe rock-paper-scissors connect-four playground autoencoder; do mkdir -p dist/$d && cp $d/index.html dist/$d/index.html; done && mkdir -p dist/handwired && cp handwired/index.html dist/handwired/index.html && for d in tic-tac-toe connect-four interpreter tower unfrozen; do mkdir -p dist/handwired/$d && cp handwired/$d/index.html dist/handwired/$d/index.html; done",
   "outputDirectory": "dist",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": true
 }

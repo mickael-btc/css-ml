@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$title</title>
+<meta name="description" content="$description">
+<style>
+/* ===== generated: the networks ===== */
+$network_css
+
+/* ===== shared page styles ===== */
+:root {
+  --bg: #f4f1ea; --fg: #1c1b19; --muted: #7a766c; --cell: #e4dfd3; --line: #d3cdbf;
+  --ink-c: #1c1b19; --accent: #d9481c; --hand: #2f6f9f;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141412; --fg: #ece8de; --muted: #8d897f; --cell: #25241f; --line: #34322c;
+    --ink-c: #ece8de; --accent: #ff6a3d; --hand: #6fb0e0;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141412; --fg: #ece8de; --muted: #8d897f; --cell: #25241f; --line: #34322c;
+  --ink-c: #ece8de; --accent: #ff6a3d; --hand: #6fb0e0;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg); color: var(--fg); min-height: 100vh;
+  font: 15px/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  display: grid; justify-items: center; padding: 40px 16px;
+}
+.app { width: min(860px, 100%); display: grid; gap: 34px; align-content: start; }
+header h1 { font-size: clamp(24px, 5vw, 36px); line-height: 1.1; margin: 0 0 10px; letter-spacing: -0.02em; }
+header p { margin: 0 0 8px; color: var(--muted); max-width: 70ch; }
+header b { color: var(--accent); font-weight: 600; }
+code { font: inherit; color: var(--fg); }
+.hand { color: var(--hand); }
+.learned { color: var(--accent); }
+
+.steps { display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; }
+.steps a { color: var(--fg); text-decoration: none; border: 1px solid var(--line); border-radius: 6px; padding: 4px 10px; display: flex; gap: 6px; align-items: baseline; }
+.steps a small { color: var(--muted); font-size: 11px; }
+.steps a[aria-current] { border-color: var(--hand); color: var(--hand); }
+@media (hover: hover) { .steps a[href]:hover { border-color: var(--fg); } }
+
+form { margin: 0; }
+form input, .hidden-inputs input { position: absolute; opacity: 0; pointer-events: none; width: 0; height: 0; margin: 0; }
+button, .btn {
+  font: inherit; font-size: 14px; color: var(--fg); background: transparent; border: 1px solid var(--line);
+  border-radius: 6px; padding: 6px 16px; cursor: pointer; white-space: nowrap;
+}
+button:hover, .btn:hover { border-color: var(--fg); }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+section { display: grid; gap: 14px; border-top: 1px solid var(--line); padding-top: 22px; }
+section h2 { font-size: 15px; font-weight: 600; margin: 0; }
+section p { margin: 0; font-size: 13px; color: var(--muted); max-width: 76ch; }
+table { border-collapse: collapse; font-size: 13px; width: 100%; }
+td, th { text-align: left; padding: 6px 10px 6px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 600; }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+.scroll { overflow-x: auto; }
+
+/* a net's layers as stacked bars: learned, hand-written, carried */
+.anatomy { display: grid; gap: 4px; font-size: 12px; }
+.anatomy .row { display: grid; grid-template-columns: 64px 1fr 80px; gap: 10px; align-items: center; }
+.anatomy .bar { display: flex; height: 12px; border-radius: 3px; overflow: hidden; background: var(--cell); }
+.anatomy .bar i { display: block; height: 100%; }
+.anatomy .bar .l { background: var(--accent); }
+.anatomy .bar .r { background: var(--hand); }
+.anatomy .bar .c { background: var(--line); }
+.anatomy span { color: var(--muted); }
+.anatomy .n { text-align: right; color: var(--muted); }
+.legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+
+footer { color: var(--muted); font-size: 12px; max-width: 80ch; }
+footer a, section a { color: var(--fg); text-underline-offset: 3px; }
+
+$styles
+$nav_css
+</style>
+</head>
+<body>
+<div class="app">
+$steps
+$body
+$nav
+</div>
+</body>
+</html>

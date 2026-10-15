@@ -15,12 +15,14 @@ DEMOS = [
     ("tic-tac-toe", "Tic-tac-toe"),
     ("connect-four", "Connect four"),
     ("rock-paper-scissors", "Rock paper scissors"),
+    ("handwired", "Handwired"),
 ]
 
 
-def nav_html(current):
-    """current is the demo's folder name, or "" for the digit demo at the root."""
-    prefix = "" if current == "" else "../"
+def nav_html(current, depth=1):
+    """current is the demo's folder name, or "" for the digit demo at the root. depth is how many
+    folders below the root the page sits (handwired/tic-tac-toe/ is 2)."""
+    prefix = "" if current == "" else "../" * depth
     items = []
     for folder, title in DEMOS:
         if folder == current:
