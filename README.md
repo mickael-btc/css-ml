@@ -20,7 +20,7 @@ Same idea, zero JavaScript, one folder each:
 | [Rock paper scissors](https://css-ml.vercel.app/rock-paper-scissors) · [`rock-paper-scissors/`](rock-paper-scissors) | An online model learns your habits while you play and counters them |
 | [Connect four](https://css-ml.vercel.app/connect-four) · [`connect-four/`](connect-four) | A neural network plays yellow, helped by three hard-coded tactical rules |
 | [Live training](https://css-ml.vercel.app/playground) · [`playground/`](playground) | You place points and the CSS itself trains a classifier on them, epoch by epoch |
-| [Handwired](https://css-ml.vercel.app/handwired) · [`handwired/`](handwired) | Code compiled into ReLU nets: game rules as weights, a network that runs any model from its weights, an interpreter running a copy of itself, and a hand-written rule trained further by backprop |
+| [Handwired](https://css-ml.vercel.app/handwired) · [`handwired/`](handwired) | Code compiled into ReLU nets: game rules as weights, a network that runs any model from its weights, an interpreter running a copy of itself, a hand-written rule trained further by backprop, a neural CPU (with a program editor) running Snake, and a tiny click-driven desktop |
 
 `npm run build:all` and `npm run test:all` build and test every demo.
 

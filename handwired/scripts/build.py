@@ -13,6 +13,8 @@ import build_interpreter
 import build_tower
 import build_unfrozen
 import build_cpu
+import build_cpu2
+import build_os
 
 
 def overview():
@@ -31,7 +33,11 @@ def overview():
         ("unfrozen", "4", "A rule that keeps learning",
          "A rule written by hand becomes a network, then keeps learning from the points you place.", "Teach it →"),
         ("cpu", "5", "A computer made of neurons",
-         "A tiny 8-bit computer whose every clock tick is one network. It runs real programs: counting, Fibonacci, multiplying.", "Run it →"),
+         "A tiny 8-bit computer whose every clock tick is one network. It runs real programs (counting, Fibonacci, multiplying) or one you write yourself.", "Run it →"),
+        ("arcade", "6", "A game console made of neurons",
+         "Snake on a tiny 8-bit computer whose every clock tick is one network. The screen is its memory; the game is a 42-instruction program.", "Play →"),
+        ("os", "7", "A tiny desktop run by one network",
+         "Three windows and a dock. Every click goes through one network that decides what happens to every window.", "Click around →"),
     ]
     items = "".join(f'<a class="card" href="{f}/"><small>step {n}</small><h2>{t}</h2><p>{d}</p><span>{c}</span></a>'
                     for f, n, t, d, c in cards)
@@ -72,13 +78,13 @@ def overview():
 header a { color: var(--fg); text-underline-offset: 3px; }
 """
     kb = page("", "Handwired", "Regular code rewritten as neural networks, running in pure CSS: rules as weights, "
-              "a network that runs networks, a tower of interpreters, and a rule that keeps learning.", "", styles, body)
+              "a network that runs networks, a tower of interpreters, a rule that keeps learning, a neural CPU running Snake, and a tiny desktop.", "", styles, body)
     print(f"index.html: {kb:.0f} KB")
 
 
 def main():
     if "--nets" in sys.argv:
-        for script in ("rules.py", "interpreter.py", "tower.py", "cpu.py"):
+        for script in ("rules.py", "interpreter.py", "tower.py", "cpu.py", "cpu2.py", "mini_os.py"):
             subprocess.run([sys.executable, str(SCRIPTS / script)], check=True)
         subprocess.run([sys.executable, str(SCRIPTS / "unfrozen.py"), "-q", "--fixtures"], check=True)
     build_games.build_ttt()
@@ -87,6 +93,8 @@ def main():
     build_tower.build()
     build_unfrozen.build()
     build_cpu.build()
+    build_cpu2.build()
+    build_os.build()
     overview()
 
 

@@ -5,7 +5,8 @@ rm -rf dist
 mkdir -p dist
 cp index.html dist/index.html
 for d in latent-space tic-tac-toe rock-paper-scissors connect-four playground autoencoder \
-         handwired handwired/tic-tac-toe handwired/connect-four handwired/interpreter handwired/tower handwired/unfrozen handwired/cpu; do
+         handwired handwired/tic-tac-toe handwired/connect-four handwired/interpreter handwired/tower handwired/unfrozen handwired/cpu \
+         handwired/arcade handwired/os; do
   mkdir -p "dist/$d"
   cp "$d/index.html" "dist/$d/index.html"
 done

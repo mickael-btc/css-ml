@@ -43,6 +43,46 @@
 @property --inmultiply_0{syntax:"<integer>";inherits:true;initial-value:6}
 @property --inmultiply_1{syntax:"<integer>";inherits:true;initial-value:7}
 @property --insum_0{syntax:"<integer>";inherits:true;initial-value:10}
+@property --eop0{syntax:"<integer>";inherits:false;initial-value:1}
+@property --earg0{syntax:"<integer>";inherits:false;initial-value:10}
+@property --eop1{syntax:"<integer>";inherits:false;initial-value:10}
+@property --earg1{syntax:"<integer>";inherits:false;initial-value:0}
+@property --eop2{syntax:"<integer>";inherits:false;initial-value:5}
+@property --earg2{syntax:"<integer>";inherits:false;initial-value:0}
+@property --eop3{syntax:"<integer>";inherits:false;initial-value:9}
+@property --earg3{syntax:"<integer>";inherits:false;initial-value:1}
+@property --eop4{syntax:"<integer>";inherits:false;initial-value:0}
+@property --earg4{syntax:"<integer>";inherits:false;initial-value:0}
+@property --eop5{syntax:"<integer>";inherits:false;initial-value:0}
+@property --earg5{syntax:"<integer>";inherits:false;initial-value:0}
+@property --eop6{syntax:"<integer>";inherits:false;initial-value:0}
+@property --earg6{syntax:"<integer>";inherits:false;initial-value:0}
+@property --eop7{syntax:"<integer>";inherits:false;initial-value:0}
+@property --earg7{syntax:"<integer>";inherits:false;initial-value:0}
+@property --eop8{syntax:"<integer>";inherits:false;initial-value:0}
+@property --earg8{syntax:"<integer>";inherits:false;initial-value:0}
+@property --eop9{syntax:"<integer>";inherits:false;initial-value:0}
+@property --earg9{syntax:"<integer>";inherits:false;initial-value:0}
+@property --eop10{syntax:"<integer>";inherits:false;initial-value:0}
+@property --earg10{syntax:"<integer>";inherits:false;initial-value:0}
+@property --eop11{syntax:"<integer>";inherits:false;initial-value:0}
+@property --earg11{syntax:"<integer>";inherits:false;initial-value:0}
+@property --eop12{syntax:"<integer>";inherits:false;initial-value:0}
+@property --earg12{syntax:"<integer>";inherits:false;initial-value:0}
+@property --eop13{syntax:"<integer>";inherits:false;initial-value:0}
+@property --earg13{syntax:"<integer>";inherits:false;initial-value:0}
+@property --eop14{syntax:"<integer>";inherits:false;initial-value:0}
+@property --earg14{syntax:"<integer>";inherits:false;initial-value:0}
+@property --eop15{syntax:"<integer>";inherits:false;initial-value:0}
+@property --earg15{syntax:"<integer>";inherits:false;initial-value:0}
+@property --emem0{syntax:"<integer>";inherits:true;initial-value:1}
+@property --emem1{syntax:"<integer>";inherits:true;initial-value:0}
+@property --emem2{syntax:"<integer>";inherits:true;initial-value:0}
+@property --emem3{syntax:"<integer>";inherits:true;initial-value:0}
+@property --emem4{syntax:"<integer>";inherits:true;initial-value:0}
+@property --emem5{syntax:"<integer>";inherits:true;initial-value:0}
+@property --emem6{syntax:"<integer>";inherits:true;initial-value:0}
+@property --emem7{syntax:"<integer>";inherits:true;initial-value:0}
 @property --PPC{syntax:"<integer>";inherits:true;initial-value:0}
 @property --PA{syntax:"<integer>";inherits:true;initial-value:0}
 @property --PH{syntax:"<integer>";inherits:true;initial-value:0}
@@ -1336,6 +1376,1695 @@
 .app:not(:has(#prog-powers:checked)) .only-powers {
   display: none;
 }
+.app:has(#prog-custom:checked) .progs label[for=prog-custom] {
+  border-color: var(--hand); color: var(--hand);
+}
+.app:not(:has(#prog-custom:checked)) .only-custom {
+  display: none;
+}
+.app:has(#prog-custom:checked) {
+  --op0: var(--eop0); --arg0: var(--earg0); --op1: var(--eop1); --arg1: var(--earg1); --op2: var(--eop2); --arg2: var(--earg2); --op3: var(--eop3); --arg3: var(--earg3); --op4: var(--eop4); --arg4: var(--earg4); --op5: var(--eop5); --arg5: var(--earg5); --op6: var(--eop6); --arg6: var(--earg6); --op7: var(--eop7); --arg7: var(--earg7); --op8: var(--eop8); --arg8: var(--earg8); --op9: var(--eop9); --arg9: var(--earg9); --op10: var(--eop10); --arg10: var(--earg10); --op11: var(--eop11); --arg11: var(--earg11); --op12: var(--eop12); --arg12: var(--earg12); --op13: var(--eop13); --arg13: var(--earg13); --op14: var(--eop14); --arg14: var(--earg14); --op15: var(--eop15); --arg15: var(--earg15); --R0: var(--emem0); --R1: var(--emem1); --R2: var(--emem2); --R3: var(--emem3); --R4: var(--emem4); --R5: var(--emem5); --R6: var(--emem6); --R7: var(--emem7);
+}
+.app:has(#eop0_0:checked) {
+  --eop0: 0;
+}
+.app:has(#eop0_1:checked) {
+  --eop0: 1;
+}
+.app:has(#eop0_2:checked) {
+  --eop0: 2;
+}
+.app:has(#eop0_3:checked) {
+  --eop0: 3;
+}
+.app:has(#eop0_4:checked) {
+  --eop0: 4;
+}
+.app:has(#eop0_5:checked) {
+  --eop0: 5;
+}
+.app:has(#eop0_6:checked) {
+  --eop0: 6;
+}
+.app:has(#eop0_7:checked) {
+  --eop0: 7;
+}
+.app:has(#eop0_8:checked) {
+  --eop0: 8;
+}
+.app:has(#eop0_9:checked) {
+  --eop0: 9;
+}
+.app:has(#eop0_10:checked) {
+  --eop0: 10;
+}
+.app:has(#earg0_0:checked) {
+  --earg0: 0;
+}
+.app:has(#earg0_1:checked) {
+  --earg0: 1;
+}
+.app:has(#earg0_2:checked) {
+  --earg0: 2;
+}
+.app:has(#earg0_3:checked) {
+  --earg0: 3;
+}
+.app:has(#earg0_4:checked) {
+  --earg0: 4;
+}
+.app:has(#earg0_5:checked) {
+  --earg0: 5;
+}
+.app:has(#earg0_6:checked) {
+  --earg0: 6;
+}
+.app:has(#earg0_7:checked) {
+  --earg0: 7;
+}
+.app:has(#earg0_8:checked) {
+  --earg0: 8;
+}
+.app:has(#earg0_9:checked) {
+  --earg0: 9;
+}
+.app:has(#earg0_10:checked) {
+  --earg0: 10;
+}
+.app:has(#earg0_11:checked) {
+  --earg0: 11;
+}
+.app:has(#earg0_12:checked) {
+  --earg0: 12;
+}
+.app:has(#earg0_13:checked) {
+  --earg0: 13;
+}
+.app:has(#earg0_14:checked) {
+  --earg0: 14;
+}
+.app:has(#earg0_15:checked) {
+  --earg0: 15;
+}
+.app:has(#eop1_0:checked) {
+  --eop1: 0;
+}
+.app:has(#eop1_1:checked) {
+  --eop1: 1;
+}
+.app:has(#eop1_2:checked) {
+  --eop1: 2;
+}
+.app:has(#eop1_3:checked) {
+  --eop1: 3;
+}
+.app:has(#eop1_4:checked) {
+  --eop1: 4;
+}
+.app:has(#eop1_5:checked) {
+  --eop1: 5;
+}
+.app:has(#eop1_6:checked) {
+  --eop1: 6;
+}
+.app:has(#eop1_7:checked) {
+  --eop1: 7;
+}
+.app:has(#eop1_8:checked) {
+  --eop1: 8;
+}
+.app:has(#eop1_9:checked) {
+  --eop1: 9;
+}
+.app:has(#eop1_10:checked) {
+  --eop1: 10;
+}
+.app:has(#earg1_0:checked) {
+  --earg1: 0;
+}
+.app:has(#earg1_1:checked) {
+  --earg1: 1;
+}
+.app:has(#earg1_2:checked) {
+  --earg1: 2;
+}
+.app:has(#earg1_3:checked) {
+  --earg1: 3;
+}
+.app:has(#earg1_4:checked) {
+  --earg1: 4;
+}
+.app:has(#earg1_5:checked) {
+  --earg1: 5;
+}
+.app:has(#earg1_6:checked) {
+  --earg1: 6;
+}
+.app:has(#earg1_7:checked) {
+  --earg1: 7;
+}
+.app:has(#earg1_8:checked) {
+  --earg1: 8;
+}
+.app:has(#earg1_9:checked) {
+  --earg1: 9;
+}
+.app:has(#earg1_10:checked) {
+  --earg1: 10;
+}
+.app:has(#earg1_11:checked) {
+  --earg1: 11;
+}
+.app:has(#earg1_12:checked) {
+  --earg1: 12;
+}
+.app:has(#earg1_13:checked) {
+  --earg1: 13;
+}
+.app:has(#earg1_14:checked) {
+  --earg1: 14;
+}
+.app:has(#earg1_15:checked) {
+  --earg1: 15;
+}
+.app:has(#eop2_0:checked) {
+  --eop2: 0;
+}
+.app:has(#eop2_1:checked) {
+  --eop2: 1;
+}
+.app:has(#eop2_2:checked) {
+  --eop2: 2;
+}
+.app:has(#eop2_3:checked) {
+  --eop2: 3;
+}
+.app:has(#eop2_4:checked) {
+  --eop2: 4;
+}
+.app:has(#eop2_5:checked) {
+  --eop2: 5;
+}
+.app:has(#eop2_6:checked) {
+  --eop2: 6;
+}
+.app:has(#eop2_7:checked) {
+  --eop2: 7;
+}
+.app:has(#eop2_8:checked) {
+  --eop2: 8;
+}
+.app:has(#eop2_9:checked) {
+  --eop2: 9;
+}
+.app:has(#eop2_10:checked) {
+  --eop2: 10;
+}
+.app:has(#earg2_0:checked) {
+  --earg2: 0;
+}
+.app:has(#earg2_1:checked) {
+  --earg2: 1;
+}
+.app:has(#earg2_2:checked) {
+  --earg2: 2;
+}
+.app:has(#earg2_3:checked) {
+  --earg2: 3;
+}
+.app:has(#earg2_4:checked) {
+  --earg2: 4;
+}
+.app:has(#earg2_5:checked) {
+  --earg2: 5;
+}
+.app:has(#earg2_6:checked) {
+  --earg2: 6;
+}
+.app:has(#earg2_7:checked) {
+  --earg2: 7;
+}
+.app:has(#earg2_8:checked) {
+  --earg2: 8;
+}
+.app:has(#earg2_9:checked) {
+  --earg2: 9;
+}
+.app:has(#earg2_10:checked) {
+  --earg2: 10;
+}
+.app:has(#earg2_11:checked) {
+  --earg2: 11;
+}
+.app:has(#earg2_12:checked) {
+  --earg2: 12;
+}
+.app:has(#earg2_13:checked) {
+  --earg2: 13;
+}
+.app:has(#earg2_14:checked) {
+  --earg2: 14;
+}
+.app:has(#earg2_15:checked) {
+  --earg2: 15;
+}
+.app:has(#eop3_0:checked) {
+  --eop3: 0;
+}
+.app:has(#eop3_1:checked) {
+  --eop3: 1;
+}
+.app:has(#eop3_2:checked) {
+  --eop3: 2;
+}
+.app:has(#eop3_3:checked) {
+  --eop3: 3;
+}
+.app:has(#eop3_4:checked) {
+  --eop3: 4;
+}
+.app:has(#eop3_5:checked) {
+  --eop3: 5;
+}
+.app:has(#eop3_6:checked) {
+  --eop3: 6;
+}
+.app:has(#eop3_7:checked) {
+  --eop3: 7;
+}
+.app:has(#eop3_8:checked) {
+  --eop3: 8;
+}
+.app:has(#eop3_9:checked) {
+  --eop3: 9;
+}
+.app:has(#eop3_10:checked) {
+  --eop3: 10;
+}
+.app:has(#earg3_0:checked) {
+  --earg3: 0;
+}
+.app:has(#earg3_1:checked) {
+  --earg3: 1;
+}
+.app:has(#earg3_2:checked) {
+  --earg3: 2;
+}
+.app:has(#earg3_3:checked) {
+  --earg3: 3;
+}
+.app:has(#earg3_4:checked) {
+  --earg3: 4;
+}
+.app:has(#earg3_5:checked) {
+  --earg3: 5;
+}
+.app:has(#earg3_6:checked) {
+  --earg3: 6;
+}
+.app:has(#earg3_7:checked) {
+  --earg3: 7;
+}
+.app:has(#earg3_8:checked) {
+  --earg3: 8;
+}
+.app:has(#earg3_9:checked) {
+  --earg3: 9;
+}
+.app:has(#earg3_10:checked) {
+  --earg3: 10;
+}
+.app:has(#earg3_11:checked) {
+  --earg3: 11;
+}
+.app:has(#earg3_12:checked) {
+  --earg3: 12;
+}
+.app:has(#earg3_13:checked) {
+  --earg3: 13;
+}
+.app:has(#earg3_14:checked) {
+  --earg3: 14;
+}
+.app:has(#earg3_15:checked) {
+  --earg3: 15;
+}
+.app:has(#eop4_0:checked) {
+  --eop4: 0;
+}
+.app:has(#eop4_1:checked) {
+  --eop4: 1;
+}
+.app:has(#eop4_2:checked) {
+  --eop4: 2;
+}
+.app:has(#eop4_3:checked) {
+  --eop4: 3;
+}
+.app:has(#eop4_4:checked) {
+  --eop4: 4;
+}
+.app:has(#eop4_5:checked) {
+  --eop4: 5;
+}
+.app:has(#eop4_6:checked) {
+  --eop4: 6;
+}
+.app:has(#eop4_7:checked) {
+  --eop4: 7;
+}
+.app:has(#eop4_8:checked) {
+  --eop4: 8;
+}
+.app:has(#eop4_9:checked) {
+  --eop4: 9;
+}
+.app:has(#eop4_10:checked) {
+  --eop4: 10;
+}
+.app:has(#earg4_0:checked) {
+  --earg4: 0;
+}
+.app:has(#earg4_1:checked) {
+  --earg4: 1;
+}
+.app:has(#earg4_2:checked) {
+  --earg4: 2;
+}
+.app:has(#earg4_3:checked) {
+  --earg4: 3;
+}
+.app:has(#earg4_4:checked) {
+  --earg4: 4;
+}
+.app:has(#earg4_5:checked) {
+  --earg4: 5;
+}
+.app:has(#earg4_6:checked) {
+  --earg4: 6;
+}
+.app:has(#earg4_7:checked) {
+  --earg4: 7;
+}
+.app:has(#earg4_8:checked) {
+  --earg4: 8;
+}
+.app:has(#earg4_9:checked) {
+  --earg4: 9;
+}
+.app:has(#earg4_10:checked) {
+  --earg4: 10;
+}
+.app:has(#earg4_11:checked) {
+  --earg4: 11;
+}
+.app:has(#earg4_12:checked) {
+  --earg4: 12;
+}
+.app:has(#earg4_13:checked) {
+  --earg4: 13;
+}
+.app:has(#earg4_14:checked) {
+  --earg4: 14;
+}
+.app:has(#earg4_15:checked) {
+  --earg4: 15;
+}
+.app:has(#eop5_0:checked) {
+  --eop5: 0;
+}
+.app:has(#eop5_1:checked) {
+  --eop5: 1;
+}
+.app:has(#eop5_2:checked) {
+  --eop5: 2;
+}
+.app:has(#eop5_3:checked) {
+  --eop5: 3;
+}
+.app:has(#eop5_4:checked) {
+  --eop5: 4;
+}
+.app:has(#eop5_5:checked) {
+  --eop5: 5;
+}
+.app:has(#eop5_6:checked) {
+  --eop5: 6;
+}
+.app:has(#eop5_7:checked) {
+  --eop5: 7;
+}
+.app:has(#eop5_8:checked) {
+  --eop5: 8;
+}
+.app:has(#eop5_9:checked) {
+  --eop5: 9;
+}
+.app:has(#eop5_10:checked) {
+  --eop5: 10;
+}
+.app:has(#earg5_0:checked) {
+  --earg5: 0;
+}
+.app:has(#earg5_1:checked) {
+  --earg5: 1;
+}
+.app:has(#earg5_2:checked) {
+  --earg5: 2;
+}
+.app:has(#earg5_3:checked) {
+  --earg5: 3;
+}
+.app:has(#earg5_4:checked) {
+  --earg5: 4;
+}
+.app:has(#earg5_5:checked) {
+  --earg5: 5;
+}
+.app:has(#earg5_6:checked) {
+  --earg5: 6;
+}
+.app:has(#earg5_7:checked) {
+  --earg5: 7;
+}
+.app:has(#earg5_8:checked) {
+  --earg5: 8;
+}
+.app:has(#earg5_9:checked) {
+  --earg5: 9;
+}
+.app:has(#earg5_10:checked) {
+  --earg5: 10;
+}
+.app:has(#earg5_11:checked) {
+  --earg5: 11;
+}
+.app:has(#earg5_12:checked) {
+  --earg5: 12;
+}
+.app:has(#earg5_13:checked) {
+  --earg5: 13;
+}
+.app:has(#earg5_14:checked) {
+  --earg5: 14;
+}
+.app:has(#earg5_15:checked) {
+  --earg5: 15;
+}
+.app:has(#eop6_0:checked) {
+  --eop6: 0;
+}
+.app:has(#eop6_1:checked) {
+  --eop6: 1;
+}
+.app:has(#eop6_2:checked) {
+  --eop6: 2;
+}
+.app:has(#eop6_3:checked) {
+  --eop6: 3;
+}
+.app:has(#eop6_4:checked) {
+  --eop6: 4;
+}
+.app:has(#eop6_5:checked) {
+  --eop6: 5;
+}
+.app:has(#eop6_6:checked) {
+  --eop6: 6;
+}
+.app:has(#eop6_7:checked) {
+  --eop6: 7;
+}
+.app:has(#eop6_8:checked) {
+  --eop6: 8;
+}
+.app:has(#eop6_9:checked) {
+  --eop6: 9;
+}
+.app:has(#eop6_10:checked) {
+  --eop6: 10;
+}
+.app:has(#earg6_0:checked) {
+  --earg6: 0;
+}
+.app:has(#earg6_1:checked) {
+  --earg6: 1;
+}
+.app:has(#earg6_2:checked) {
+  --earg6: 2;
+}
+.app:has(#earg6_3:checked) {
+  --earg6: 3;
+}
+.app:has(#earg6_4:checked) {
+  --earg6: 4;
+}
+.app:has(#earg6_5:checked) {
+  --earg6: 5;
+}
+.app:has(#earg6_6:checked) {
+  --earg6: 6;
+}
+.app:has(#earg6_7:checked) {
+  --earg6: 7;
+}
+.app:has(#earg6_8:checked) {
+  --earg6: 8;
+}
+.app:has(#earg6_9:checked) {
+  --earg6: 9;
+}
+.app:has(#earg6_10:checked) {
+  --earg6: 10;
+}
+.app:has(#earg6_11:checked) {
+  --earg6: 11;
+}
+.app:has(#earg6_12:checked) {
+  --earg6: 12;
+}
+.app:has(#earg6_13:checked) {
+  --earg6: 13;
+}
+.app:has(#earg6_14:checked) {
+  --earg6: 14;
+}
+.app:has(#earg6_15:checked) {
+  --earg6: 15;
+}
+.app:has(#eop7_0:checked) {
+  --eop7: 0;
+}
+.app:has(#eop7_1:checked) {
+  --eop7: 1;
+}
+.app:has(#eop7_2:checked) {
+  --eop7: 2;
+}
+.app:has(#eop7_3:checked) {
+  --eop7: 3;
+}
+.app:has(#eop7_4:checked) {
+  --eop7: 4;
+}
+.app:has(#eop7_5:checked) {
+  --eop7: 5;
+}
+.app:has(#eop7_6:checked) {
+  --eop7: 6;
+}
+.app:has(#eop7_7:checked) {
+  --eop7: 7;
+}
+.app:has(#eop7_8:checked) {
+  --eop7: 8;
+}
+.app:has(#eop7_9:checked) {
+  --eop7: 9;
+}
+.app:has(#eop7_10:checked) {
+  --eop7: 10;
+}
+.app:has(#earg7_0:checked) {
+  --earg7: 0;
+}
+.app:has(#earg7_1:checked) {
+  --earg7: 1;
+}
+.app:has(#earg7_2:checked) {
+  --earg7: 2;
+}
+.app:has(#earg7_3:checked) {
+  --earg7: 3;
+}
+.app:has(#earg7_4:checked) {
+  --earg7: 4;
+}
+.app:has(#earg7_5:checked) {
+  --earg7: 5;
+}
+.app:has(#earg7_6:checked) {
+  --earg7: 6;
+}
+.app:has(#earg7_7:checked) {
+  --earg7: 7;
+}
+.app:has(#earg7_8:checked) {
+  --earg7: 8;
+}
+.app:has(#earg7_9:checked) {
+  --earg7: 9;
+}
+.app:has(#earg7_10:checked) {
+  --earg7: 10;
+}
+.app:has(#earg7_11:checked) {
+  --earg7: 11;
+}
+.app:has(#earg7_12:checked) {
+  --earg7: 12;
+}
+.app:has(#earg7_13:checked) {
+  --earg7: 13;
+}
+.app:has(#earg7_14:checked) {
+  --earg7: 14;
+}
+.app:has(#earg7_15:checked) {
+  --earg7: 15;
+}
+.app:has(#eop8_0:checked) {
+  --eop8: 0;
+}
+.app:has(#eop8_1:checked) {
+  --eop8: 1;
+}
+.app:has(#eop8_2:checked) {
+  --eop8: 2;
+}
+.app:has(#eop8_3:checked) {
+  --eop8: 3;
+}
+.app:has(#eop8_4:checked) {
+  --eop8: 4;
+}
+.app:has(#eop8_5:checked) {
+  --eop8: 5;
+}
+.app:has(#eop8_6:checked) {
+  --eop8: 6;
+}
+.app:has(#eop8_7:checked) {
+  --eop8: 7;
+}
+.app:has(#eop8_8:checked) {
+  --eop8: 8;
+}
+.app:has(#eop8_9:checked) {
+  --eop8: 9;
+}
+.app:has(#eop8_10:checked) {
+  --eop8: 10;
+}
+.app:has(#earg8_0:checked) {
+  --earg8: 0;
+}
+.app:has(#earg8_1:checked) {
+  --earg8: 1;
+}
+.app:has(#earg8_2:checked) {
+  --earg8: 2;
+}
+.app:has(#earg8_3:checked) {
+  --earg8: 3;
+}
+.app:has(#earg8_4:checked) {
+  --earg8: 4;
+}
+.app:has(#earg8_5:checked) {
+  --earg8: 5;
+}
+.app:has(#earg8_6:checked) {
+  --earg8: 6;
+}
+.app:has(#earg8_7:checked) {
+  --earg8: 7;
+}
+.app:has(#earg8_8:checked) {
+  --earg8: 8;
+}
+.app:has(#earg8_9:checked) {
+  --earg8: 9;
+}
+.app:has(#earg8_10:checked) {
+  --earg8: 10;
+}
+.app:has(#earg8_11:checked) {
+  --earg8: 11;
+}
+.app:has(#earg8_12:checked) {
+  --earg8: 12;
+}
+.app:has(#earg8_13:checked) {
+  --earg8: 13;
+}
+.app:has(#earg8_14:checked) {
+  --earg8: 14;
+}
+.app:has(#earg8_15:checked) {
+  --earg8: 15;
+}
+.app:has(#eop9_0:checked) {
+  --eop9: 0;
+}
+.app:has(#eop9_1:checked) {
+  --eop9: 1;
+}
+.app:has(#eop9_2:checked) {
+  --eop9: 2;
+}
+.app:has(#eop9_3:checked) {
+  --eop9: 3;
+}
+.app:has(#eop9_4:checked) {
+  --eop9: 4;
+}
+.app:has(#eop9_5:checked) {
+  --eop9: 5;
+}
+.app:has(#eop9_6:checked) {
+  --eop9: 6;
+}
+.app:has(#eop9_7:checked) {
+  --eop9: 7;
+}
+.app:has(#eop9_8:checked) {
+  --eop9: 8;
+}
+.app:has(#eop9_9:checked) {
+  --eop9: 9;
+}
+.app:has(#eop9_10:checked) {
+  --eop9: 10;
+}
+.app:has(#earg9_0:checked) {
+  --earg9: 0;
+}
+.app:has(#earg9_1:checked) {
+  --earg9: 1;
+}
+.app:has(#earg9_2:checked) {
+  --earg9: 2;
+}
+.app:has(#earg9_3:checked) {
+  --earg9: 3;
+}
+.app:has(#earg9_4:checked) {
+  --earg9: 4;
+}
+.app:has(#earg9_5:checked) {
+  --earg9: 5;
+}
+.app:has(#earg9_6:checked) {
+  --earg9: 6;
+}
+.app:has(#earg9_7:checked) {
+  --earg9: 7;
+}
+.app:has(#earg9_8:checked) {
+  --earg9: 8;
+}
+.app:has(#earg9_9:checked) {
+  --earg9: 9;
+}
+.app:has(#earg9_10:checked) {
+  --earg9: 10;
+}
+.app:has(#earg9_11:checked) {
+  --earg9: 11;
+}
+.app:has(#earg9_12:checked) {
+  --earg9: 12;
+}
+.app:has(#earg9_13:checked) {
+  --earg9: 13;
+}
+.app:has(#earg9_14:checked) {
+  --earg9: 14;
+}
+.app:has(#earg9_15:checked) {
+  --earg9: 15;
+}
+.app:has(#eop10_0:checked) {
+  --eop10: 0;
+}
+.app:has(#eop10_1:checked) {
+  --eop10: 1;
+}
+.app:has(#eop10_2:checked) {
+  --eop10: 2;
+}
+.app:has(#eop10_3:checked) {
+  --eop10: 3;
+}
+.app:has(#eop10_4:checked) {
+  --eop10: 4;
+}
+.app:has(#eop10_5:checked) {
+  --eop10: 5;
+}
+.app:has(#eop10_6:checked) {
+  --eop10: 6;
+}
+.app:has(#eop10_7:checked) {
+  --eop10: 7;
+}
+.app:has(#eop10_8:checked) {
+  --eop10: 8;
+}
+.app:has(#eop10_9:checked) {
+  --eop10: 9;
+}
+.app:has(#eop10_10:checked) {
+  --eop10: 10;
+}
+.app:has(#earg10_0:checked) {
+  --earg10: 0;
+}
+.app:has(#earg10_1:checked) {
+  --earg10: 1;
+}
+.app:has(#earg10_2:checked) {
+  --earg10: 2;
+}
+.app:has(#earg10_3:checked) {
+  --earg10: 3;
+}
+.app:has(#earg10_4:checked) {
+  --earg10: 4;
+}
+.app:has(#earg10_5:checked) {
+  --earg10: 5;
+}
+.app:has(#earg10_6:checked) {
+  --earg10: 6;
+}
+.app:has(#earg10_7:checked) {
+  --earg10: 7;
+}
+.app:has(#earg10_8:checked) {
+  --earg10: 8;
+}
+.app:has(#earg10_9:checked) {
+  --earg10: 9;
+}
+.app:has(#earg10_10:checked) {
+  --earg10: 10;
+}
+.app:has(#earg10_11:checked) {
+  --earg10: 11;
+}
+.app:has(#earg10_12:checked) {
+  --earg10: 12;
+}
+.app:has(#earg10_13:checked) {
+  --earg10: 13;
+}
+.app:has(#earg10_14:checked) {
+  --earg10: 14;
+}
+.app:has(#earg10_15:checked) {
+  --earg10: 15;
+}
+.app:has(#eop11_0:checked) {
+  --eop11: 0;
+}
+.app:has(#eop11_1:checked) {
+  --eop11: 1;
+}
+.app:has(#eop11_2:checked) {
+  --eop11: 2;
+}
+.app:has(#eop11_3:checked) {
+  --eop11: 3;
+}
+.app:has(#eop11_4:checked) {
+  --eop11: 4;
+}
+.app:has(#eop11_5:checked) {
+  --eop11: 5;
+}
+.app:has(#eop11_6:checked) {
+  --eop11: 6;
+}
+.app:has(#eop11_7:checked) {
+  --eop11: 7;
+}
+.app:has(#eop11_8:checked) {
+  --eop11: 8;
+}
+.app:has(#eop11_9:checked) {
+  --eop11: 9;
+}
+.app:has(#eop11_10:checked) {
+  --eop11: 10;
+}
+.app:has(#earg11_0:checked) {
+  --earg11: 0;
+}
+.app:has(#earg11_1:checked) {
+  --earg11: 1;
+}
+.app:has(#earg11_2:checked) {
+  --earg11: 2;
+}
+.app:has(#earg11_3:checked) {
+  --earg11: 3;
+}
+.app:has(#earg11_4:checked) {
+  --earg11: 4;
+}
+.app:has(#earg11_5:checked) {
+  --earg11: 5;
+}
+.app:has(#earg11_6:checked) {
+  --earg11: 6;
+}
+.app:has(#earg11_7:checked) {
+  --earg11: 7;
+}
+.app:has(#earg11_8:checked) {
+  --earg11: 8;
+}
+.app:has(#earg11_9:checked) {
+  --earg11: 9;
+}
+.app:has(#earg11_10:checked) {
+  --earg11: 10;
+}
+.app:has(#earg11_11:checked) {
+  --earg11: 11;
+}
+.app:has(#earg11_12:checked) {
+  --earg11: 12;
+}
+.app:has(#earg11_13:checked) {
+  --earg11: 13;
+}
+.app:has(#earg11_14:checked) {
+  --earg11: 14;
+}
+.app:has(#earg11_15:checked) {
+  --earg11: 15;
+}
+.app:has(#eop12_0:checked) {
+  --eop12: 0;
+}
+.app:has(#eop12_1:checked) {
+  --eop12: 1;
+}
+.app:has(#eop12_2:checked) {
+  --eop12: 2;
+}
+.app:has(#eop12_3:checked) {
+  --eop12: 3;
+}
+.app:has(#eop12_4:checked) {
+  --eop12: 4;
+}
+.app:has(#eop12_5:checked) {
+  --eop12: 5;
+}
+.app:has(#eop12_6:checked) {
+  --eop12: 6;
+}
+.app:has(#eop12_7:checked) {
+  --eop12: 7;
+}
+.app:has(#eop12_8:checked) {
+  --eop12: 8;
+}
+.app:has(#eop12_9:checked) {
+  --eop12: 9;
+}
+.app:has(#eop12_10:checked) {
+  --eop12: 10;
+}
+.app:has(#earg12_0:checked) {
+  --earg12: 0;
+}
+.app:has(#earg12_1:checked) {
+  --earg12: 1;
+}
+.app:has(#earg12_2:checked) {
+  --earg12: 2;
+}
+.app:has(#earg12_3:checked) {
+  --earg12: 3;
+}
+.app:has(#earg12_4:checked) {
+  --earg12: 4;
+}
+.app:has(#earg12_5:checked) {
+  --earg12: 5;
+}
+.app:has(#earg12_6:checked) {
+  --earg12: 6;
+}
+.app:has(#earg12_7:checked) {
+  --earg12: 7;
+}
+.app:has(#earg12_8:checked) {
+  --earg12: 8;
+}
+.app:has(#earg12_9:checked) {
+  --earg12: 9;
+}
+.app:has(#earg12_10:checked) {
+  --earg12: 10;
+}
+.app:has(#earg12_11:checked) {
+  --earg12: 11;
+}
+.app:has(#earg12_12:checked) {
+  --earg12: 12;
+}
+.app:has(#earg12_13:checked) {
+  --earg12: 13;
+}
+.app:has(#earg12_14:checked) {
+  --earg12: 14;
+}
+.app:has(#earg12_15:checked) {
+  --earg12: 15;
+}
+.app:has(#eop13_0:checked) {
+  --eop13: 0;
+}
+.app:has(#eop13_1:checked) {
+  --eop13: 1;
+}
+.app:has(#eop13_2:checked) {
+  --eop13: 2;
+}
+.app:has(#eop13_3:checked) {
+  --eop13: 3;
+}
+.app:has(#eop13_4:checked) {
+  --eop13: 4;
+}
+.app:has(#eop13_5:checked) {
+  --eop13: 5;
+}
+.app:has(#eop13_6:checked) {
+  --eop13: 6;
+}
+.app:has(#eop13_7:checked) {
+  --eop13: 7;
+}
+.app:has(#eop13_8:checked) {
+  --eop13: 8;
+}
+.app:has(#eop13_9:checked) {
+  --eop13: 9;
+}
+.app:has(#eop13_10:checked) {
+  --eop13: 10;
+}
+.app:has(#earg13_0:checked) {
+  --earg13: 0;
+}
+.app:has(#earg13_1:checked) {
+  --earg13: 1;
+}
+.app:has(#earg13_2:checked) {
+  --earg13: 2;
+}
+.app:has(#earg13_3:checked) {
+  --earg13: 3;
+}
+.app:has(#earg13_4:checked) {
+  --earg13: 4;
+}
+.app:has(#earg13_5:checked) {
+  --earg13: 5;
+}
+.app:has(#earg13_6:checked) {
+  --earg13: 6;
+}
+.app:has(#earg13_7:checked) {
+  --earg13: 7;
+}
+.app:has(#earg13_8:checked) {
+  --earg13: 8;
+}
+.app:has(#earg13_9:checked) {
+  --earg13: 9;
+}
+.app:has(#earg13_10:checked) {
+  --earg13: 10;
+}
+.app:has(#earg13_11:checked) {
+  --earg13: 11;
+}
+.app:has(#earg13_12:checked) {
+  --earg13: 12;
+}
+.app:has(#earg13_13:checked) {
+  --earg13: 13;
+}
+.app:has(#earg13_14:checked) {
+  --earg13: 14;
+}
+.app:has(#earg13_15:checked) {
+  --earg13: 15;
+}
+.app:has(#eop14_0:checked) {
+  --eop14: 0;
+}
+.app:has(#eop14_1:checked) {
+  --eop14: 1;
+}
+.app:has(#eop14_2:checked) {
+  --eop14: 2;
+}
+.app:has(#eop14_3:checked) {
+  --eop14: 3;
+}
+.app:has(#eop14_4:checked) {
+  --eop14: 4;
+}
+.app:has(#eop14_5:checked) {
+  --eop14: 5;
+}
+.app:has(#eop14_6:checked) {
+  --eop14: 6;
+}
+.app:has(#eop14_7:checked) {
+  --eop14: 7;
+}
+.app:has(#eop14_8:checked) {
+  --eop14: 8;
+}
+.app:has(#eop14_9:checked) {
+  --eop14: 9;
+}
+.app:has(#eop14_10:checked) {
+  --eop14: 10;
+}
+.app:has(#earg14_0:checked) {
+  --earg14: 0;
+}
+.app:has(#earg14_1:checked) {
+  --earg14: 1;
+}
+.app:has(#earg14_2:checked) {
+  --earg14: 2;
+}
+.app:has(#earg14_3:checked) {
+  --earg14: 3;
+}
+.app:has(#earg14_4:checked) {
+  --earg14: 4;
+}
+.app:has(#earg14_5:checked) {
+  --earg14: 5;
+}
+.app:has(#earg14_6:checked) {
+  --earg14: 6;
+}
+.app:has(#earg14_7:checked) {
+  --earg14: 7;
+}
+.app:has(#earg14_8:checked) {
+  --earg14: 8;
+}
+.app:has(#earg14_9:checked) {
+  --earg14: 9;
+}
+.app:has(#earg14_10:checked) {
+  --earg14: 10;
+}
+.app:has(#earg14_11:checked) {
+  --earg14: 11;
+}
+.app:has(#earg14_12:checked) {
+  --earg14: 12;
+}
+.app:has(#earg14_13:checked) {
+  --earg14: 13;
+}
+.app:has(#earg14_14:checked) {
+  --earg14: 14;
+}
+.app:has(#earg14_15:checked) {
+  --earg14: 15;
+}
+.app:has(#eop15_0:checked) {
+  --eop15: 0;
+}
+.app:has(#eop15_1:checked) {
+  --eop15: 1;
+}
+.app:has(#eop15_2:checked) {
+  --eop15: 2;
+}
+.app:has(#eop15_3:checked) {
+  --eop15: 3;
+}
+.app:has(#eop15_4:checked) {
+  --eop15: 4;
+}
+.app:has(#eop15_5:checked) {
+  --eop15: 5;
+}
+.app:has(#eop15_6:checked) {
+  --eop15: 6;
+}
+.app:has(#eop15_7:checked) {
+  --eop15: 7;
+}
+.app:has(#eop15_8:checked) {
+  --eop15: 8;
+}
+.app:has(#eop15_9:checked) {
+  --eop15: 9;
+}
+.app:has(#eop15_10:checked) {
+  --eop15: 10;
+}
+.app:has(#earg15_0:checked) {
+  --earg15: 0;
+}
+.app:has(#earg15_1:checked) {
+  --earg15: 1;
+}
+.app:has(#earg15_2:checked) {
+  --earg15: 2;
+}
+.app:has(#earg15_3:checked) {
+  --earg15: 3;
+}
+.app:has(#earg15_4:checked) {
+  --earg15: 4;
+}
+.app:has(#earg15_5:checked) {
+  --earg15: 5;
+}
+.app:has(#earg15_6:checked) {
+  --earg15: 6;
+}
+.app:has(#earg15_7:checked) {
+  --earg15: 7;
+}
+.app:has(#earg15_8:checked) {
+  --earg15: 8;
+}
+.app:has(#earg15_9:checked) {
+  --earg15: 9;
+}
+.app:has(#earg15_10:checked) {
+  --earg15: 10;
+}
+.app:has(#earg15_11:checked) {
+  --earg15: 11;
+}
+.app:has(#earg15_12:checked) {
+  --earg15: 12;
+}
+.app:has(#earg15_13:checked) {
+  --earg15: 13;
+}
+.app:has(#earg15_14:checked) {
+  --earg15: 14;
+}
+.app:has(#earg15_15:checked) {
+  --earg15: 15;
+}
+.app:has(#emem0_0:checked) {
+  --emem0: 0;
+}
+.app:has(#emem0_1:checked) {
+  --emem0: 1;
+}
+.app:has(#emem0_2:checked) {
+  --emem0: 2;
+}
+.app:has(#emem0_3:checked) {
+  --emem0: 3;
+}
+.app:has(#emem0_4:checked) {
+  --emem0: 4;
+}
+.app:has(#emem0_5:checked) {
+  --emem0: 5;
+}
+.app:has(#emem0_6:checked) {
+  --emem0: 6;
+}
+.app:has(#emem0_7:checked) {
+  --emem0: 7;
+}
+.app:has(#emem0_8:checked) {
+  --emem0: 8;
+}
+.app:has(#emem0_9:checked) {
+  --emem0: 9;
+}
+.app:has(#emem0_10:checked) {
+  --emem0: 10;
+}
+.app:has(#emem0_11:checked) {
+  --emem0: 11;
+}
+.app:has(#emem0_12:checked) {
+  --emem0: 12;
+}
+.app:has(#emem0_13:checked) {
+  --emem0: 13;
+}
+.app:has(#emem0_14:checked) {
+  --emem0: 14;
+}
+.app:has(#emem0_15:checked) {
+  --emem0: 15;
+}
+.app:has(#emem1_0:checked) {
+  --emem1: 0;
+}
+.app:has(#emem1_1:checked) {
+  --emem1: 1;
+}
+.app:has(#emem1_2:checked) {
+  --emem1: 2;
+}
+.app:has(#emem1_3:checked) {
+  --emem1: 3;
+}
+.app:has(#emem1_4:checked) {
+  --emem1: 4;
+}
+.app:has(#emem1_5:checked) {
+  --emem1: 5;
+}
+.app:has(#emem1_6:checked) {
+  --emem1: 6;
+}
+.app:has(#emem1_7:checked) {
+  --emem1: 7;
+}
+.app:has(#emem1_8:checked) {
+  --emem1: 8;
+}
+.app:has(#emem1_9:checked) {
+  --emem1: 9;
+}
+.app:has(#emem1_10:checked) {
+  --emem1: 10;
+}
+.app:has(#emem1_11:checked) {
+  --emem1: 11;
+}
+.app:has(#emem1_12:checked) {
+  --emem1: 12;
+}
+.app:has(#emem1_13:checked) {
+  --emem1: 13;
+}
+.app:has(#emem1_14:checked) {
+  --emem1: 14;
+}
+.app:has(#emem1_15:checked) {
+  --emem1: 15;
+}
+.app:has(#emem2_0:checked) {
+  --emem2: 0;
+}
+.app:has(#emem2_1:checked) {
+  --emem2: 1;
+}
+.app:has(#emem2_2:checked) {
+  --emem2: 2;
+}
+.app:has(#emem2_3:checked) {
+  --emem2: 3;
+}
+.app:has(#emem2_4:checked) {
+  --emem2: 4;
+}
+.app:has(#emem2_5:checked) {
+  --emem2: 5;
+}
+.app:has(#emem2_6:checked) {
+  --emem2: 6;
+}
+.app:has(#emem2_7:checked) {
+  --emem2: 7;
+}
+.app:has(#emem2_8:checked) {
+  --emem2: 8;
+}
+.app:has(#emem2_9:checked) {
+  --emem2: 9;
+}
+.app:has(#emem2_10:checked) {
+  --emem2: 10;
+}
+.app:has(#emem2_11:checked) {
+  --emem2: 11;
+}
+.app:has(#emem2_12:checked) {
+  --emem2: 12;
+}
+.app:has(#emem2_13:checked) {
+  --emem2: 13;
+}
+.app:has(#emem2_14:checked) {
+  --emem2: 14;
+}
+.app:has(#emem2_15:checked) {
+  --emem2: 15;
+}
+.app:has(#emem3_0:checked) {
+  --emem3: 0;
+}
+.app:has(#emem3_1:checked) {
+  --emem3: 1;
+}
+.app:has(#emem3_2:checked) {
+  --emem3: 2;
+}
+.app:has(#emem3_3:checked) {
+  --emem3: 3;
+}
+.app:has(#emem3_4:checked) {
+  --emem3: 4;
+}
+.app:has(#emem3_5:checked) {
+  --emem3: 5;
+}
+.app:has(#emem3_6:checked) {
+  --emem3: 6;
+}
+.app:has(#emem3_7:checked) {
+  --emem3: 7;
+}
+.app:has(#emem3_8:checked) {
+  --emem3: 8;
+}
+.app:has(#emem3_9:checked) {
+  --emem3: 9;
+}
+.app:has(#emem3_10:checked) {
+  --emem3: 10;
+}
+.app:has(#emem3_11:checked) {
+  --emem3: 11;
+}
+.app:has(#emem3_12:checked) {
+  --emem3: 12;
+}
+.app:has(#emem3_13:checked) {
+  --emem3: 13;
+}
+.app:has(#emem3_14:checked) {
+  --emem3: 14;
+}
+.app:has(#emem3_15:checked) {
+  --emem3: 15;
+}
+.app:has(#emem4_0:checked) {
+  --emem4: 0;
+}
+.app:has(#emem4_1:checked) {
+  --emem4: 1;
+}
+.app:has(#emem4_2:checked) {
+  --emem4: 2;
+}
+.app:has(#emem4_3:checked) {
+  --emem4: 3;
+}
+.app:has(#emem4_4:checked) {
+  --emem4: 4;
+}
+.app:has(#emem4_5:checked) {
+  --emem4: 5;
+}
+.app:has(#emem4_6:checked) {
+  --emem4: 6;
+}
+.app:has(#emem4_7:checked) {
+  --emem4: 7;
+}
+.app:has(#emem4_8:checked) {
+  --emem4: 8;
+}
+.app:has(#emem4_9:checked) {
+  --emem4: 9;
+}
+.app:has(#emem4_10:checked) {
+  --emem4: 10;
+}
+.app:has(#emem4_11:checked) {
+  --emem4: 11;
+}
+.app:has(#emem4_12:checked) {
+  --emem4: 12;
+}
+.app:has(#emem4_13:checked) {
+  --emem4: 13;
+}
+.app:has(#emem4_14:checked) {
+  --emem4: 14;
+}
+.app:has(#emem4_15:checked) {
+  --emem4: 15;
+}
+.app:has(#emem5_0:checked) {
+  --emem5: 0;
+}
+.app:has(#emem5_1:checked) {
+  --emem5: 1;
+}
+.app:has(#emem5_2:checked) {
+  --emem5: 2;
+}
+.app:has(#emem5_3:checked) {
+  --emem5: 3;
+}
+.app:has(#emem5_4:checked) {
+  --emem5: 4;
+}
+.app:has(#emem5_5:checked) {
+  --emem5: 5;
+}
+.app:has(#emem5_6:checked) {
+  --emem5: 6;
+}
+.app:has(#emem5_7:checked) {
+  --emem5: 7;
+}
+.app:has(#emem5_8:checked) {
+  --emem5: 8;
+}
+.app:has(#emem5_9:checked) {
+  --emem5: 9;
+}
+.app:has(#emem5_10:checked) {
+  --emem5: 10;
+}
+.app:has(#emem5_11:checked) {
+  --emem5: 11;
+}
+.app:has(#emem5_12:checked) {
+  --emem5: 12;
+}
+.app:has(#emem5_13:checked) {
+  --emem5: 13;
+}
+.app:has(#emem5_14:checked) {
+  --emem5: 14;
+}
+.app:has(#emem5_15:checked) {
+  --emem5: 15;
+}
+.app:has(#emem6_0:checked) {
+  --emem6: 0;
+}
+.app:has(#emem6_1:checked) {
+  --emem6: 1;
+}
+.app:has(#emem6_2:checked) {
+  --emem6: 2;
+}
+.app:has(#emem6_3:checked) {
+  --emem6: 3;
+}
+.app:has(#emem6_4:checked) {
+  --emem6: 4;
+}
+.app:has(#emem6_5:checked) {
+  --emem6: 5;
+}
+.app:has(#emem6_6:checked) {
+  --emem6: 6;
+}
+.app:has(#emem6_7:checked) {
+  --emem6: 7;
+}
+.app:has(#emem6_8:checked) {
+  --emem6: 8;
+}
+.app:has(#emem6_9:checked) {
+  --emem6: 9;
+}
+.app:has(#emem6_10:checked) {
+  --emem6: 10;
+}
+.app:has(#emem6_11:checked) {
+  --emem6: 11;
+}
+.app:has(#emem6_12:checked) {
+  --emem6: 12;
+}
+.app:has(#emem6_13:checked) {
+  --emem6: 13;
+}
+.app:has(#emem6_14:checked) {
+  --emem6: 14;
+}
+.app:has(#emem6_15:checked) {
+  --emem6: 15;
+}
+.app:has(#emem7_0:checked) {
+  --emem7: 0;
+}
+.app:has(#emem7_1:checked) {
+  --emem7: 1;
+}
+.app:has(#emem7_2:checked) {
+  --emem7: 2;
+}
+.app:has(#emem7_3:checked) {
+  --emem7: 3;
+}
+.app:has(#emem7_4:checked) {
+  --emem7: 4;
+}
+.app:has(#emem7_5:checked) {
+  --emem7: 5;
+}
+.app:has(#emem7_6:checked) {
+  --emem7: 6;
+}
+.app:has(#emem7_7:checked) {
+  --emem7: 7;
+}
+.app:has(#emem7_8:checked) {
+  --emem7: 8;
+}
+.app:has(#emem7_9:checked) {
+  --emem7: 9;
+}
+.app:has(#emem7_10:checked) {
+  --emem7: 10;
+}
+.app:has(#emem7_11:checked) {
+  --emem7: 11;
+}
+.app:has(#emem7_12:checked) {
+  --emem7: 12;
+}
+.app:has(#emem7_13:checked) {
+  --emem7: 13;
+}
+.app:has(#emem7_14:checked) {
+  --emem7: 14;
+}
+.app:has(#emem7_15:checked) {
+  --emem7: 15;
+}
 .cyc {
   --PPC: var(--PC);
   --PA: var(--A);
@@ -2306,8 +4035,16 @@ footer a, section a { color: var(--fg); text-underline-offset: 3px; }
 .machine { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); column-gap: 10px; align-items: start; }
 .cyc, .step { display: contents; }
 .ui { grid-column: 1 / -1; order: -1; display: grid; gap: 14px; margin-bottom: 8px; }
-.panel { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
-@media (max-width: 720px) { .panel { grid-template-columns: 1fr; gap: 20px; } }
+.panel { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr; grid-template-areas: "left out" "left right";
+  column-gap: 32px; align-items: start; }
+.panel > .left { grid-area: left; } .panel > .out { grid-area: out; } .panel > .right { grid-area: right; }
+/* on a phone the printed tape comes first; while you write your own program it stays pinned at the top of the screen */
+@media (max-width: 720px) {
+  .panel { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-template-areas: "out" "left" "right"; row-gap: 20px; }
+  .app:has(#prog-custom:checked) .panel > .out { position: sticky; top: 0; z-index: 2; background: var(--bg);
+    padding: 8px 0 2px; border-bottom: 1px solid var(--line); }
+  .app:has(#prog-custom:checked) .panel > .out .tape { margin-bottom: 6px; }
+}
 .ui h2 { font-size: 14px; margin: 0 0 8px; }
 .ui h2.tr { margin: 6px 0 0; border-top: 1px solid var(--line); padding-top: 16px; }
 .inrow { display: grid; grid-template-columns: 40px 1fr; gap: 8px; align-items: center; font-size: 13px; margin-bottom: 8px; }
@@ -2342,6 +4079,47 @@ footer a, section a { color: var(--fg); text-underline-offset: 3px; }
 .row .arg::after { counter-reset: v var(--xarg); content: counter(v); }
 .row .acc { text-align: right; color: var(--hand); --v: var(--A); }
 .explain a { color: var(--fg); }
+/* the editor */
+@property --edm { syntax: "<integer>"; inherits: true; initial-value: 0; }
+.edhint { font-size: 12px; color: var(--muted); margin: 0 0 10px; }
+.ed { display: grid; border-top: 1px solid var(--line); margin-bottom: 10px; }
+.ln { border-bottom: 1px solid var(--line); --noarg: calc(clamp(0, 1 - max(var(--o) - 0, 0 - var(--o)), 1) + clamp(0, 1 - max(var(--o) - 10, 10 - var(--o)), 1));
+  --edm: calc(var(--a) - 8 * clamp(0, var(--a) - 7, 1)); }
+.ln > summary { display: grid; grid-template-columns: 20px 38px 22px 1fr 14px; gap: 6px; align-items: center; font-size: 12px;
+  padding: 4px 0; cursor: pointer; list-style: none; }
+.ln > summary::-webkit-details-marker { display: none; }
+.ln > summary::after { content: "+"; color: var(--muted); text-align: right; }
+.ln[open] > summary::after { content: "−"; }
+.ln > summary b { color: var(--muted); font-weight: 400; text-align: right; }
+.ln[open] > summary { color: var(--hand); }
+@media (hover: hover) { .ln > summary:hover { background: var(--cell); } }
+.stack { display: grid; }
+.stack > span { grid-area: 1 / 1; opacity: clamp(0, 1 - max(var(--o) - var(--k), var(--k) - var(--o)), 1); }
+.mn { font-weight: 700; }
+.ag { opacity: calc(1 - var(--noarg)); }
+.ag::after, .says .t::after { counter-reset: v var(--a); content: counter(v); }
+.says .m::after { counter-reset: v var(--edm); content: counter(v); }
+.says i { font-style: normal; }
+.says { color: var(--muted); min-width: 0; }
+.pick { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 6px 8px; align-items: start; padding: 2px 0 12px; font-size: 12px; }
+.pick > span { color: var(--muted); padding-top: 2px; }
+.opts { display: flex; flex-wrap: wrap; gap: 3px; }
+.opts label { font-size: 11px; min-width: 26px; text-align: center; border: 1px solid var(--line); border-radius: 4px; padding: 1px 4px; cursor: pointer;
+  --on: clamp(0, 1 - max(var(--a) - var(--k), var(--k) - var(--a)), 1);
+  border-color: color-mix(in oklab, var(--line), var(--hand) calc(var(--on) * 100%));
+  color: color-mix(in oklab, var(--fg), var(--hand) calc(var(--on) * 100%)); font-weight: calc(400 + 300 * var(--on)); }
+.opts.ops label { --on: clamp(0, 1 - max(var(--o) - var(--k), var(--k) - var(--o)), 1); }
+.ln .args { opacity: calc(1 - 0.6 * var(--noarg)); }
+.mem > summary { grid-template-columns: 20px 1fr 14px; }
+.memsum { color: var(--muted); }
+.memsum i { font-style: normal; color: var(--fg); margin-left: 8px; }
+.memsum i::after { counter-reset: v var(--v); content: counter(v); }
+/* bigger tap targets on a phone or a touch screen */
+@media (max-width: 720px), (pointer: coarse) {
+  .opts { gap: 5px; }
+  .opts label { min-width: 32px; min-height: 32px; padding: 5px 6px; font-size: 12px; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; }
+  .ln > summary { padding: 9px 0; }
+}
 
 .demos { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; border-top: 1px solid var(--line); padding-top: 18px; font-size: 12px; }
 .demos span { color: var(--muted); margin-right: 4px; }
@@ -2355,7 +4133,7 @@ footer a, section a { color: var(--fg); text-underline-offset: 3px; }
 </head>
 <body>
 <div class="app">
-<nav class="steps" aria-label="Handwired steps"><a href="../">Overview</a><a href="../tic-tac-toe/"><small>1</small>Tic-tac-toe</a><a href="../connect-four/"><small>1</small>Connect four</a><a href="../interpreter/"><small>2</small>Swap the brain</a><a href="../tower/"><small>3</small>Nesting dolls</a><a href="../unfrozen/"><small>4</small>Rule that learns</a><a aria-current="page"><small>5</small>Neural CPU</a></nav>
+<nav class="steps" aria-label="Handwired steps"><a href="../">Overview</a><a href="../tic-tac-toe/"><small>1</small>Tic-tac-toe</a><a href="../connect-four/"><small>1</small>Connect four</a><a href="../interpreter/"><small>2</small>Swap the brain</a><a href="../tower/"><small>3</small>Nesting dolls</a><a href="../unfrozen/"><small>4</small>Rule that learns</a><a aria-current="page"><small>5</small>Neural CPU</a><a href="../arcade/"><small>6</small>Game console</a><a href="../os/"><small>7</small>Mini OS</a></nav>
 
 <header>
   <h1>A computer made of neurons</h1>
@@ -2365,10 +4143,10 @@ footer a, section a { color: var(--fg); text-underline-offset: 3px; }
   <li><b>The computer:</b> one number in its hand (A), 8 numbers of memory, a list of 16 instructions, and a printer. Like a 1970s kit computer.</li>
   <li><b>One tick is one network</b> of 811 neurons: read the next instruction, do it (add, subtract, store, jump…), move on. The page runs that same network 128 times in a row.</li>
   <li><b>The program is data</b>, like the cartridge on the <a href="../interpreter/">Swap the brain</a> page: the network never changes, the program does.</li>
-  <li><b>Try:</b> pick a program, change its inputs, and read what it printed. Below, every tick the computer made.</li>
+  <li><b>Try:</b> pick a program and change its inputs, or press <i>Write your own</i> and change any of its 16 lines. Read what it printed; below, every tick the computer made.</li>
 </ul></div>
-<form class="hidden-inputs"><input type="radio" name="prog" id="prog-count" checked><input type="radio" name="prog" id="prog-fibonacci"><input type="radio" name="prog" id="prog-multiply"><input type="radio" name="prog" id="prog-sum"><input type="radio" name="prog" id="prog-powers"><input type="radio" name="icount_1" id="icount_1_1"><input type="radio" name="icount_1" id="icount_1_2"><input type="radio" name="icount_1" id="icount_1_3"><input type="radio" name="icount_1" id="icount_1_4"><input type="radio" name="icount_1" id="icount_1_5"><input type="radio" name="icount_1" id="icount_1_6"><input type="radio" name="icount_1" id="icount_1_7"><input type="radio" name="icount_1" id="icount_1_8" checked><input type="radio" name="icount_1" id="icount_1_9"><input type="radio" name="icount_1" id="icount_1_10"><input type="radio" name="icount_1" id="icount_1_11"><input type="radio" name="icount_1" id="icount_1_12"><input type="radio" name="icount_1" id="icount_1_13"><input type="radio" name="icount_1" id="icount_1_14"><input type="radio" name="icount_1" id="icount_1_15"><input type="radio" name="imultiply_0" id="imultiply_0_0"><input type="radio" name="imultiply_0" id="imultiply_0_1"><input type="radio" name="imultiply_0" id="imultiply_0_2"><input type="radio" name="imultiply_0" id="imultiply_0_3"><input type="radio" name="imultiply_0" id="imultiply_0_4"><input type="radio" name="imultiply_0" id="imultiply_0_5"><input type="radio" name="imultiply_0" id="imultiply_0_6" checked><input type="radio" name="imultiply_0" id="imultiply_0_7"><input type="radio" name="imultiply_0" id="imultiply_0_8"><input type="radio" name="imultiply_0" id="imultiply_0_9"><input type="radio" name="imultiply_0" id="imultiply_0_10"><input type="radio" name="imultiply_0" id="imultiply_0_11"><input type="radio" name="imultiply_0" id="imultiply_0_12"><input type="radio" name="imultiply_0" id="imultiply_0_13"><input type="radio" name="imultiply_0" id="imultiply_0_14"><input type="radio" name="imultiply_0" id="imultiply_0_15"><input type="radio" name="imultiply_1" id="imultiply_1_1"><input type="radio" name="imultiply_1" id="imultiply_1_2"><input type="radio" name="imultiply_1" id="imultiply_1_3"><input type="radio" name="imultiply_1" id="imultiply_1_4"><input type="radio" name="imultiply_1" id="imultiply_1_5"><input type="radio" name="imultiply_1" id="imultiply_1_6"><input type="radio" name="imultiply_1" id="imultiply_1_7" checked><input type="radio" name="imultiply_1" id="imultiply_1_8"><input type="radio" name="imultiply_1" id="imultiply_1_9"><input type="radio" name="imultiply_1" id="imultiply_1_10"><input type="radio" name="imultiply_1" id="imultiply_1_11"><input type="radio" name="imultiply_1" id="imultiply_1_12"><input type="radio" name="imultiply_1" id="imultiply_1_13"><input type="radio" name="imultiply_1" id="imultiply_1_14"><input type="radio" name="imultiply_1" id="imultiply_1_15"><input type="radio" name="isum_0" id="isum_0_1"><input type="radio" name="isum_0" id="isum_0_2"><input type="radio" name="isum_0" id="isum_0_3"><input type="radio" name="isum_0" id="isum_0_4"><input type="radio" name="isum_0" id="isum_0_5"><input type="radio" name="isum_0" id="isum_0_6"><input type="radio" name="isum_0" id="isum_0_7"><input type="radio" name="isum_0" id="isum_0_8"><input type="radio" name="isum_0" id="isum_0_9"><input type="radio" name="isum_0" id="isum_0_10" checked><input type="radio" name="isum_0" id="isum_0_11"><input type="radio" name="isum_0" id="isum_0_12"><input type="radio" name="isum_0" id="isum_0_13"><input type="radio" name="isum_0" id="isum_0_14"><input type="radio" name="isum_0" id="isum_0_15"></form>
-<div class="progs"><label for="prog-count" class="btn">Count to n</label><label for="prog-fibonacci" class="btn">Fibonacci</label><label for="prog-multiply" class="btn">Multiply x × y</label><label for="prog-sum" class="btn">Sum 1 + 2 + … + n</label><label for="prog-powers" class="btn">Powers of two</label></div>
+<form class="hidden-inputs"><input type="radio" name="prog" id="prog-count" checked><input type="radio" name="prog" id="prog-fibonacci"><input type="radio" name="prog" id="prog-multiply"><input type="radio" name="prog" id="prog-sum"><input type="radio" name="prog" id="prog-powers"><input type="radio" name="prog" id="prog-custom"><input type="radio" name="icount_1" id="icount_1_1"><input type="radio" name="icount_1" id="icount_1_2"><input type="radio" name="icount_1" id="icount_1_3"><input type="radio" name="icount_1" id="icount_1_4"><input type="radio" name="icount_1" id="icount_1_5"><input type="radio" name="icount_1" id="icount_1_6"><input type="radio" name="icount_1" id="icount_1_7"><input type="radio" name="icount_1" id="icount_1_8" checked><input type="radio" name="icount_1" id="icount_1_9"><input type="radio" name="icount_1" id="icount_1_10"><input type="radio" name="icount_1" id="icount_1_11"><input type="radio" name="icount_1" id="icount_1_12"><input type="radio" name="icount_1" id="icount_1_13"><input type="radio" name="icount_1" id="icount_1_14"><input type="radio" name="icount_1" id="icount_1_15"><input type="radio" name="imultiply_0" id="imultiply_0_0"><input type="radio" name="imultiply_0" id="imultiply_0_1"><input type="radio" name="imultiply_0" id="imultiply_0_2"><input type="radio" name="imultiply_0" id="imultiply_0_3"><input type="radio" name="imultiply_0" id="imultiply_0_4"><input type="radio" name="imultiply_0" id="imultiply_0_5"><input type="radio" name="imultiply_0" id="imultiply_0_6" checked><input type="radio" name="imultiply_0" id="imultiply_0_7"><input type="radio" name="imultiply_0" id="imultiply_0_8"><input type="radio" name="imultiply_0" id="imultiply_0_9"><input type="radio" name="imultiply_0" id="imultiply_0_10"><input type="radio" name="imultiply_0" id="imultiply_0_11"><input type="radio" name="imultiply_0" id="imultiply_0_12"><input type="radio" name="imultiply_0" id="imultiply_0_13"><input type="radio" name="imultiply_0" id="imultiply_0_14"><input type="radio" name="imultiply_0" id="imultiply_0_15"><input type="radio" name="imultiply_1" id="imultiply_1_1"><input type="radio" name="imultiply_1" id="imultiply_1_2"><input type="radio" name="imultiply_1" id="imultiply_1_3"><input type="radio" name="imultiply_1" id="imultiply_1_4"><input type="radio" name="imultiply_1" id="imultiply_1_5"><input type="radio" name="imultiply_1" id="imultiply_1_6"><input type="radio" name="imultiply_1" id="imultiply_1_7" checked><input type="radio" name="imultiply_1" id="imultiply_1_8"><input type="radio" name="imultiply_1" id="imultiply_1_9"><input type="radio" name="imultiply_1" id="imultiply_1_10"><input type="radio" name="imultiply_1" id="imultiply_1_11"><input type="radio" name="imultiply_1" id="imultiply_1_12"><input type="radio" name="imultiply_1" id="imultiply_1_13"><input type="radio" name="imultiply_1" id="imultiply_1_14"><input type="radio" name="imultiply_1" id="imultiply_1_15"><input type="radio" name="isum_0" id="isum_0_1"><input type="radio" name="isum_0" id="isum_0_2"><input type="radio" name="isum_0" id="isum_0_3"><input type="radio" name="isum_0" id="isum_0_4"><input type="radio" name="isum_0" id="isum_0_5"><input type="radio" name="isum_0" id="isum_0_6"><input type="radio" name="isum_0" id="isum_0_7"><input type="radio" name="isum_0" id="isum_0_8"><input type="radio" name="isum_0" id="isum_0_9"><input type="radio" name="isum_0" id="isum_0_10" checked><input type="radio" name="isum_0" id="isum_0_11"><input type="radio" name="isum_0" id="isum_0_12"><input type="radio" name="isum_0" id="isum_0_13"><input type="radio" name="isum_0" id="isum_0_14"><input type="radio" name="isum_0" id="isum_0_15"><input type="radio" name="eop0" id="eop0_0"><input type="radio" name="eop0" id="eop0_1" checked><input type="radio" name="eop0" id="eop0_2"><input type="radio" name="eop0" id="eop0_3"><input type="radio" name="eop0" id="eop0_4"><input type="radio" name="eop0" id="eop0_5"><input type="radio" name="eop0" id="eop0_6"><input type="radio" name="eop0" id="eop0_7"><input type="radio" name="eop0" id="eop0_8"><input type="radio" name="eop0" id="eop0_9"><input type="radio" name="eop0" id="eop0_10"><input type="radio" name="earg0" id="earg0_0"><input type="radio" name="earg0" id="earg0_1"><input type="radio" name="earg0" id="earg0_2"><input type="radio" name="earg0" id="earg0_3"><input type="radio" name="earg0" id="earg0_4"><input type="radio" name="earg0" id="earg0_5"><input type="radio" name="earg0" id="earg0_6"><input type="radio" name="earg0" id="earg0_7"><input type="radio" name="earg0" id="earg0_8"><input type="radio" name="earg0" id="earg0_9"><input type="radio" name="earg0" id="earg0_10" checked><input type="radio" name="earg0" id="earg0_11"><input type="radio" name="earg0" id="earg0_12"><input type="radio" name="earg0" id="earg0_13"><input type="radio" name="earg0" id="earg0_14"><input type="radio" name="earg0" id="earg0_15"><input type="radio" name="eop1" id="eop1_0"><input type="radio" name="eop1" id="eop1_1"><input type="radio" name="eop1" id="eop1_2"><input type="radio" name="eop1" id="eop1_3"><input type="radio" name="eop1" id="eop1_4"><input type="radio" name="eop1" id="eop1_5"><input type="radio" name="eop1" id="eop1_6"><input type="radio" name="eop1" id="eop1_7"><input type="radio" name="eop1" id="eop1_8"><input type="radio" name="eop1" id="eop1_9"><input type="radio" name="eop1" id="eop1_10" checked><input type="radio" name="earg1" id="earg1_0" checked><input type="radio" name="earg1" id="earg1_1"><input type="radio" name="earg1" id="earg1_2"><input type="radio" name="earg1" id="earg1_3"><input type="radio" name="earg1" id="earg1_4"><input type="radio" name="earg1" id="earg1_5"><input type="radio" name="earg1" id="earg1_6"><input type="radio" name="earg1" id="earg1_7"><input type="radio" name="earg1" id="earg1_8"><input type="radio" name="earg1" id="earg1_9"><input type="radio" name="earg1" id="earg1_10"><input type="radio" name="earg1" id="earg1_11"><input type="radio" name="earg1" id="earg1_12"><input type="radio" name="earg1" id="earg1_13"><input type="radio" name="earg1" id="earg1_14"><input type="radio" name="earg1" id="earg1_15"><input type="radio" name="eop2" id="eop2_0"><input type="radio" name="eop2" id="eop2_1"><input type="radio" name="eop2" id="eop2_2"><input type="radio" name="eop2" id="eop2_3"><input type="radio" name="eop2" id="eop2_4"><input type="radio" name="eop2" id="eop2_5" checked><input type="radio" name="eop2" id="eop2_6"><input type="radio" name="eop2" id="eop2_7"><input type="radio" name="eop2" id="eop2_8"><input type="radio" name="eop2" id="eop2_9"><input type="radio" name="eop2" id="eop2_10"><input type="radio" name="earg2" id="earg2_0" checked><input type="radio" name="earg2" id="earg2_1"><input type="radio" name="earg2" id="earg2_2"><input type="radio" name="earg2" id="earg2_3"><input type="radio" name="earg2" id="earg2_4"><input type="radio" name="earg2" id="earg2_5"><input type="radio" name="earg2" id="earg2_6"><input type="radio" name="earg2" id="earg2_7"><input type="radio" name="earg2" id="earg2_8"><input type="radio" name="earg2" id="earg2_9"><input type="radio" name="earg2" id="earg2_10"><input type="radio" name="earg2" id="earg2_11"><input type="radio" name="earg2" id="earg2_12"><input type="radio" name="earg2" id="earg2_13"><input type="radio" name="earg2" id="earg2_14"><input type="radio" name="earg2" id="earg2_15"><input type="radio" name="eop3" id="eop3_0"><input type="radio" name="eop3" id="eop3_1"><input type="radio" name="eop3" id="eop3_2"><input type="radio" name="eop3" id="eop3_3"><input type="radio" name="eop3" id="eop3_4"><input type="radio" name="eop3" id="eop3_5"><input type="radio" name="eop3" id="eop3_6"><input type="radio" name="eop3" id="eop3_7"><input type="radio" name="eop3" id="eop3_8"><input type="radio" name="eop3" id="eop3_9" checked><input type="radio" name="eop3" id="eop3_10"><input type="radio" name="earg3" id="earg3_0"><input type="radio" name="earg3" id="earg3_1" checked><input type="radio" name="earg3" id="earg3_2"><input type="radio" name="earg3" id="earg3_3"><input type="radio" name="earg3" id="earg3_4"><input type="radio" name="earg3" id="earg3_5"><input type="radio" name="earg3" id="earg3_6"><input type="radio" name="earg3" id="earg3_7"><input type="radio" name="earg3" id="earg3_8"><input type="radio" name="earg3" id="earg3_9"><input type="radio" name="earg3" id="earg3_10"><input type="radio" name="earg3" id="earg3_11"><input type="radio" name="earg3" id="earg3_12"><input type="radio" name="earg3" id="earg3_13"><input type="radio" name="earg3" id="earg3_14"><input type="radio" name="earg3" id="earg3_15"><input type="radio" name="eop4" id="eop4_0" checked><input type="radio" name="eop4" id="eop4_1"><input type="radio" name="eop4" id="eop4_2"><input type="radio" name="eop4" id="eop4_3"><input type="radio" name="eop4" id="eop4_4"><input type="radio" name="eop4" id="eop4_5"><input type="radio" name="eop4" id="eop4_6"><input type="radio" name="eop4" id="eop4_7"><input type="radio" name="eop4" id="eop4_8"><input type="radio" name="eop4" id="eop4_9"><input type="radio" name="eop4" id="eop4_10"><input type="radio" name="earg4" id="earg4_0" checked><input type="radio" name="earg4" id="earg4_1"><input type="radio" name="earg4" id="earg4_2"><input type="radio" name="earg4" id="earg4_3"><input type="radio" name="earg4" id="earg4_4"><input type="radio" name="earg4" id="earg4_5"><input type="radio" name="earg4" id="earg4_6"><input type="radio" name="earg4" id="earg4_7"><input type="radio" name="earg4" id="earg4_8"><input type="radio" name="earg4" id="earg4_9"><input type="radio" name="earg4" id="earg4_10"><input type="radio" name="earg4" id="earg4_11"><input type="radio" name="earg4" id="earg4_12"><input type="radio" name="earg4" id="earg4_13"><input type="radio" name="earg4" id="earg4_14"><input type="radio" name="earg4" id="earg4_15"><input type="radio" name="eop5" id="eop5_0" checked><input type="radio" name="eop5" id="eop5_1"><input type="radio" name="eop5" id="eop5_2"><input type="radio" name="eop5" id="eop5_3"><input type="radio" name="eop5" id="eop5_4"><input type="radio" name="eop5" id="eop5_5"><input type="radio" name="eop5" id="eop5_6"><input type="radio" name="eop5" id="eop5_7"><input type="radio" name="eop5" id="eop5_8"><input type="radio" name="eop5" id="eop5_9"><input type="radio" name="eop5" id="eop5_10"><input type="radio" name="earg5" id="earg5_0" checked><input type="radio" name="earg5" id="earg5_1"><input type="radio" name="earg5" id="earg5_2"><input type="radio" name="earg5" id="earg5_3"><input type="radio" name="earg5" id="earg5_4"><input type="radio" name="earg5" id="earg5_5"><input type="radio" name="earg5" id="earg5_6"><input type="radio" name="earg5" id="earg5_7"><input type="radio" name="earg5" id="earg5_8"><input type="radio" name="earg5" id="earg5_9"><input type="radio" name="earg5" id="earg5_10"><input type="radio" name="earg5" id="earg5_11"><input type="radio" name="earg5" id="earg5_12"><input type="radio" name="earg5" id="earg5_13"><input type="radio" name="earg5" id="earg5_14"><input type="radio" name="earg5" id="earg5_15"><input type="radio" name="eop6" id="eop6_0" checked><input type="radio" name="eop6" id="eop6_1"><input type="radio" name="eop6" id="eop6_2"><input type="radio" name="eop6" id="eop6_3"><input type="radio" name="eop6" id="eop6_4"><input type="radio" name="eop6" id="eop6_5"><input type="radio" name="eop6" id="eop6_6"><input type="radio" name="eop6" id="eop6_7"><input type="radio" name="eop6" id="eop6_8"><input type="radio" name="eop6" id="eop6_9"><input type="radio" name="eop6" id="eop6_10"><input type="radio" name="earg6" id="earg6_0" checked><input type="radio" name="earg6" id="earg6_1"><input type="radio" name="earg6" id="earg6_2"><input type="radio" name="earg6" id="earg6_3"><input type="radio" name="earg6" id="earg6_4"><input type="radio" name="earg6" id="earg6_5"><input type="radio" name="earg6" id="earg6_6"><input type="radio" name="earg6" id="earg6_7"><input type="radio" name="earg6" id="earg6_8"><input type="radio" name="earg6" id="earg6_9"><input type="radio" name="earg6" id="earg6_10"><input type="radio" name="earg6" id="earg6_11"><input type="radio" name="earg6" id="earg6_12"><input type="radio" name="earg6" id="earg6_13"><input type="radio" name="earg6" id="earg6_14"><input type="radio" name="earg6" id="earg6_15"><input type="radio" name="eop7" id="eop7_0" checked><input type="radio" name="eop7" id="eop7_1"><input type="radio" name="eop7" id="eop7_2"><input type="radio" name="eop7" id="eop7_3"><input type="radio" name="eop7" id="eop7_4"><input type="radio" name="eop7" id="eop7_5"><input type="radio" name="eop7" id="eop7_6"><input type="radio" name="eop7" id="eop7_7"><input type="radio" name="eop7" id="eop7_8"><input type="radio" name="eop7" id="eop7_9"><input type="radio" name="eop7" id="eop7_10"><input type="radio" name="earg7" id="earg7_0" checked><input type="radio" name="earg7" id="earg7_1"><input type="radio" name="earg7" id="earg7_2"><input type="radio" name="earg7" id="earg7_3"><input type="radio" name="earg7" id="earg7_4"><input type="radio" name="earg7" id="earg7_5"><input type="radio" name="earg7" id="earg7_6"><input type="radio" name="earg7" id="earg7_7"><input type="radio" name="earg7" id="earg7_8"><input type="radio" name="earg7" id="earg7_9"><input type="radio" name="earg7" id="earg7_10"><input type="radio" name="earg7" id="earg7_11"><input type="radio" name="earg7" id="earg7_12"><input type="radio" name="earg7" id="earg7_13"><input type="radio" name="earg7" id="earg7_14"><input type="radio" name="earg7" id="earg7_15"><input type="radio" name="eop8" id="eop8_0" checked><input type="radio" name="eop8" id="eop8_1"><input type="radio" name="eop8" id="eop8_2"><input type="radio" name="eop8" id="eop8_3"><input type="radio" name="eop8" id="eop8_4"><input type="radio" name="eop8" id="eop8_5"><input type="radio" name="eop8" id="eop8_6"><input type="radio" name="eop8" id="eop8_7"><input type="radio" name="eop8" id="eop8_8"><input type="radio" name="eop8" id="eop8_9"><input type="radio" name="eop8" id="eop8_10"><input type="radio" name="earg8" id="earg8_0" checked><input type="radio" name="earg8" id="earg8_1"><input type="radio" name="earg8" id="earg8_2"><input type="radio" name="earg8" id="earg8_3"><input type="radio" name="earg8" id="earg8_4"><input type="radio" name="earg8" id="earg8_5"><input type="radio" name="earg8" id="earg8_6"><input type="radio" name="earg8" id="earg8_7"><input type="radio" name="earg8" id="earg8_8"><input type="radio" name="earg8" id="earg8_9"><input type="radio" name="earg8" id="earg8_10"><input type="radio" name="earg8" id="earg8_11"><input type="radio" name="earg8" id="earg8_12"><input type="radio" name="earg8" id="earg8_13"><input type="radio" name="earg8" id="earg8_14"><input type="radio" name="earg8" id="earg8_15"><input type="radio" name="eop9" id="eop9_0" checked><input type="radio" name="eop9" id="eop9_1"><input type="radio" name="eop9" id="eop9_2"><input type="radio" name="eop9" id="eop9_3"><input type="radio" name="eop9" id="eop9_4"><input type="radio" name="eop9" id="eop9_5"><input type="radio" name="eop9" id="eop9_6"><input type="radio" name="eop9" id="eop9_7"><input type="radio" name="eop9" id="eop9_8"><input type="radio" name="eop9" id="eop9_9"><input type="radio" name="eop9" id="eop9_10"><input type="radio" name="earg9" id="earg9_0" checked><input type="radio" name="earg9" id="earg9_1"><input type="radio" name="earg9" id="earg9_2"><input type="radio" name="earg9" id="earg9_3"><input type="radio" name="earg9" id="earg9_4"><input type="radio" name="earg9" id="earg9_5"><input type="radio" name="earg9" id="earg9_6"><input type="radio" name="earg9" id="earg9_7"><input type="radio" name="earg9" id="earg9_8"><input type="radio" name="earg9" id="earg9_9"><input type="radio" name="earg9" id="earg9_10"><input type="radio" name="earg9" id="earg9_11"><input type="radio" name="earg9" id="earg9_12"><input type="radio" name="earg9" id="earg9_13"><input type="radio" name="earg9" id="earg9_14"><input type="radio" name="earg9" id="earg9_15"><input type="radio" name="eop10" id="eop10_0" checked><input type="radio" name="eop10" id="eop10_1"><input type="radio" name="eop10" id="eop10_2"><input type="radio" name="eop10" id="eop10_3"><input type="radio" name="eop10" id="eop10_4"><input type="radio" name="eop10" id="eop10_5"><input type="radio" name="eop10" id="eop10_6"><input type="radio" name="eop10" id="eop10_7"><input type="radio" name="eop10" id="eop10_8"><input type="radio" name="eop10" id="eop10_9"><input type="radio" name="eop10" id="eop10_10"><input type="radio" name="earg10" id="earg10_0" checked><input type="radio" name="earg10" id="earg10_1"><input type="radio" name="earg10" id="earg10_2"><input type="radio" name="earg10" id="earg10_3"><input type="radio" name="earg10" id="earg10_4"><input type="radio" name="earg10" id="earg10_5"><input type="radio" name="earg10" id="earg10_6"><input type="radio" name="earg10" id="earg10_7"><input type="radio" name="earg10" id="earg10_8"><input type="radio" name="earg10" id="earg10_9"><input type="radio" name="earg10" id="earg10_10"><input type="radio" name="earg10" id="earg10_11"><input type="radio" name="earg10" id="earg10_12"><input type="radio" name="earg10" id="earg10_13"><input type="radio" name="earg10" id="earg10_14"><input type="radio" name="earg10" id="earg10_15"><input type="radio" name="eop11" id="eop11_0" checked><input type="radio" name="eop11" id="eop11_1"><input type="radio" name="eop11" id="eop11_2"><input type="radio" name="eop11" id="eop11_3"><input type="radio" name="eop11" id="eop11_4"><input type="radio" name="eop11" id="eop11_5"><input type="radio" name="eop11" id="eop11_6"><input type="radio" name="eop11" id="eop11_7"><input type="radio" name="eop11" id="eop11_8"><input type="radio" name="eop11" id="eop11_9"><input type="radio" name="eop11" id="eop11_10"><input type="radio" name="earg11" id="earg11_0" checked><input type="radio" name="earg11" id="earg11_1"><input type="radio" name="earg11" id="earg11_2"><input type="radio" name="earg11" id="earg11_3"><input type="radio" name="earg11" id="earg11_4"><input type="radio" name="earg11" id="earg11_5"><input type="radio" name="earg11" id="earg11_6"><input type="radio" name="earg11" id="earg11_7"><input type="radio" name="earg11" id="earg11_8"><input type="radio" name="earg11" id="earg11_9"><input type="radio" name="earg11" id="earg11_10"><input type="radio" name="earg11" id="earg11_11"><input type="radio" name="earg11" id="earg11_12"><input type="radio" name="earg11" id="earg11_13"><input type="radio" name="earg11" id="earg11_14"><input type="radio" name="earg11" id="earg11_15"><input type="radio" name="eop12" id="eop12_0" checked><input type="radio" name="eop12" id="eop12_1"><input type="radio" name="eop12" id="eop12_2"><input type="radio" name="eop12" id="eop12_3"><input type="radio" name="eop12" id="eop12_4"><input type="radio" name="eop12" id="eop12_5"><input type="radio" name="eop12" id="eop12_6"><input type="radio" name="eop12" id="eop12_7"><input type="radio" name="eop12" id="eop12_8"><input type="radio" name="eop12" id="eop12_9"><input type="radio" name="eop12" id="eop12_10"><input type="radio" name="earg12" id="earg12_0" checked><input type="radio" name="earg12" id="earg12_1"><input type="radio" name="earg12" id="earg12_2"><input type="radio" name="earg12" id="earg12_3"><input type="radio" name="earg12" id="earg12_4"><input type="radio" name="earg12" id="earg12_5"><input type="radio" name="earg12" id="earg12_6"><input type="radio" name="earg12" id="earg12_7"><input type="radio" name="earg12" id="earg12_8"><input type="radio" name="earg12" id="earg12_9"><input type="radio" name="earg12" id="earg12_10"><input type="radio" name="earg12" id="earg12_11"><input type="radio" name="earg12" id="earg12_12"><input type="radio" name="earg12" id="earg12_13"><input type="radio" name="earg12" id="earg12_14"><input type="radio" name="earg12" id="earg12_15"><input type="radio" name="eop13" id="eop13_0" checked><input type="radio" name="eop13" id="eop13_1"><input type="radio" name="eop13" id="eop13_2"><input type="radio" name="eop13" id="eop13_3"><input type="radio" name="eop13" id="eop13_4"><input type="radio" name="eop13" id="eop13_5"><input type="radio" name="eop13" id="eop13_6"><input type="radio" name="eop13" id="eop13_7"><input type="radio" name="eop13" id="eop13_8"><input type="radio" name="eop13" id="eop13_9"><input type="radio" name="eop13" id="eop13_10"><input type="radio" name="earg13" id="earg13_0" checked><input type="radio" name="earg13" id="earg13_1"><input type="radio" name="earg13" id="earg13_2"><input type="radio" name="earg13" id="earg13_3"><input type="radio" name="earg13" id="earg13_4"><input type="radio" name="earg13" id="earg13_5"><input type="radio" name="earg13" id="earg13_6"><input type="radio" name="earg13" id="earg13_7"><input type="radio" name="earg13" id="earg13_8"><input type="radio" name="earg13" id="earg13_9"><input type="radio" name="earg13" id="earg13_10"><input type="radio" name="earg13" id="earg13_11"><input type="radio" name="earg13" id="earg13_12"><input type="radio" name="earg13" id="earg13_13"><input type="radio" name="earg13" id="earg13_14"><input type="radio" name="earg13" id="earg13_15"><input type="radio" name="eop14" id="eop14_0" checked><input type="radio" name="eop14" id="eop14_1"><input type="radio" name="eop14" id="eop14_2"><input type="radio" name="eop14" id="eop14_3"><input type="radio" name="eop14" id="eop14_4"><input type="radio" name="eop14" id="eop14_5"><input type="radio" name="eop14" id="eop14_6"><input type="radio" name="eop14" id="eop14_7"><input type="radio" name="eop14" id="eop14_8"><input type="radio" name="eop14" id="eop14_9"><input type="radio" name="eop14" id="eop14_10"><input type="radio" name="earg14" id="earg14_0" checked><input type="radio" name="earg14" id="earg14_1"><input type="radio" name="earg14" id="earg14_2"><input type="radio" name="earg14" id="earg14_3"><input type="radio" name="earg14" id="earg14_4"><input type="radio" name="earg14" id="earg14_5"><input type="radio" name="earg14" id="earg14_6"><input type="radio" name="earg14" id="earg14_7"><input type="radio" name="earg14" id="earg14_8"><input type="radio" name="earg14" id="earg14_9"><input type="radio" name="earg14" id="earg14_10"><input type="radio" name="earg14" id="earg14_11"><input type="radio" name="earg14" id="earg14_12"><input type="radio" name="earg14" id="earg14_13"><input type="radio" name="earg14" id="earg14_14"><input type="radio" name="earg14" id="earg14_15"><input type="radio" name="eop15" id="eop15_0" checked><input type="radio" name="eop15" id="eop15_1"><input type="radio" name="eop15" id="eop15_2"><input type="radio" name="eop15" id="eop15_3"><input type="radio" name="eop15" id="eop15_4"><input type="radio" name="eop15" id="eop15_5"><input type="radio" name="eop15" id="eop15_6"><input type="radio" name="eop15" id="eop15_7"><input type="radio" name="eop15" id="eop15_8"><input type="radio" name="eop15" id="eop15_9"><input type="radio" name="eop15" id="eop15_10"><input type="radio" name="earg15" id="earg15_0" checked><input type="radio" name="earg15" id="earg15_1"><input type="radio" name="earg15" id="earg15_2"><input type="radio" name="earg15" id="earg15_3"><input type="radio" name="earg15" id="earg15_4"><input type="radio" name="earg15" id="earg15_5"><input type="radio" name="earg15" id="earg15_6"><input type="radio" name="earg15" id="earg15_7"><input type="radio" name="earg15" id="earg15_8"><input type="radio" name="earg15" id="earg15_9"><input type="radio" name="earg15" id="earg15_10"><input type="radio" name="earg15" id="earg15_11"><input type="radio" name="earg15" id="earg15_12"><input type="radio" name="earg15" id="earg15_13"><input type="radio" name="earg15" id="earg15_14"><input type="radio" name="earg15" id="earg15_15"><input type="radio" name="emem0" id="emem0_0"><input type="radio" name="emem0" id="emem0_1" checked><input type="radio" name="emem0" id="emem0_2"><input type="radio" name="emem0" id="emem0_3"><input type="radio" name="emem0" id="emem0_4"><input type="radio" name="emem0" id="emem0_5"><input type="radio" name="emem0" id="emem0_6"><input type="radio" name="emem0" id="emem0_7"><input type="radio" name="emem0" id="emem0_8"><input type="radio" name="emem0" id="emem0_9"><input type="radio" name="emem0" id="emem0_10"><input type="radio" name="emem0" id="emem0_11"><input type="radio" name="emem0" id="emem0_12"><input type="radio" name="emem0" id="emem0_13"><input type="radio" name="emem0" id="emem0_14"><input type="radio" name="emem0" id="emem0_15"><input type="radio" name="emem1" id="emem1_0" checked><input type="radio" name="emem1" id="emem1_1"><input type="radio" name="emem1" id="emem1_2"><input type="radio" name="emem1" id="emem1_3"><input type="radio" name="emem1" id="emem1_4"><input type="radio" name="emem1" id="emem1_5"><input type="radio" name="emem1" id="emem1_6"><input type="radio" name="emem1" id="emem1_7"><input type="radio" name="emem1" id="emem1_8"><input type="radio" name="emem1" id="emem1_9"><input type="radio" name="emem1" id="emem1_10"><input type="radio" name="emem1" id="emem1_11"><input type="radio" name="emem1" id="emem1_12"><input type="radio" name="emem1" id="emem1_13"><input type="radio" name="emem1" id="emem1_14"><input type="radio" name="emem1" id="emem1_15"><input type="radio" name="emem2" id="emem2_0" checked><input type="radio" name="emem2" id="emem2_1"><input type="radio" name="emem2" id="emem2_2"><input type="radio" name="emem2" id="emem2_3"><input type="radio" name="emem2" id="emem2_4"><input type="radio" name="emem2" id="emem2_5"><input type="radio" name="emem2" id="emem2_6"><input type="radio" name="emem2" id="emem2_7"><input type="radio" name="emem2" id="emem2_8"><input type="radio" name="emem2" id="emem2_9"><input type="radio" name="emem2" id="emem2_10"><input type="radio" name="emem2" id="emem2_11"><input type="radio" name="emem2" id="emem2_12"><input type="radio" name="emem2" id="emem2_13"><input type="radio" name="emem2" id="emem2_14"><input type="radio" name="emem2" id="emem2_15"><input type="radio" name="emem3" id="emem3_0" checked><input type="radio" name="emem3" id="emem3_1"><input type="radio" name="emem3" id="emem3_2"><input type="radio" name="emem3" id="emem3_3"><input type="radio" name="emem3" id="emem3_4"><input type="radio" name="emem3" id="emem3_5"><input type="radio" name="emem3" id="emem3_6"><input type="radio" name="emem3" id="emem3_7"><input type="radio" name="emem3" id="emem3_8"><input type="radio" name="emem3" id="emem3_9"><input type="radio" name="emem3" id="emem3_10"><input type="radio" name="emem3" id="emem3_11"><input type="radio" name="emem3" id="emem3_12"><input type="radio" name="emem3" id="emem3_13"><input type="radio" name="emem3" id="emem3_14"><input type="radio" name="emem3" id="emem3_15"><input type="radio" name="emem4" id="emem4_0" checked><input type="radio" name="emem4" id="emem4_1"><input type="radio" name="emem4" id="emem4_2"><input type="radio" name="emem4" id="emem4_3"><input type="radio" name="emem4" id="emem4_4"><input type="radio" name="emem4" id="emem4_5"><input type="radio" name="emem4" id="emem4_6"><input type="radio" name="emem4" id="emem4_7"><input type="radio" name="emem4" id="emem4_8"><input type="radio" name="emem4" id="emem4_9"><input type="radio" name="emem4" id="emem4_10"><input type="radio" name="emem4" id="emem4_11"><input type="radio" name="emem4" id="emem4_12"><input type="radio" name="emem4" id="emem4_13"><input type="radio" name="emem4" id="emem4_14"><input type="radio" name="emem4" id="emem4_15"><input type="radio" name="emem5" id="emem5_0" checked><input type="radio" name="emem5" id="emem5_1"><input type="radio" name="emem5" id="emem5_2"><input type="radio" name="emem5" id="emem5_3"><input type="radio" name="emem5" id="emem5_4"><input type="radio" name="emem5" id="emem5_5"><input type="radio" name="emem5" id="emem5_6"><input type="radio" name="emem5" id="emem5_7"><input type="radio" name="emem5" id="emem5_8"><input type="radio" name="emem5" id="emem5_9"><input type="radio" name="emem5" id="emem5_10"><input type="radio" name="emem5" id="emem5_11"><input type="radio" name="emem5" id="emem5_12"><input type="radio" name="emem5" id="emem5_13"><input type="radio" name="emem5" id="emem5_14"><input type="radio" name="emem5" id="emem5_15"><input type="radio" name="emem6" id="emem6_0" checked><input type="radio" name="emem6" id="emem6_1"><input type="radio" name="emem6" id="emem6_2"><input type="radio" name="emem6" id="emem6_3"><input type="radio" name="emem6" id="emem6_4"><input type="radio" name="emem6" id="emem6_5"><input type="radio" name="emem6" id="emem6_6"><input type="radio" name="emem6" id="emem6_7"><input type="radio" name="emem6" id="emem6_8"><input type="radio" name="emem6" id="emem6_9"><input type="radio" name="emem6" id="emem6_10"><input type="radio" name="emem6" id="emem6_11"><input type="radio" name="emem6" id="emem6_12"><input type="radio" name="emem6" id="emem6_13"><input type="radio" name="emem6" id="emem6_14"><input type="radio" name="emem6" id="emem6_15"><input type="radio" name="emem7" id="emem7_0" checked><input type="radio" name="emem7" id="emem7_1"><input type="radio" name="emem7" id="emem7_2"><input type="radio" name="emem7" id="emem7_3"><input type="radio" name="emem7" id="emem7_4"><input type="radio" name="emem7" id="emem7_5"><input type="radio" name="emem7" id="emem7_6"><input type="radio" name="emem7" id="emem7_7"><input type="radio" name="emem7" id="emem7_8"><input type="radio" name="emem7" id="emem7_9"><input type="radio" name="emem7" id="emem7_10"><input type="radio" name="emem7" id="emem7_11"><input type="radio" name="emem7" id="emem7_12"><input type="radio" name="emem7" id="emem7_13"><input type="radio" name="emem7" id="emem7_14"><input type="radio" name="emem7" id="emem7_15"></form>
+<div class="progs"><label for="prog-count" class="btn">Count to n</label><label for="prog-fibonacci" class="btn">Fibonacci</label><label for="prog-multiply" class="btn">Multiply x × y</label><label for="prog-sum" class="btn">Sum 1 + 2 + … + n</label><label for="prog-powers" class="btn">Powers of two</label><label for="prog-custom" class="btn">Write your own</label></div>
 <div class="machine">
 <div class="cyc"><div class="step"><div class="row" style="--ran: calc(var(--e0) + var(--e1) + var(--e2) + var(--e3) + var(--e4) + var(--e5) + var(--e6) + var(--e7) + var(--e8) + var(--e9) + var(--e10)); --noarg: calc(var(--e0) + var(--e10))"><b class="cy"></b><span class="pc"></span><span class="ins"><span class="mn" style="opacity: var(--e0)">HLT</span><span class="mn" style="opacity: var(--e1)">LDI</span><span class="mn" style="opacity: var(--e2)">LD</span><span class="mn" style="opacity: var(--e3)">ST</span><span class="mn" style="opacity: var(--e4)">ADD</span><span class="mn" style="opacity: var(--e5)">SUB</span><span class="mn" style="opacity: var(--e6)">ADDI</span><span class="mn" style="opacity: var(--e7)">JMP</span><span class="mn" style="opacity: var(--e8)">JZ</span><span class="mn" style="opacity: var(--e9)">JNZ</span><span class="mn" style="opacity: var(--e10)">OUT</span></span><span class="arg"></span><span class="acc"></span></div>
 <div class="cyc"><div class="step"><div class="row" style="--ran: calc(var(--e0) + var(--e1) + var(--e2) + var(--e3) + var(--e4) + var(--e5) + var(--e6) + var(--e7) + var(--e8) + var(--e9) + var(--e10)); --noarg: calc(var(--e0) + var(--e10))"><b class="cy"></b><span class="pc"></span><span class="ins"><span class="mn" style="opacity: var(--e0)">HLT</span><span class="mn" style="opacity: var(--e1)">LDI</span><span class="mn" style="opacity: var(--e2)">LD</span><span class="mn" style="opacity: var(--e3)">ST</span><span class="mn" style="opacity: var(--e4)">ADD</span><span class="mn" style="opacity: var(--e5)">SUB</span><span class="mn" style="opacity: var(--e6)">ADDI</span><span class="mn" style="opacity: var(--e7)">JMP</span><span class="mn" style="opacity: var(--e8)">JZ</span><span class="mn" style="opacity: var(--e9)">JNZ</span><span class="mn" style="opacity: var(--e10)">OUT</span></span><span class="arg"></span><span class="acc"></span></div>
@@ -2500,10 +4278,19 @@ footer a, section a { color: var(--fg); text-underline-offset: 3px; }
 <div class="cyc"><div class="step"><div class="row" style="--ran: calc(var(--e0) + var(--e1) + var(--e2) + var(--e3) + var(--e4) + var(--e5) + var(--e6) + var(--e7) + var(--e8) + var(--e9) + var(--e10)); --noarg: calc(var(--e0) + var(--e10))"><b class="cy"></b><span class="pc"></span><span class="ins"><span class="mn" style="opacity: var(--e0)">HLT</span><span class="mn" style="opacity: var(--e1)">LDI</span><span class="mn" style="opacity: var(--e2)">LD</span><span class="mn" style="opacity: var(--e3)">ST</span><span class="mn" style="opacity: var(--e4)">ADD</span><span class="mn" style="opacity: var(--e5)">SUB</span><span class="mn" style="opacity: var(--e6)">ADDI</span><span class="mn" style="opacity: var(--e7)">JMP</span><span class="mn" style="opacity: var(--e8)">JZ</span><span class="mn" style="opacity: var(--e9)">JNZ</span><span class="mn" style="opacity: var(--e10)">OUT</span></span><span class="arg"></span><span class="acc"></span></div>
 <div class="ui">
   <div class="panel">
-    <div class="left"><div class="only-count"><div class="inrow"><span>n =</span><div class="chips"><label for="icount_1_1">1</label><label for="icount_1_2">2</label><label for="icount_1_3">3</label><label for="icount_1_4">4</label><label for="icount_1_5">5</label><label for="icount_1_6">6</label><label for="icount_1_7">7</label><label for="icount_1_8">8</label><label for="icount_1_9">9</label><label for="icount_1_10">10</label><label for="icount_1_11">11</label><label for="icount_1_12">12</label><label for="icount_1_13">13</label><label for="icount_1_14">14</label><label for="icount_1_15">15</label></div></div><table class="listing"><tr><th class="n">#</th><th>instruction</th><th>what it does</th></tr><tr><td class="n">0</td><td><code>LD 0</code></td><td>A = counter</td></tr><tr><td class="n">1</td><td><code>ADDI 1</code></td><td>add one</td></tr><tr><td class="n">2</td><td><code>ST 0</code></td><td>save it</td></tr><tr><td class="n">3</td><td><code>OUT</code></td><td>print it</td></tr><tr><td class="n">4</td><td><code>SUB 1</code></td><td>A = counter − n</td></tr><tr><td class="n">5</td><td><code>JNZ 0</code></td><td>not there yet? loop</td></tr><tr><td class="n">6</td><td><code>HLT</code></td><td></td></tr></table></div><div class="only-fibonacci"><table class="listing"><tr><th class="n">#</th><th>instruction</th><th>what it does</th></tr><tr><td class="n">0</td><td><code>LD 0</code></td><td>A = a</td></tr><tr><td class="n">1</td><td><code>OUT</code></td><td>print a</td></tr><tr><td class="n">2</td><td><code>ADD 1</code></td><td>A = a + b</td></tr><tr><td class="n">3</td><td><code>ST 2</code></td><td>t = a + b</td></tr><tr><td class="n">4</td><td><code>LD 1</code></td><td></td></tr><tr><td class="n">5</td><td><code>ST 0</code></td><td>a = b</td></tr><tr><td class="n">6</td><td><code>LD 2</code></td><td></td></tr><tr><td class="n">7</td><td><code>ST 1</code></td><td>b = t</td></tr><tr><td class="n">8</td><td><code>JMP 0</code></td><td>again</td></tr></table></div><div class="only-multiply"><div class="inrow"><span>x =</span><div class="chips"><label for="imultiply_0_0">0</label><label for="imultiply_0_1">1</label><label for="imultiply_0_2">2</label><label for="imultiply_0_3">3</label><label for="imultiply_0_4">4</label><label for="imultiply_0_5">5</label><label for="imultiply_0_6">6</label><label for="imultiply_0_7">7</label><label for="imultiply_0_8">8</label><label for="imultiply_0_9">9</label><label for="imultiply_0_10">10</label><label for="imultiply_0_11">11</label><label for="imultiply_0_12">12</label><label for="imultiply_0_13">13</label><label for="imultiply_0_14">14</label><label for="imultiply_0_15">15</label></div></div><div class="inrow"><span>y =</span><div class="chips"><label for="imultiply_1_1">1</label><label for="imultiply_1_2">2</label><label for="imultiply_1_3">3</label><label for="imultiply_1_4">4</label><label for="imultiply_1_5">5</label><label for="imultiply_1_6">6</label><label for="imultiply_1_7">7</label><label for="imultiply_1_8">8</label><label for="imultiply_1_9">9</label><label for="imultiply_1_10">10</label><label for="imultiply_1_11">11</label><label for="imultiply_1_12">12</label><label for="imultiply_1_13">13</label><label for="imultiply_1_14">14</label><label for="imultiply_1_15">15</label></div></div><table class="listing"><tr><th class="n">#</th><th>instruction</th><th>what it does</th></tr><tr><td class="n">0</td><td><code>LD 2</code></td><td>A = total</td></tr><tr><td class="n">1</td><td><code>ADD 0</code></td><td>add x</td></tr><tr><td class="n">2</td><td><code>ST 2</code></td><td>save total</td></tr><tr><td class="n">3</td><td><code>LD 1</code></td><td>A = y</td></tr><tr><td class="n">4</td><td><code>SUB 3</code></td><td>minus one</td></tr><tr><td class="n">5</td><td><code>ST 1</code></td><td>save y</td></tr><tr><td class="n">6</td><td><code>JNZ 0</code></td><td>y left? loop</td></tr><tr><td class="n">7</td><td><code>LD 2</code></td><td></td></tr><tr><td class="n">8</td><td><code>OUT</code></td><td>print x × y</td></tr><tr><td class="n">9</td><td><code>HLT</code></td><td></td></tr></table></div><div class="only-sum"><div class="inrow"><span>n =</span><div class="chips"><label for="isum_0_1">1</label><label for="isum_0_2">2</label><label for="isum_0_3">3</label><label for="isum_0_4">4</label><label for="isum_0_5">5</label><label for="isum_0_6">6</label><label for="isum_0_7">7</label><label for="isum_0_8">8</label><label for="isum_0_9">9</label><label for="isum_0_10">10</label><label for="isum_0_11">11</label><label for="isum_0_12">12</label><label for="isum_0_13">13</label><label for="isum_0_14">14</label><label for="isum_0_15">15</label></div></div><table class="listing"><tr><th class="n">#</th><th>instruction</th><th>what it does</th></tr><tr><td class="n">0</td><td><code>LD 1</code></td><td>A = total</td></tr><tr><td class="n">1</td><td><code>ADD 0</code></td><td>add n</td></tr><tr><td class="n">2</td><td><code>ST 1</code></td><td>save total</td></tr><tr><td class="n">3</td><td><code>LD 0</code></td><td>A = n</td></tr><tr><td class="n">4</td><td><code>SUB 2</code></td><td>minus one</td></tr><tr><td class="n">5</td><td><code>ST 0</code></td><td>save n</td></tr><tr><td class="n">6</td><td><code>JNZ 0</code></td><td>n left? loop</td></tr><tr><td class="n">7</td><td><code>LD 1</code></td><td></td></tr><tr><td class="n">8</td><td><code>OUT</code></td><td>print the sum</td></tr><tr><td class="n">9</td><td><code>HLT</code></td><td></td></tr></table></div><div class="only-powers"><table class="listing"><tr><th class="n">#</th><th>instruction</th><th>what it does</th></tr><tr><td class="n">0</td><td><code>LD 0</code></td><td>A = x</td></tr><tr><td class="n">1</td><td><code>OUT</code></td><td>print x</td></tr><tr><td class="n">2</td><td><code>ADD 0</code></td><td>A = x + x</td></tr><tr><td class="n">3</td><td><code>ST 0</code></td><td>x = 2x</td></tr><tr><td class="n">4</td><td><code>JNZ 0</code></td><td>until it overflows to 0</td></tr><tr><td class="n">5</td><td><code>HLT</code></td><td></td></tr></table></div></div>
-    <div class="right">
+    <div class="out">
       <h2>Printed</h2>
       <div class="tape"><i style="--k: 0; --v: var(--T0)"></i><i style="--k: 1; --v: var(--T1)"></i><i style="--k: 2; --v: var(--T2)"></i><i style="--k: 3; --v: var(--T3)"></i><i style="--k: 4; --v: var(--T4)"></i><i style="--k: 5; --v: var(--T5)"></i><i style="--k: 6; --v: var(--T6)"></i><i style="--k: 7; --v: var(--T7)"></i><i style="--k: 8; --v: var(--T8)"></i><i style="--k: 9; --v: var(--T9)"></i><i style="--k: 10; --v: var(--T10)"></i><i style="--k: 11; --v: var(--T11)"></i><i style="--k: 12; --v: var(--T12)"></i><i style="--k: 13; --v: var(--T13)"></i><i style="--k: 14; --v: var(--T14)"></i><i style="--k: 15; --v: var(--T15)"></i></div>
+    </div>
+    <div class="left"><div class="only-count"><div class="inrow"><span>n =</span><div class="chips"><label for="icount_1_1">1</label><label for="icount_1_2">2</label><label for="icount_1_3">3</label><label for="icount_1_4">4</label><label for="icount_1_5">5</label><label for="icount_1_6">6</label><label for="icount_1_7">7</label><label for="icount_1_8">8</label><label for="icount_1_9">9</label><label for="icount_1_10">10</label><label for="icount_1_11">11</label><label for="icount_1_12">12</label><label for="icount_1_13">13</label><label for="icount_1_14">14</label><label for="icount_1_15">15</label></div></div><table class="listing"><tr><th class="n">#</th><th>instruction</th><th>what it does</th></tr><tr><td class="n">0</td><td><code>LD 0</code></td><td>A = counter</td></tr><tr><td class="n">1</td><td><code>ADDI 1</code></td><td>add one</td></tr><tr><td class="n">2</td><td><code>ST 0</code></td><td>save it</td></tr><tr><td class="n">3</td><td><code>OUT</code></td><td>print it</td></tr><tr><td class="n">4</td><td><code>SUB 1</code></td><td>A = counter − n</td></tr><tr><td class="n">5</td><td><code>JNZ 0</code></td><td>not there yet? loop</td></tr><tr><td class="n">6</td><td><code>HLT</code></td><td></td></tr></table></div><div class="only-fibonacci"><table class="listing"><tr><th class="n">#</th><th>instruction</th><th>what it does</th></tr><tr><td class="n">0</td><td><code>LD 0</code></td><td>A = a</td></tr><tr><td class="n">1</td><td><code>OUT</code></td><td>print a</td></tr><tr><td class="n">2</td><td><code>ADD 1</code></td><td>A = a + b</td></tr><tr><td class="n">3</td><td><code>ST 2</code></td><td>t = a + b</td></tr><tr><td class="n">4</td><td><code>LD 1</code></td><td></td></tr><tr><td class="n">5</td><td><code>ST 0</code></td><td>a = b</td></tr><tr><td class="n">6</td><td><code>LD 2</code></td><td></td></tr><tr><td class="n">7</td><td><code>ST 1</code></td><td>b = t</td></tr><tr><td class="n">8</td><td><code>JMP 0</code></td><td>again</td></tr></table></div><div class="only-multiply"><div class="inrow"><span>x =</span><div class="chips"><label for="imultiply_0_0">0</label><label for="imultiply_0_1">1</label><label for="imultiply_0_2">2</label><label for="imultiply_0_3">3</label><label for="imultiply_0_4">4</label><label for="imultiply_0_5">5</label><label for="imultiply_0_6">6</label><label for="imultiply_0_7">7</label><label for="imultiply_0_8">8</label><label for="imultiply_0_9">9</label><label for="imultiply_0_10">10</label><label for="imultiply_0_11">11</label><label for="imultiply_0_12">12</label><label for="imultiply_0_13">13</label><label for="imultiply_0_14">14</label><label for="imultiply_0_15">15</label></div></div><div class="inrow"><span>y =</span><div class="chips"><label for="imultiply_1_1">1</label><label for="imultiply_1_2">2</label><label for="imultiply_1_3">3</label><label for="imultiply_1_4">4</label><label for="imultiply_1_5">5</label><label for="imultiply_1_6">6</label><label for="imultiply_1_7">7</label><label for="imultiply_1_8">8</label><label for="imultiply_1_9">9</label><label for="imultiply_1_10">10</label><label for="imultiply_1_11">11</label><label for="imultiply_1_12">12</label><label for="imultiply_1_13">13</label><label for="imultiply_1_14">14</label><label for="imultiply_1_15">15</label></div></div><table class="listing"><tr><th class="n">#</th><th>instruction</th><th>what it does</th></tr><tr><td class="n">0</td><td><code>LD 2</code></td><td>A = total</td></tr><tr><td class="n">1</td><td><code>ADD 0</code></td><td>add x</td></tr><tr><td class="n">2</td><td><code>ST 2</code></td><td>save total</td></tr><tr><td class="n">3</td><td><code>LD 1</code></td><td>A = y</td></tr><tr><td class="n">4</td><td><code>SUB 3</code></td><td>minus one</td></tr><tr><td class="n">5</td><td><code>ST 1</code></td><td>save y</td></tr><tr><td class="n">6</td><td><code>JNZ 0</code></td><td>y left? loop</td></tr><tr><td class="n">7</td><td><code>LD 2</code></td><td></td></tr><tr><td class="n">8</td><td><code>OUT</code></td><td>print x × y</td></tr><tr><td class="n">9</td><td><code>HLT</code></td><td></td></tr></table></div><div class="only-sum"><div class="inrow"><span>n =</span><div class="chips"><label for="isum_0_1">1</label><label for="isum_0_2">2</label><label for="isum_0_3">3</label><label for="isum_0_4">4</label><label for="isum_0_5">5</label><label for="isum_0_6">6</label><label for="isum_0_7">7</label><label for="isum_0_8">8</label><label for="isum_0_9">9</label><label for="isum_0_10">10</label><label for="isum_0_11">11</label><label for="isum_0_12">12</label><label for="isum_0_13">13</label><label for="isum_0_14">14</label><label for="isum_0_15">15</label></div></div><table class="listing"><tr><th class="n">#</th><th>instruction</th><th>what it does</th></tr><tr><td class="n">0</td><td><code>LD 1</code></td><td>A = total</td></tr><tr><td class="n">1</td><td><code>ADD 0</code></td><td>add n</td></tr><tr><td class="n">2</td><td><code>ST 1</code></td><td>save total</td></tr><tr><td class="n">3</td><td><code>LD 0</code></td><td>A = n</td></tr><tr><td class="n">4</td><td><code>SUB 2</code></td><td>minus one</td></tr><tr><td class="n">5</td><td><code>ST 0</code></td><td>save n</td></tr><tr><td class="n">6</td><td><code>JNZ 0</code></td><td>n left? loop</td></tr><tr><td class="n">7</td><td><code>LD 1</code></td><td></td></tr><tr><td class="n">8</td><td><code>OUT</code></td><td>print the sum</td></tr><tr><td class="n">9</td><td><code>HLT</code></td><td></td></tr></table></div><div class="only-powers"><table class="listing"><tr><th class="n">#</th><th>instruction</th><th>what it does</th></tr><tr><td class="n">0</td><td><code>LD 0</code></td><td>A = x</td></tr><tr><td class="n">1</td><td><code>OUT</code></td><td>print x</td></tr><tr><td class="n">2</td><td><code>ADD 0</code></td><td>A = x + x</td></tr><tr><td class="n">3</td><td><code>ST 0</code></td><td>x = 2x</td></tr><tr><td class="n">4</td><td><code>JNZ 0</code></td><td>until it overflows to 0</td></tr><tr><td class="n">5</td><td><code>HLT</code></td><td></td></tr></table></div><div class="only-custom">
+<p class="edhint">Tap a line to change it: pick what it does, then its number. Lines run from the top; a jump goes to any line.</p>
+<div class="ed"><details class="ln" style="--o: var(--op0); --a: var(--arg0)"><summary><b>0</b><span class="stack mn"><span style="--k: 0">HLT</span><span style="--k: 1">LDI</span><span style="--k: 2">LD</span><span style="--k: 3">ST</span><span style="--k: 4">ADD</span><span style="--k: 5">SUB</span><span style="--k: 6">ADDI</span><span style="--k: 7">JMP</span><span style="--k: 8">JZ</span><span style="--k: 9">JNZ</span><span style="--k: 10">OUT</span></span><span class="ag"></span><span class="stack says"><span style="--k: 0">stop</span><span style="--k: 1">A = <i class="t"></i></span><span style="--k: 2">A = memory[<i class="m"></i>]</span><span style="--k: 3">memory[<i class="m"></i>] = A</span><span style="--k: 4">A = A + memory[<i class="m"></i>]</span><span style="--k: 5">A = A − memory[<i class="m"></i>]</span><span style="--k: 6">A = A + <i class="t"></i></span><span style="--k: 7">go to line <i class="t"></i></span><span style="--k: 8">if A = 0, go to line <i class="t"></i></span><span style="--k: 9">if A ≠ 0, go to line <i class="t"></i></span><span style="--k: 10">print A</span></span></summary><div class="pick"><span>do</span><div class="opts ops"><label for="eop0_0" style="--k: 0">HLT</label><label for="eop0_1" style="--k: 1">LDI</label><label for="eop0_2" style="--k: 2">LD</label><label for="eop0_3" style="--k: 3">ST</label><label for="eop0_4" style="--k: 4">ADD</label><label for="eop0_5" style="--k: 5">SUB</label><label for="eop0_6" style="--k: 6">ADDI</label><label for="eop0_7" style="--k: 7">JMP</label><label for="eop0_8" style="--k: 8">JZ</label><label for="eop0_9" style="--k: 9">JNZ</label><label for="eop0_10" style="--k: 10">OUT</label></div><span>with</span><div class="opts args"><label for="earg0_0" style="--k: 0">0</label><label for="earg0_1" style="--k: 1">1</label><label for="earg0_2" style="--k: 2">2</label><label for="earg0_3" style="--k: 3">3</label><label for="earg0_4" style="--k: 4">4</label><label for="earg0_5" style="--k: 5">5</label><label for="earg0_6" style="--k: 6">6</label><label for="earg0_7" style="--k: 7">7</label><label for="earg0_8" style="--k: 8">8</label><label for="earg0_9" style="--k: 9">9</label><label for="earg0_10" style="--k: 10">10</label><label for="earg0_11" style="--k: 11">11</label><label for="earg0_12" style="--k: 12">12</label><label for="earg0_13" style="--k: 13">13</label><label for="earg0_14" style="--k: 14">14</label><label for="earg0_15" style="--k: 15">15</label></div></div></details><details class="ln" style="--o: var(--op1); --a: var(--arg1)"><summary><b>1</b><span class="stack mn"><span style="--k: 0">HLT</span><span style="--k: 1">LDI</span><span style="--k: 2">LD</span><span style="--k: 3">ST</span><span style="--k: 4">ADD</span><span style="--k: 5">SUB</span><span style="--k: 6">ADDI</span><span style="--k: 7">JMP</span><span style="--k: 8">JZ</span><span style="--k: 9">JNZ</span><span style="--k: 10">OUT</span></span><span class="ag"></span><span class="stack says"><span style="--k: 0">stop</span><span style="--k: 1">A = <i class="t"></i></span><span style="--k: 2">A = memory[<i class="m"></i>]</span><span style="--k: 3">memory[<i class="m"></i>] = A</span><span style="--k: 4">A = A + memory[<i class="m"></i>]</span><span style="--k: 5">A = A − memory[<i class="m"></i>]</span><span style="--k: 6">A = A + <i class="t"></i></span><span style="--k: 7">go to line <i class="t"></i></span><span style="--k: 8">if A = 0, go to line <i class="t"></i></span><span style="--k: 9">if A ≠ 0, go to line <i class="t"></i></span><span style="--k: 10">print A</span></span></summary><div class="pick"><span>do</span><div class="opts ops"><label for="eop1_0" style="--k: 0">HLT</label><label for="eop1_1" style="--k: 1">LDI</label><label for="eop1_2" style="--k: 2">LD</label><label for="eop1_3" style="--k: 3">ST</label><label for="eop1_4" style="--k: 4">ADD</label><label for="eop1_5" style="--k: 5">SUB</label><label for="eop1_6" style="--k: 6">ADDI</label><label for="eop1_7" style="--k: 7">JMP</label><label for="eop1_8" style="--k: 8">JZ</label><label for="eop1_9" style="--k: 9">JNZ</label><label for="eop1_10" style="--k: 10">OUT</label></div><span>with</span><div class="opts args"><label for="earg1_0" style="--k: 0">0</label><label for="earg1_1" style="--k: 1">1</label><label for="earg1_2" style="--k: 2">2</label><label for="earg1_3" style="--k: 3">3</label><label for="earg1_4" style="--k: 4">4</label><label for="earg1_5" style="--k: 5">5</label><label for="earg1_6" style="--k: 6">6</label><label for="earg1_7" style="--k: 7">7</label><label for="earg1_8" style="--k: 8">8</label><label for="earg1_9" style="--k: 9">9</label><label for="earg1_10" style="--k: 10">10</label><label for="earg1_11" style="--k: 11">11</label><label for="earg1_12" style="--k: 12">12</label><label for="earg1_13" style="--k: 13">13</label><label for="earg1_14" style="--k: 14">14</label><label for="earg1_15" style="--k: 15">15</label></div></div></details><details class="ln" style="--o: var(--op2); --a: var(--arg2)"><summary><b>2</b><span class="stack mn"><span style="--k: 0">HLT</span><span style="--k: 1">LDI</span><span style="--k: 2">LD</span><span style="--k: 3">ST</span><span style="--k: 4">ADD</span><span style="--k: 5">SUB</span><span style="--k: 6">ADDI</span><span style="--k: 7">JMP</span><span style="--k: 8">JZ</span><span style="--k: 9">JNZ</span><span style="--k: 10">OUT</span></span><span class="ag"></span><span class="stack says"><span style="--k: 0">stop</span><span style="--k: 1">A = <i class="t"></i></span><span style="--k: 2">A = memory[<i class="m"></i>]</span><span style="--k: 3">memory[<i class="m"></i>] = A</span><span style="--k: 4">A = A + memory[<i class="m"></i>]</span><span style="--k: 5">A = A − memory[<i class="m"></i>]</span><span style="--k: 6">A = A + <i class="t"></i></span><span style="--k: 7">go to line <i class="t"></i></span><span style="--k: 8">if A = 0, go to line <i class="t"></i></span><span style="--k: 9">if A ≠ 0, go to line <i class="t"></i></span><span style="--k: 10">print A</span></span></summary><div class="pick"><span>do</span><div class="opts ops"><label for="eop2_0" style="--k: 0">HLT</label><label for="eop2_1" style="--k: 1">LDI</label><label for="eop2_2" style="--k: 2">LD</label><label for="eop2_3" style="--k: 3">ST</label><label for="eop2_4" style="--k: 4">ADD</label><label for="eop2_5" style="--k: 5">SUB</label><label for="eop2_6" style="--k: 6">ADDI</label><label for="eop2_7" style="--k: 7">JMP</label><label for="eop2_8" style="--k: 8">JZ</label><label for="eop2_9" style="--k: 9">JNZ</label><label for="eop2_10" style="--k: 10">OUT</label></div><span>with</span><div class="opts args"><label for="earg2_0" style="--k: 0">0</label><label for="earg2_1" style="--k: 1">1</label><label for="earg2_2" style="--k: 2">2</label><label for="earg2_3" style="--k: 3">3</label><label for="earg2_4" style="--k: 4">4</label><label for="earg2_5" style="--k: 5">5</label><label for="earg2_6" style="--k: 6">6</label><label for="earg2_7" style="--k: 7">7</label><label for="earg2_8" style="--k: 8">8</label><label for="earg2_9" style="--k: 9">9</label><label for="earg2_10" style="--k: 10">10</label><label for="earg2_11" style="--k: 11">11</label><label for="earg2_12" style="--k: 12">12</label><label for="earg2_13" style="--k: 13">13</label><label for="earg2_14" style="--k: 14">14</label><label for="earg2_15" style="--k: 15">15</label></div></div></details><details class="ln" style="--o: var(--op3); --a: var(--arg3)"><summary><b>3</b><span class="stack mn"><span style="--k: 0">HLT</span><span style="--k: 1">LDI</span><span style="--k: 2">LD</span><span style="--k: 3">ST</span><span style="--k: 4">ADD</span><span style="--k: 5">SUB</span><span style="--k: 6">ADDI</span><span style="--k: 7">JMP</span><span style="--k: 8">JZ</span><span style="--k: 9">JNZ</span><span style="--k: 10">OUT</span></span><span class="ag"></span><span class="stack says"><span style="--k: 0">stop</span><span style="--k: 1">A = <i class="t"></i></span><span style="--k: 2">A = memory[<i class="m"></i>]</span><span style="--k: 3">memory[<i class="m"></i>] = A</span><span style="--k: 4">A = A + memory[<i class="m"></i>]</span><span style="--k: 5">A = A − memory[<i class="m"></i>]</span><span style="--k: 6">A = A + <i class="t"></i></span><span style="--k: 7">go to line <i class="t"></i></span><span style="--k: 8">if A = 0, go to line <i class="t"></i></span><span style="--k: 9">if A ≠ 0, go to line <i class="t"></i></span><span style="--k: 10">print A</span></span></summary><div class="pick"><span>do</span><div class="opts ops"><label for="eop3_0" style="--k: 0">HLT</label><label for="eop3_1" style="--k: 1">LDI</label><label for="eop3_2" style="--k: 2">LD</label><label for="eop3_3" style="--k: 3">ST</label><label for="eop3_4" style="--k: 4">ADD</label><label for="eop3_5" style="--k: 5">SUB</label><label for="eop3_6" style="--k: 6">ADDI</label><label for="eop3_7" style="--k: 7">JMP</label><label for="eop3_8" style="--k: 8">JZ</label><label for="eop3_9" style="--k: 9">JNZ</label><label for="eop3_10" style="--k: 10">OUT</label></div><span>with</span><div class="opts args"><label for="earg3_0" style="--k: 0">0</label><label for="earg3_1" style="--k: 1">1</label><label for="earg3_2" style="--k: 2">2</label><label for="earg3_3" style="--k: 3">3</label><label for="earg3_4" style="--k: 4">4</label><label for="earg3_5" style="--k: 5">5</label><label for="earg3_6" style="--k: 6">6</label><label for="earg3_7" style="--k: 7">7</label><label for="earg3_8" style="--k: 8">8</label><label for="earg3_9" style="--k: 9">9</label><label for="earg3_10" style="--k: 10">10</label><label for="earg3_11" style="--k: 11">11</label><label for="earg3_12" style="--k: 12">12</label><label for="earg3_13" style="--k: 13">13</label><label for="earg3_14" style="--k: 14">14</label><label for="earg3_15" style="--k: 15">15</label></div></div></details><details class="ln" style="--o: var(--op4); --a: var(--arg4)"><summary><b>4</b><span class="stack mn"><span style="--k: 0">HLT</span><span style="--k: 1">LDI</span><span style="--k: 2">LD</span><span style="--k: 3">ST</span><span style="--k: 4">ADD</span><span style="--k: 5">SUB</span><span style="--k: 6">ADDI</span><span style="--k: 7">JMP</span><span style="--k: 8">JZ</span><span style="--k: 9">JNZ</span><span style="--k: 10">OUT</span></span><span class="ag"></span><span class="stack says"><span style="--k: 0">stop</span><span style="--k: 1">A = <i class="t"></i></span><span style="--k: 2">A = memory[<i class="m"></i>]</span><span style="--k: 3">memory[<i class="m"></i>] = A</span><span style="--k: 4">A = A + memory[<i class="m"></i>]</span><span style="--k: 5">A = A − memory[<i class="m"></i>]</span><span style="--k: 6">A = A + <i class="t"></i></span><span style="--k: 7">go to line <i class="t"></i></span><span style="--k: 8">if A = 0, go to line <i class="t"></i></span><span style="--k: 9">if A ≠ 0, go to line <i class="t"></i></span><span style="--k: 10">print A</span></span></summary><div class="pick"><span>do</span><div class="opts ops"><label for="eop4_0" style="--k: 0">HLT</label><label for="eop4_1" style="--k: 1">LDI</label><label for="eop4_2" style="--k: 2">LD</label><label for="eop4_3" style="--k: 3">ST</label><label for="eop4_4" style="--k: 4">ADD</label><label for="eop4_5" style="--k: 5">SUB</label><label for="eop4_6" style="--k: 6">ADDI</label><label for="eop4_7" style="--k: 7">JMP</label><label for="eop4_8" style="--k: 8">JZ</label><label for="eop4_9" style="--k: 9">JNZ</label><label for="eop4_10" style="--k: 10">OUT</label></div><span>with</span><div class="opts args"><label for="earg4_0" style="--k: 0">0</label><label for="earg4_1" style="--k: 1">1</label><label for="earg4_2" style="--k: 2">2</label><label for="earg4_3" style="--k: 3">3</label><label for="earg4_4" style="--k: 4">4</label><label for="earg4_5" style="--k: 5">5</label><label for="earg4_6" style="--k: 6">6</label><label for="earg4_7" style="--k: 7">7</label><label for="earg4_8" style="--k: 8">8</label><label for="earg4_9" style="--k: 9">9</label><label for="earg4_10" style="--k: 10">10</label><label for="earg4_11" style="--k: 11">11</label><label for="earg4_12" style="--k: 12">12</label><label for="earg4_13" style="--k: 13">13</label><label for="earg4_14" style="--k: 14">14</label><label for="earg4_15" style="--k: 15">15</label></div></div></details><details class="ln" style="--o: var(--op5); --a: var(--arg5)"><summary><b>5</b><span class="stack mn"><span style="--k: 0">HLT</span><span style="--k: 1">LDI</span><span style="--k: 2">LD</span><span style="--k: 3">ST</span><span style="--k: 4">ADD</span><span style="--k: 5">SUB</span><span style="--k: 6">ADDI</span><span style="--k: 7">JMP</span><span style="--k: 8">JZ</span><span style="--k: 9">JNZ</span><span style="--k: 10">OUT</span></span><span class="ag"></span><span class="stack says"><span style="--k: 0">stop</span><span style="--k: 1">A = <i class="t"></i></span><span style="--k: 2">A = memory[<i class="m"></i>]</span><span style="--k: 3">memory[<i class="m"></i>] = A</span><span style="--k: 4">A = A + memory[<i class="m"></i>]</span><span style="--k: 5">A = A − memory[<i class="m"></i>]</span><span style="--k: 6">A = A + <i class="t"></i></span><span style="--k: 7">go to line <i class="t"></i></span><span style="--k: 8">if A = 0, go to line <i class="t"></i></span><span style="--k: 9">if A ≠ 0, go to line <i class="t"></i></span><span style="--k: 10">print A</span></span></summary><div class="pick"><span>do</span><div class="opts ops"><label for="eop5_0" style="--k: 0">HLT</label><label for="eop5_1" style="--k: 1">LDI</label><label for="eop5_2" style="--k: 2">LD</label><label for="eop5_3" style="--k: 3">ST</label><label for="eop5_4" style="--k: 4">ADD</label><label for="eop5_5" style="--k: 5">SUB</label><label for="eop5_6" style="--k: 6">ADDI</label><label for="eop5_7" style="--k: 7">JMP</label><label for="eop5_8" style="--k: 8">JZ</label><label for="eop5_9" style="--k: 9">JNZ</label><label for="eop5_10" style="--k: 10">OUT</label></div><span>with</span><div class="opts args"><label for="earg5_0" style="--k: 0">0</label><label for="earg5_1" style="--k: 1">1</label><label for="earg5_2" style="--k: 2">2</label><label for="earg5_3" style="--k: 3">3</label><label for="earg5_4" style="--k: 4">4</label><label for="earg5_5" style="--k: 5">5</label><label for="earg5_6" style="--k: 6">6</label><label for="earg5_7" style="--k: 7">7</label><label for="earg5_8" style="--k: 8">8</label><label for="earg5_9" style="--k: 9">9</label><label for="earg5_10" style="--k: 10">10</label><label for="earg5_11" style="--k: 11">11</label><label for="earg5_12" style="--k: 12">12</label><label for="earg5_13" style="--k: 13">13</label><label for="earg5_14" style="--k: 14">14</label><label for="earg5_15" style="--k: 15">15</label></div></div></details><details class="ln" style="--o: var(--op6); --a: var(--arg6)"><summary><b>6</b><span class="stack mn"><span style="--k: 0">HLT</span><span style="--k: 1">LDI</span><span style="--k: 2">LD</span><span style="--k: 3">ST</span><span style="--k: 4">ADD</span><span style="--k: 5">SUB</span><span style="--k: 6">ADDI</span><span style="--k: 7">JMP</span><span style="--k: 8">JZ</span><span style="--k: 9">JNZ</span><span style="--k: 10">OUT</span></span><span class="ag"></span><span class="stack says"><span style="--k: 0">stop</span><span style="--k: 1">A = <i class="t"></i></span><span style="--k: 2">A = memory[<i class="m"></i>]</span><span style="--k: 3">memory[<i class="m"></i>] = A</span><span style="--k: 4">A = A + memory[<i class="m"></i>]</span><span style="--k: 5">A = A − memory[<i class="m"></i>]</span><span style="--k: 6">A = A + <i class="t"></i></span><span style="--k: 7">go to line <i class="t"></i></span><span style="--k: 8">if A = 0, go to line <i class="t"></i></span><span style="--k: 9">if A ≠ 0, go to line <i class="t"></i></span><span style="--k: 10">print A</span></span></summary><div class="pick"><span>do</span><div class="opts ops"><label for="eop6_0" style="--k: 0">HLT</label><label for="eop6_1" style="--k: 1">LDI</label><label for="eop6_2" style="--k: 2">LD</label><label for="eop6_3" style="--k: 3">ST</label><label for="eop6_4" style="--k: 4">ADD</label><label for="eop6_5" style="--k: 5">SUB</label><label for="eop6_6" style="--k: 6">ADDI</label><label for="eop6_7" style="--k: 7">JMP</label><label for="eop6_8" style="--k: 8">JZ</label><label for="eop6_9" style="--k: 9">JNZ</label><label for="eop6_10" style="--k: 10">OUT</label></div><span>with</span><div class="opts args"><label for="earg6_0" style="--k: 0">0</label><label for="earg6_1" style="--k: 1">1</label><label for="earg6_2" style="--k: 2">2</label><label for="earg6_3" style="--k: 3">3</label><label for="earg6_4" style="--k: 4">4</label><label for="earg6_5" style="--k: 5">5</label><label for="earg6_6" style="--k: 6">6</label><label for="earg6_7" style="--k: 7">7</label><label for="earg6_8" style="--k: 8">8</label><label for="earg6_9" style="--k: 9">9</label><label for="earg6_10" style="--k: 10">10</label><label for="earg6_11" style="--k: 11">11</label><label for="earg6_12" style="--k: 12">12</label><label for="earg6_13" style="--k: 13">13</label><label for="earg6_14" style="--k: 14">14</label><label for="earg6_15" style="--k: 15">15</label></div></div></details><details class="ln" style="--o: var(--op7); --a: var(--arg7)"><summary><b>7</b><span class="stack mn"><span style="--k: 0">HLT</span><span style="--k: 1">LDI</span><span style="--k: 2">LD</span><span style="--k: 3">ST</span><span style="--k: 4">ADD</span><span style="--k: 5">SUB</span><span style="--k: 6">ADDI</span><span style="--k: 7">JMP</span><span style="--k: 8">JZ</span><span style="--k: 9">JNZ</span><span style="--k: 10">OUT</span></span><span class="ag"></span><span class="stack says"><span style="--k: 0">stop</span><span style="--k: 1">A = <i class="t"></i></span><span style="--k: 2">A = memory[<i class="m"></i>]</span><span style="--k: 3">memory[<i class="m"></i>] = A</span><span style="--k: 4">A = A + memory[<i class="m"></i>]</span><span style="--k: 5">A = A − memory[<i class="m"></i>]</span><span style="--k: 6">A = A + <i class="t"></i></span><span style="--k: 7">go to line <i class="t"></i></span><span style="--k: 8">if A = 0, go to line <i class="t"></i></span><span style="--k: 9">if A ≠ 0, go to line <i class="t"></i></span><span style="--k: 10">print A</span></span></summary><div class="pick"><span>do</span><div class="opts ops"><label for="eop7_0" style="--k: 0">HLT</label><label for="eop7_1" style="--k: 1">LDI</label><label for="eop7_2" style="--k: 2">LD</label><label for="eop7_3" style="--k: 3">ST</label><label for="eop7_4" style="--k: 4">ADD</label><label for="eop7_5" style="--k: 5">SUB</label><label for="eop7_6" style="--k: 6">ADDI</label><label for="eop7_7" style="--k: 7">JMP</label><label for="eop7_8" style="--k: 8">JZ</label><label for="eop7_9" style="--k: 9">JNZ</label><label for="eop7_10" style="--k: 10">OUT</label></div><span>with</span><div class="opts args"><label for="earg7_0" style="--k: 0">0</label><label for="earg7_1" style="--k: 1">1</label><label for="earg7_2" style="--k: 2">2</label><label for="earg7_3" style="--k: 3">3</label><label for="earg7_4" style="--k: 4">4</label><label for="earg7_5" style="--k: 5">5</label><label for="earg7_6" style="--k: 6">6</label><label for="earg7_7" style="--k: 7">7</label><label for="earg7_8" style="--k: 8">8</label><label for="earg7_9" style="--k: 9">9</label><label for="earg7_10" style="--k: 10">10</label><label for="earg7_11" style="--k: 11">11</label><label for="earg7_12" style="--k: 12">12</label><label for="earg7_13" style="--k: 13">13</label><label for="earg7_14" style="--k: 14">14</label><label for="earg7_15" style="--k: 15">15</label></div></div></details><details class="ln" style="--o: var(--op8); --a: var(--arg8)"><summary><b>8</b><span class="stack mn"><span style="--k: 0">HLT</span><span style="--k: 1">LDI</span><span style="--k: 2">LD</span><span style="--k: 3">ST</span><span style="--k: 4">ADD</span><span style="--k: 5">SUB</span><span style="--k: 6">ADDI</span><span style="--k: 7">JMP</span><span style="--k: 8">JZ</span><span style="--k: 9">JNZ</span><span style="--k: 10">OUT</span></span><span class="ag"></span><span class="stack says"><span style="--k: 0">stop</span><span style="--k: 1">A = <i class="t"></i></span><span style="--k: 2">A = memory[<i class="m"></i>]</span><span style="--k: 3">memory[<i class="m"></i>] = A</span><span style="--k: 4">A = A + memory[<i class="m"></i>]</span><span style="--k: 5">A = A − memory[<i class="m"></i>]</span><span style="--k: 6">A = A + <i class="t"></i></span><span style="--k: 7">go to line <i class="t"></i></span><span style="--k: 8">if A = 0, go to line <i class="t"></i></span><span style="--k: 9">if A ≠ 0, go to line <i class="t"></i></span><span style="--k: 10">print A</span></span></summary><div class="pick"><span>do</span><div class="opts ops"><label for="eop8_0" style="--k: 0">HLT</label><label for="eop8_1" style="--k: 1">LDI</label><label for="eop8_2" style="--k: 2">LD</label><label for="eop8_3" style="--k: 3">ST</label><label for="eop8_4" style="--k: 4">ADD</label><label for="eop8_5" style="--k: 5">SUB</label><label for="eop8_6" style="--k: 6">ADDI</label><label for="eop8_7" style="--k: 7">JMP</label><label for="eop8_8" style="--k: 8">JZ</label><label for="eop8_9" style="--k: 9">JNZ</label><label for="eop8_10" style="--k: 10">OUT</label></div><span>with</span><div class="opts args"><label for="earg8_0" style="--k: 0">0</label><label for="earg8_1" style="--k: 1">1</label><label for="earg8_2" style="--k: 2">2</label><label for="earg8_3" style="--k: 3">3</label><label for="earg8_4" style="--k: 4">4</label><label for="earg8_5" style="--k: 5">5</label><label for="earg8_6" style="--k: 6">6</label><label for="earg8_7" style="--k: 7">7</label><label for="earg8_8" style="--k: 8">8</label><label for="earg8_9" style="--k: 9">9</label><label for="earg8_10" style="--k: 10">10</label><label for="earg8_11" style="--k: 11">11</label><label for="earg8_12" style="--k: 12">12</label><label for="earg8_13" style="--k: 13">13</label><label for="earg8_14" style="--k: 14">14</label><label for="earg8_15" style="--k: 15">15</label></div></div></details><details class="ln" style="--o: var(--op9); --a: var(--arg9)"><summary><b>9</b><span class="stack mn"><span style="--k: 0">HLT</span><span style="--k: 1">LDI</span><span style="--k: 2">LD</span><span style="--k: 3">ST</span><span style="--k: 4">ADD</span><span style="--k: 5">SUB</span><span style="--k: 6">ADDI</span><span style="--k: 7">JMP</span><span style="--k: 8">JZ</span><span style="--k: 9">JNZ</span><span style="--k: 10">OUT</span></span><span class="ag"></span><span class="stack says"><span style="--k: 0">stop</span><span style="--k: 1">A = <i class="t"></i></span><span style="--k: 2">A = memory[<i class="m"></i>]</span><span style="--k: 3">memory[<i class="m"></i>] = A</span><span style="--k: 4">A = A + memory[<i class="m"></i>]</span><span style="--k: 5">A = A − memory[<i class="m"></i>]</span><span style="--k: 6">A = A + <i class="t"></i></span><span style="--k: 7">go to line <i class="t"></i></span><span style="--k: 8">if A = 0, go to line <i class="t"></i></span><span style="--k: 9">if A ≠ 0, go to line <i class="t"></i></span><span style="--k: 10">print A</span></span></summary><div class="pick"><span>do</span><div class="opts ops"><label for="eop9_0" style="--k: 0">HLT</label><label for="eop9_1" style="--k: 1">LDI</label><label for="eop9_2" style="--k: 2">LD</label><label for="eop9_3" style="--k: 3">ST</label><label for="eop9_4" style="--k: 4">ADD</label><label for="eop9_5" style="--k: 5">SUB</label><label for="eop9_6" style="--k: 6">ADDI</label><label for="eop9_7" style="--k: 7">JMP</label><label for="eop9_8" style="--k: 8">JZ</label><label for="eop9_9" style="--k: 9">JNZ</label><label for="eop9_10" style="--k: 10">OUT</label></div><span>with</span><div class="opts args"><label for="earg9_0" style="--k: 0">0</label><label for="earg9_1" style="--k: 1">1</label><label for="earg9_2" style="--k: 2">2</label><label for="earg9_3" style="--k: 3">3</label><label for="earg9_4" style="--k: 4">4</label><label for="earg9_5" style="--k: 5">5</label><label for="earg9_6" style="--k: 6">6</label><label for="earg9_7" style="--k: 7">7</label><label for="earg9_8" style="--k: 8">8</label><label for="earg9_9" style="--k: 9">9</label><label for="earg9_10" style="--k: 10">10</label><label for="earg9_11" style="--k: 11">11</label><label for="earg9_12" style="--k: 12">12</label><label for="earg9_13" style="--k: 13">13</label><label for="earg9_14" style="--k: 14">14</label><label for="earg9_15" style="--k: 15">15</label></div></div></details><details class="ln" style="--o: var(--op10); --a: var(--arg10)"><summary><b>10</b><span class="stack mn"><span style="--k: 0">HLT</span><span style="--k: 1">LDI</span><span style="--k: 2">LD</span><span style="--k: 3">ST</span><span style="--k: 4">ADD</span><span style="--k: 5">SUB</span><span style="--k: 6">ADDI</span><span style="--k: 7">JMP</span><span style="--k: 8">JZ</span><span style="--k: 9">JNZ</span><span style="--k: 10">OUT</span></span><span class="ag"></span><span class="stack says"><span style="--k: 0">stop</span><span style="--k: 1">A = <i class="t"></i></span><span style="--k: 2">A = memory[<i class="m"></i>]</span><span style="--k: 3">memory[<i class="m"></i>] = A</span><span style="--k: 4">A = A + memory[<i class="m"></i>]</span><span style="--k: 5">A = A − memory[<i class="m"></i>]</span><span style="--k: 6">A = A + <i class="t"></i></span><span style="--k: 7">go to line <i class="t"></i></span><span style="--k: 8">if A = 0, go to line <i class="t"></i></span><span style="--k: 9">if A ≠ 0, go to line <i class="t"></i></span><span style="--k: 10">print A</span></span></summary><div class="pick"><span>do</span><div class="opts ops"><label for="eop10_0" style="--k: 0">HLT</label><label for="eop10_1" style="--k: 1">LDI</label><label for="eop10_2" style="--k: 2">LD</label><label for="eop10_3" style="--k: 3">ST</label><label for="eop10_4" style="--k: 4">ADD</label><label for="eop10_5" style="--k: 5">SUB</label><label for="eop10_6" style="--k: 6">ADDI</label><label for="eop10_7" style="--k: 7">JMP</label><label for="eop10_8" style="--k: 8">JZ</label><label for="eop10_9" style="--k: 9">JNZ</label><label for="eop10_10" style="--k: 10">OUT</label></div><span>with</span><div class="opts args"><label for="earg10_0" style="--k: 0">0</label><label for="earg10_1" style="--k: 1">1</label><label for="earg10_2" style="--k: 2">2</label><label for="earg10_3" style="--k: 3">3</label><label for="earg10_4" style="--k: 4">4</label><label for="earg10_5" style="--k: 5">5</label><label for="earg10_6" style="--k: 6">6</label><label for="earg10_7" style="--k: 7">7</label><label for="earg10_8" style="--k: 8">8</label><label for="earg10_9" style="--k: 9">9</label><label for="earg10_10" style="--k: 10">10</label><label for="earg10_11" style="--k: 11">11</label><label for="earg10_12" style="--k: 12">12</label><label for="earg10_13" style="--k: 13">13</label><label for="earg10_14" style="--k: 14">14</label><label for="earg10_15" style="--k: 15">15</label></div></div></details><details class="ln" style="--o: var(--op11); --a: var(--arg11)"><summary><b>11</b><span class="stack mn"><span style="--k: 0">HLT</span><span style="--k: 1">LDI</span><span style="--k: 2">LD</span><span style="--k: 3">ST</span><span style="--k: 4">ADD</span><span style="--k: 5">SUB</span><span style="--k: 6">ADDI</span><span style="--k: 7">JMP</span><span style="--k: 8">JZ</span><span style="--k: 9">JNZ</span><span style="--k: 10">OUT</span></span><span class="ag"></span><span class="stack says"><span style="--k: 0">stop</span><span style="--k: 1">A = <i class="t"></i></span><span style="--k: 2">A = memory[<i class="m"></i>]</span><span style="--k: 3">memory[<i class="m"></i>] = A</span><span style="--k: 4">A = A + memory[<i class="m"></i>]</span><span style="--k: 5">A = A − memory[<i class="m"></i>]</span><span style="--k: 6">A = A + <i class="t"></i></span><span style="--k: 7">go to line <i class="t"></i></span><span style="--k: 8">if A = 0, go to line <i class="t"></i></span><span style="--k: 9">if A ≠ 0, go to line <i class="t"></i></span><span style="--k: 10">print A</span></span></summary><div class="pick"><span>do</span><div class="opts ops"><label for="eop11_0" style="--k: 0">HLT</label><label for="eop11_1" style="--k: 1">LDI</label><label for="eop11_2" style="--k: 2">LD</label><label for="eop11_3" style="--k: 3">ST</label><label for="eop11_4" style="--k: 4">ADD</label><label for="eop11_5" style="--k: 5">SUB</label><label for="eop11_6" style="--k: 6">ADDI</label><label for="eop11_7" style="--k: 7">JMP</label><label for="eop11_8" style="--k: 8">JZ</label><label for="eop11_9" style="--k: 9">JNZ</label><label for="eop11_10" style="--k: 10">OUT</label></div><span>with</span><div class="opts args"><label for="earg11_0" style="--k: 0">0</label><label for="earg11_1" style="--k: 1">1</label><label for="earg11_2" style="--k: 2">2</label><label for="earg11_3" style="--k: 3">3</label><label for="earg11_4" style="--k: 4">4</label><label for="earg11_5" style="--k: 5">5</label><label for="earg11_6" style="--k: 6">6</label><label for="earg11_7" style="--k: 7">7</label><label for="earg11_8" style="--k: 8">8</label><label for="earg11_9" style="--k: 9">9</label><label for="earg11_10" style="--k: 10">10</label><label for="earg11_11" style="--k: 11">11</label><label for="earg11_12" style="--k: 12">12</label><label for="earg11_13" style="--k: 13">13</label><label for="earg11_14" style="--k: 14">14</label><label for="earg11_15" style="--k: 15">15</label></div></div></details><details class="ln" style="--o: var(--op12); --a: var(--arg12)"><summary><b>12</b><span class="stack mn"><span style="--k: 0">HLT</span><span style="--k: 1">LDI</span><span style="--k: 2">LD</span><span style="--k: 3">ST</span><span style="--k: 4">ADD</span><span style="--k: 5">SUB</span><span style="--k: 6">ADDI</span><span style="--k: 7">JMP</span><span style="--k: 8">JZ</span><span style="--k: 9">JNZ</span><span style="--k: 10">OUT</span></span><span class="ag"></span><span class="stack says"><span style="--k: 0">stop</span><span style="--k: 1">A = <i class="t"></i></span><span style="--k: 2">A = memory[<i class="m"></i>]</span><span style="--k: 3">memory[<i class="m"></i>] = A</span><span style="--k: 4">A = A + memory[<i class="m"></i>]</span><span style="--k: 5">A = A − memory[<i class="m"></i>]</span><span style="--k: 6">A = A + <i class="t"></i></span><span style="--k: 7">go to line <i class="t"></i></span><span style="--k: 8">if A = 0, go to line <i class="t"></i></span><span style="--k: 9">if A ≠ 0, go to line <i class="t"></i></span><span style="--k: 10">print A</span></span></summary><div class="pick"><span>do</span><div class="opts ops"><label for="eop12_0" style="--k: 0">HLT</label><label for="eop12_1" style="--k: 1">LDI</label><label for="eop12_2" style="--k: 2">LD</label><label for="eop12_3" style="--k: 3">ST</label><label for="eop12_4" style="--k: 4">ADD</label><label for="eop12_5" style="--k: 5">SUB</label><label for="eop12_6" style="--k: 6">ADDI</label><label for="eop12_7" style="--k: 7">JMP</label><label for="eop12_8" style="--k: 8">JZ</label><label for="eop12_9" style="--k: 9">JNZ</label><label for="eop12_10" style="--k: 10">OUT</label></div><span>with</span><div class="opts args"><label for="earg12_0" style="--k: 0">0</label><label for="earg12_1" style="--k: 1">1</label><label for="earg12_2" style="--k: 2">2</label><label for="earg12_3" style="--k: 3">3</label><label for="earg12_4" style="--k: 4">4</label><label for="earg12_5" style="--k: 5">5</label><label for="earg12_6" style="--k: 6">6</label><label for="earg12_7" style="--k: 7">7</label><label for="earg12_8" style="--k: 8">8</label><label for="earg12_9" style="--k: 9">9</label><label for="earg12_10" style="--k: 10">10</label><label for="earg12_11" style="--k: 11">11</label><label for="earg12_12" style="--k: 12">12</label><label for="earg12_13" style="--k: 13">13</label><label for="earg12_14" style="--k: 14">14</label><label for="earg12_15" style="--k: 15">15</label></div></div></details><details class="ln" style="--o: var(--op13); --a: var(--arg13)"><summary><b>13</b><span class="stack mn"><span style="--k: 0">HLT</span><span style="--k: 1">LDI</span><span style="--k: 2">LD</span><span style="--k: 3">ST</span><span style="--k: 4">ADD</span><span style="--k: 5">SUB</span><span style="--k: 6">ADDI</span><span style="--k: 7">JMP</span><span style="--k: 8">JZ</span><span style="--k: 9">JNZ</span><span style="--k: 10">OUT</span></span><span class="ag"></span><span class="stack says"><span style="--k: 0">stop</span><span style="--k: 1">A = <i class="t"></i></span><span style="--k: 2">A = memory[<i class="m"></i>]</span><span style="--k: 3">memory[<i class="m"></i>] = A</span><span style="--k: 4">A = A + memory[<i class="m"></i>]</span><span style="--k: 5">A = A − memory[<i class="m"></i>]</span><span style="--k: 6">A = A + <i class="t"></i></span><span style="--k: 7">go to line <i class="t"></i></span><span style="--k: 8">if A = 0, go to line <i class="t"></i></span><span style="--k: 9">if A ≠ 0, go to line <i class="t"></i></span><span style="--k: 10">print A</span></span></summary><div class="pick"><span>do</span><div class="opts ops"><label for="eop13_0" style="--k: 0">HLT</label><label for="eop13_1" style="--k: 1">LDI</label><label for="eop13_2" style="--k: 2">LD</label><label for="eop13_3" style="--k: 3">ST</label><label for="eop13_4" style="--k: 4">ADD</label><label for="eop13_5" style="--k: 5">SUB</label><label for="eop13_6" style="--k: 6">ADDI</label><label for="eop13_7" style="--k: 7">JMP</label><label for="eop13_8" style="--k: 8">JZ</label><label for="eop13_9" style="--k: 9">JNZ</label><label for="eop13_10" style="--k: 10">OUT</label></div><span>with</span><div class="opts args"><label for="earg13_0" style="--k: 0">0</label><label for="earg13_1" style="--k: 1">1</label><label for="earg13_2" style="--k: 2">2</label><label for="earg13_3" style="--k: 3">3</label><label for="earg13_4" style="--k: 4">4</label><label for="earg13_5" style="--k: 5">5</label><label for="earg13_6" style="--k: 6">6</label><label for="earg13_7" style="--k: 7">7</label><label for="earg13_8" style="--k: 8">8</label><label for="earg13_9" style="--k: 9">9</label><label for="earg13_10" style="--k: 10">10</label><label for="earg13_11" style="--k: 11">11</label><label for="earg13_12" style="--k: 12">12</label><label for="earg13_13" style="--k: 13">13</label><label for="earg13_14" style="--k: 14">14</label><label for="earg13_15" style="--k: 15">15</label></div></div></details><details class="ln" style="--o: var(--op14); --a: var(--arg14)"><summary><b>14</b><span class="stack mn"><span style="--k: 0">HLT</span><span style="--k: 1">LDI</span><span style="--k: 2">LD</span><span style="--k: 3">ST</span><span style="--k: 4">ADD</span><span style="--k: 5">SUB</span><span style="--k: 6">ADDI</span><span style="--k: 7">JMP</span><span style="--k: 8">JZ</span><span style="--k: 9">JNZ</span><span style="--k: 10">OUT</span></span><span class="ag"></span><span class="stack says"><span style="--k: 0">stop</span><span style="--k: 1">A = <i class="t"></i></span><span style="--k: 2">A = memory[<i class="m"></i>]</span><span style="--k: 3">memory[<i class="m"></i>] = A</span><span style="--k: 4">A = A + memory[<i class="m"></i>]</span><span style="--k: 5">A = A − memory[<i class="m"></i>]</span><span style="--k: 6">A = A + <i class="t"></i></span><span style="--k: 7">go to line <i class="t"></i></span><span style="--k: 8">if A = 0, go to line <i class="t"></i></span><span style="--k: 9">if A ≠ 0, go to line <i class="t"></i></span><span style="--k: 10">print A</span></span></summary><div class="pick"><span>do</span><div class="opts ops"><label for="eop14_0" style="--k: 0">HLT</label><label for="eop14_1" style="--k: 1">LDI</label><label for="eop14_2" style="--k: 2">LD</label><label for="eop14_3" style="--k: 3">ST</label><label for="eop14_4" style="--k: 4">ADD</label><label for="eop14_5" style="--k: 5">SUB</label><label for="eop14_6" style="--k: 6">ADDI</label><label for="eop14_7" style="--k: 7">JMP</label><label for="eop14_8" style="--k: 8">JZ</label><label for="eop14_9" style="--k: 9">JNZ</label><label for="eop14_10" style="--k: 10">OUT</label></div><span>with</span><div class="opts args"><label for="earg14_0" style="--k: 0">0</label><label for="earg14_1" style="--k: 1">1</label><label for="earg14_2" style="--k: 2">2</label><label for="earg14_3" style="--k: 3">3</label><label for="earg14_4" style="--k: 4">4</label><label for="earg14_5" style="--k: 5">5</label><label for="earg14_6" style="--k: 6">6</label><label for="earg14_7" style="--k: 7">7</label><label for="earg14_8" style="--k: 8">8</label><label for="earg14_9" style="--k: 9">9</label><label for="earg14_10" style="--k: 10">10</label><label for="earg14_11" style="--k: 11">11</label><label for="earg14_12" style="--k: 12">12</label><label for="earg14_13" style="--k: 13">13</label><label for="earg14_14" style="--k: 14">14</label><label for="earg14_15" style="--k: 15">15</label></div></div></details><details class="ln" style="--o: var(--op15); --a: var(--arg15)"><summary><b>15</b><span class="stack mn"><span style="--k: 0">HLT</span><span style="--k: 1">LDI</span><span style="--k: 2">LD</span><span style="--k: 3">ST</span><span style="--k: 4">ADD</span><span style="--k: 5">SUB</span><span style="--k: 6">ADDI</span><span style="--k: 7">JMP</span><span style="--k: 8">JZ</span><span style="--k: 9">JNZ</span><span style="--k: 10">OUT</span></span><span class="ag"></span><span class="stack says"><span style="--k: 0">stop</span><span style="--k: 1">A = <i class="t"></i></span><span style="--k: 2">A = memory[<i class="m"></i>]</span><span style="--k: 3">memory[<i class="m"></i>] = A</span><span style="--k: 4">A = A + memory[<i class="m"></i>]</span><span style="--k: 5">A = A − memory[<i class="m"></i>]</span><span style="--k: 6">A = A + <i class="t"></i></span><span style="--k: 7">go to line <i class="t"></i></span><span style="--k: 8">if A = 0, go to line <i class="t"></i></span><span style="--k: 9">if A ≠ 0, go to line <i class="t"></i></span><span style="--k: 10">print A</span></span></summary><div class="pick"><span>do</span><div class="opts ops"><label for="eop15_0" style="--k: 0">HLT</label><label for="eop15_1" style="--k: 1">LDI</label><label for="eop15_2" style="--k: 2">LD</label><label for="eop15_3" style="--k: 3">ST</label><label for="eop15_4" style="--k: 4">ADD</label><label for="eop15_5" style="--k: 5">SUB</label><label for="eop15_6" style="--k: 6">ADDI</label><label for="eop15_7" style="--k: 7">JMP</label><label for="eop15_8" style="--k: 8">JZ</label><label for="eop15_9" style="--k: 9">JNZ</label><label for="eop15_10" style="--k: 10">OUT</label></div><span>with</span><div class="opts args"><label for="earg15_0" style="--k: 0">0</label><label for="earg15_1" style="--k: 1">1</label><label for="earg15_2" style="--k: 2">2</label><label for="earg15_3" style="--k: 3">3</label><label for="earg15_4" style="--k: 4">4</label><label for="earg15_5" style="--k: 5">5</label><label for="earg15_6" style="--k: 6">6</label><label for="earg15_7" style="--k: 7">7</label><label for="earg15_8" style="--k: 8">8</label><label for="earg15_9" style="--k: 9">9</label><label for="earg15_10" style="--k: 10">10</label><label for="earg15_11" style="--k: 11">11</label><label for="earg15_12" style="--k: 12">12</label><label for="earg15_13" style="--k: 13">13</label><label for="earg15_14" style="--k: 14">14</label><label for="earg15_15" style="--k: 15">15</label></div></div></details>
+<details class="ln mem"><summary><b>m</b><span class="memsum">starting memory <i style="--v: var(--emem0)"></i><i style="--v: var(--emem1)"></i><i style="--v: var(--emem2)"></i><i style="--v: var(--emem3)"></i><i style="--v: var(--emem4)"></i><i style="--v: var(--emem5)"></i><i style="--v: var(--emem6)"></i><i style="--v: var(--emem7)"></i></span></summary>
+<div class="pick"><span>[0]</span><div class="opts" style="--a: var(--emem0)"><label for="emem0_0" style="--k: 0">0</label><label for="emem0_1" style="--k: 1">1</label><label for="emem0_2" style="--k: 2">2</label><label for="emem0_3" style="--k: 3">3</label><label for="emem0_4" style="--k: 4">4</label><label for="emem0_5" style="--k: 5">5</label><label for="emem0_6" style="--k: 6">6</label><label for="emem0_7" style="--k: 7">7</label><label for="emem0_8" style="--k: 8">8</label><label for="emem0_9" style="--k: 9">9</label><label for="emem0_10" style="--k: 10">10</label><label for="emem0_11" style="--k: 11">11</label><label for="emem0_12" style="--k: 12">12</label><label for="emem0_13" style="--k: 13">13</label><label for="emem0_14" style="--k: 14">14</label><label for="emem0_15" style="--k: 15">15</label></div><span>[1]</span><div class="opts" style="--a: var(--emem1)"><label for="emem1_0" style="--k: 0">0</label><label for="emem1_1" style="--k: 1">1</label><label for="emem1_2" style="--k: 2">2</label><label for="emem1_3" style="--k: 3">3</label><label for="emem1_4" style="--k: 4">4</label><label for="emem1_5" style="--k: 5">5</label><label for="emem1_6" style="--k: 6">6</label><label for="emem1_7" style="--k: 7">7</label><label for="emem1_8" style="--k: 8">8</label><label for="emem1_9" style="--k: 9">9</label><label for="emem1_10" style="--k: 10">10</label><label for="emem1_11" style="--k: 11">11</label><label for="emem1_12" style="--k: 12">12</label><label for="emem1_13" style="--k: 13">13</label><label for="emem1_14" style="--k: 14">14</label><label for="emem1_15" style="--k: 15">15</label></div><span>[2]</span><div class="opts" style="--a: var(--emem2)"><label for="emem2_0" style="--k: 0">0</label><label for="emem2_1" style="--k: 1">1</label><label for="emem2_2" style="--k: 2">2</label><label for="emem2_3" style="--k: 3">3</label><label for="emem2_4" style="--k: 4">4</label><label for="emem2_5" style="--k: 5">5</label><label for="emem2_6" style="--k: 6">6</label><label for="emem2_7" style="--k: 7">7</label><label for="emem2_8" style="--k: 8">8</label><label for="emem2_9" style="--k: 9">9</label><label for="emem2_10" style="--k: 10">10</label><label for="emem2_11" style="--k: 11">11</label><label for="emem2_12" style="--k: 12">12</label><label for="emem2_13" style="--k: 13">13</label><label for="emem2_14" style="--k: 14">14</label><label for="emem2_15" style="--k: 15">15</label></div><span>[3]</span><div class="opts" style="--a: var(--emem3)"><label for="emem3_0" style="--k: 0">0</label><label for="emem3_1" style="--k: 1">1</label><label for="emem3_2" style="--k: 2">2</label><label for="emem3_3" style="--k: 3">3</label><label for="emem3_4" style="--k: 4">4</label><label for="emem3_5" style="--k: 5">5</label><label for="emem3_6" style="--k: 6">6</label><label for="emem3_7" style="--k: 7">7</label><label for="emem3_8" style="--k: 8">8</label><label for="emem3_9" style="--k: 9">9</label><label for="emem3_10" style="--k: 10">10</label><label for="emem3_11" style="--k: 11">11</label><label for="emem3_12" style="--k: 12">12</label><label for="emem3_13" style="--k: 13">13</label><label for="emem3_14" style="--k: 14">14</label><label for="emem3_15" style="--k: 15">15</label></div><span>[4]</span><div class="opts" style="--a: var(--emem4)"><label for="emem4_0" style="--k: 0">0</label><label for="emem4_1" style="--k: 1">1</label><label for="emem4_2" style="--k: 2">2</label><label for="emem4_3" style="--k: 3">3</label><label for="emem4_4" style="--k: 4">4</label><label for="emem4_5" style="--k: 5">5</label><label for="emem4_6" style="--k: 6">6</label><label for="emem4_7" style="--k: 7">7</label><label for="emem4_8" style="--k: 8">8</label><label for="emem4_9" style="--k: 9">9</label><label for="emem4_10" style="--k: 10">10</label><label for="emem4_11" style="--k: 11">11</label><label for="emem4_12" style="--k: 12">12</label><label for="emem4_13" style="--k: 13">13</label><label for="emem4_14" style="--k: 14">14</label><label for="emem4_15" style="--k: 15">15</label></div><span>[5]</span><div class="opts" style="--a: var(--emem5)"><label for="emem5_0" style="--k: 0">0</label><label for="emem5_1" style="--k: 1">1</label><label for="emem5_2" style="--k: 2">2</label><label for="emem5_3" style="--k: 3">3</label><label for="emem5_4" style="--k: 4">4</label><label for="emem5_5" style="--k: 5">5</label><label for="emem5_6" style="--k: 6">6</label><label for="emem5_7" style="--k: 7">7</label><label for="emem5_8" style="--k: 8">8</label><label for="emem5_9" style="--k: 9">9</label><label for="emem5_10" style="--k: 10">10</label><label for="emem5_11" style="--k: 11">11</label><label for="emem5_12" style="--k: 12">12</label><label for="emem5_13" style="--k: 13">13</label><label for="emem5_14" style="--k: 14">14</label><label for="emem5_15" style="--k: 15">15</label></div><span>[6]</span><div class="opts" style="--a: var(--emem6)"><label for="emem6_0" style="--k: 0">0</label><label for="emem6_1" style="--k: 1">1</label><label for="emem6_2" style="--k: 2">2</label><label for="emem6_3" style="--k: 3">3</label><label for="emem6_4" style="--k: 4">4</label><label for="emem6_5" style="--k: 5">5</label><label for="emem6_6" style="--k: 6">6</label><label for="emem6_7" style="--k: 7">7</label><label for="emem6_8" style="--k: 8">8</label><label for="emem6_9" style="--k: 9">9</label><label for="emem6_10" style="--k: 10">10</label><label for="emem6_11" style="--k: 11">11</label><label for="emem6_12" style="--k: 12">12</label><label for="emem6_13" style="--k: 13">13</label><label for="emem6_14" style="--k: 14">14</label><label for="emem6_15" style="--k: 15">15</label></div><span>[7]</span><div class="opts" style="--a: var(--emem7)"><label for="emem7_0" style="--k: 0">0</label><label for="emem7_1" style="--k: 1">1</label><label for="emem7_2" style="--k: 2">2</label><label for="emem7_3" style="--k: 3">3</label><label for="emem7_4" style="--k: 4">4</label><label for="emem7_5" style="--k: 5">5</label><label for="emem7_6" style="--k: 6">6</label><label for="emem7_7" style="--k: 7">7</label><label for="emem7_8" style="--k: 8">8</label><label for="emem7_9" style="--k: 9">9</label><label for="emem7_10" style="--k: 10">10</label><label for="emem7_11" style="--k: 11">11</label><label for="emem7_12" style="--k: 12">12</label><label for="emem7_13" style="--k: 13">13</label><label for="emem7_14" style="--k: 14">14</label><label for="emem7_15" style="--k: 15">15</label></div></div></details>
+</div>
+<p class="edhint">Numbers you can pick go from 0 to 15. Memory has only 8 cells, so cell 8 is cell 0 again, 9 is 1, and so on. Sums wrap around: 255 + 1 is 0, and 0 − 1 is 255.</p>
+</div></div>
+    <div class="right">
       <div class="regs">
         <div><span>A</span><b style="--v: var(--A)"></b></div>
         <div><span>next instruction</span><b style="--v: var(--PC)"></b></div>
@@ -2543,7 +4330,12 @@ footer a, section a { color: var(--fg); text-underline-offset: 3px; }
     <tr><td>next PC</td><td>the jump target, PC + 1, or PC again when halted</td></tr>
   </table></div>
   <div class="anatomy"><div class="row"><span>layer 1</span><div class="bar"><i class="r" style="width:62.11%"></i><i class="c" style="width:37.89%"></i></div><span class="n">161</span></div><div class="row"><span>layer 2</span><div class="bar"><i class="r" style="width:19.88%"></i><i class="c" style="width:52.17%"></i></div><span class="n">116</span></div><div class="row"><span>layer 3</span><div class="bar"><i class="r" style="width:23.60%"></i><i class="c" style="width:62.11%"></i></div><span class="n">138</span></div><div class="row"><span>layer 4</span><div class="bar"><i class="r" style="width:21.74%"></i><i class="c" style="width:64.60%"></i></div><span class="n">139</span></div><div class="row"><span>layer 5</span><div class="bar"><i class="r" style="width:23.60%"></i><i class="c" style="width:38.51%"></i></div><span class="n">100</span></div><div class="row"><span>layer 6</span><div class="bar"><i class="r" style="width:24.22%"></i><i class="c" style="width:27.95%"></i></div><span class="n">84</span></div><div class="row"><span>layer 7</span><div class="bar"><i class="r" style="width:1.24%"></i><i class="c" style="width:44.10%"></i></div><span class="n">73</span></div><div class="row"><span>output</span><div class="bar"><i class="r" style="width:26.09%"></i></div><span class="n">42</span></div></div><div class="legend"><span><i style="background:var(--accent)"></i>learned</span><span><i style="background:var(--hand)"></i>hand-written</span><span><i style="background:var(--line)"></i>carry (passes a value down a layer)</span></div>
-  <p>Checked in numpy against a plain Python emulator: the demo programs with every input, and 3,000 random programs, all 128 ticks, every register at every tick. The browser test runs the demo programs in Chromium, Firefox and WebKit and compares every tick's A and the final state.</p>
+  <p>Checked in numpy against a plain Python emulator: the demo programs with every input, the editor's default, 1,000 random programs of the kind the editor can make and 3,000 random programs of any kind, all 128 ticks, every register at every tick. The browser tests run the demo programs in Chromium, Firefox and WebKit, and type programs into the editor with real clicks (random ones, and edge cases: a jump to itself, writing every memory cell, sums that wrap past 255, printing more than 16 times, stopping on line 0), comparing every tick's A and the final state with an emulator written in the test.</p>
+</section>
+<section>
+  <h2>Writing your own</h2>
+  <p>The editor is 560 radio buttons: for each of the 16 lines, one per instruction (11) and one per number (16), and 16 for each of the 8 starting memory cells. Each picked radio sets one integer on the page (<code>.app:has(#eop3_7:checked) { --eop3: 7 }</code>), and picking <i>Write your own</i> copies those integers into the program inputs of the same network every other cartridge uses. The network does not change at all: the program is just 32 more numbers it reads.</p>
+  <p>Numbers stop at 15 to keep the page small (the network itself takes any argument up to 255). Memory addresses use the number mod 8 and jumps use it mod 16, so <code>ST 9</code> writes cell 1. There is no "do nothing" instruction, but <code>ADDI 0</code> is one. Each line's text (<code>LD 3</code>, "A = memory[3]") is drawn from the same integers: the numbers with CSS counters, and the instruction name and its sentence by showing one of 11 stacked words and hiding the rest.</p>
 </section>
 </details>
 

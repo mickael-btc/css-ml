@@ -246,6 +246,19 @@ PROGRAMS = {
 }
 
 
+# "Write your own": the editor's pickers offer the 11 opcodes, arguments 0..15 and starting memory values
+# 0..15. Its default program counts down from 10 and prints 10, 9, ..., 1.
+EDIT_ARGS, EDIT_MEM = 16, 16
+CUSTOM = ([("LDI", 10), ("OUT", 0), ("SUB", 0), ("JNZ", 1), ("HLT", 0)], [1])
+
+
+def custom_default():
+    lines, ram = CUSTOM
+    ops = [OP[o] for o, _ in lines] + [OP["HLT"]] * (ROM - len(lines))
+    args = [a for _, a in lines] + [0] * (ROM - len(lines))
+    return ops, args, list(ram) + [0] * (RAM - len(ram))
+
+
 def cartridge(name, inputs=None):
     title, listing, ram, ins = PROGRAMS[name]
     ops, args = asm([l for l, _ in listing])
@@ -265,6 +278,10 @@ def check(net, n_random=3000, seed=0):
         for cell, (_, values, _) in ins.items():
             for v in values:
                 cases.append(cartridge(name, {cell: v}))
+    cases.append(custom_default())
+    for _ in range(1000):  # programs the editor can express: opcodes 0..10, arguments and memory 0..15
+        cases.append((rng.integers(0, len(OPS), ROM).tolist(), rng.integers(0, EDIT_ARGS, ROM).tolist(),
+                      rng.integers(0, EDIT_MEM, RAM).tolist()))
     n_demo = len(cases)
     for _ in range(n_random):  # random programs: mostly real opcodes, some unknown ones
         ops = rng.integers(0, 13, ROM).tolist()
@@ -294,7 +311,7 @@ def check(net, n_random=3000, seed=0):
             assert ex[i].sum() == (op is not None and op < len(OPS)), (c, i)
     assert mass < LIMIT, mass
     halted = sum(1 for e in emu if e[0][-1]["H"])
-    return (f"{len(cases):,} programs ({n_demo} demo runs, {n_random:,} random; {halted:,} halt within {CYCLES} cycles) "
+    return (f"{len(cases):,} programs ({n_demo} demo and editor-range runs, {n_random:,} random; {halted:,} halt within {CYCLES} cycles) "
             f"x {CYCLES} cycles: every register equals the emulator, max |partial sum| {mass:,}")
 
 
@@ -311,6 +328,10 @@ def main():
             states, executed = run(ops, args, ram)
             fixtures.append({"program": name, "inputs": {str(k): v for k, v in inputs.items()},
                              "final": states[-1], "trace": [s["A"] for s in states[1:]]})
+    states, _ = run(*custom_default())
+    fixtures.append({"program": "custom", "inputs": {}, "final": states[-1], "trace": [s["A"] for s in states[1:]]})
+    f = states[-1]
+    assert [f[f"T{k}"] for k in range(f["NT"])] == list(range(10, 0, -1)) and f["H"], f
     (ROOT / "tests" / "cpu.json").write_text(json.dumps(fixtures))
     for name in PROGRAMS:
         states, _ = run(*cartridge(name))
