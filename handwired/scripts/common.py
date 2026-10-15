@@ -20,6 +20,7 @@ STEPS = [  # (folder, nav title, step label)
     ("interpreter", "Swap the brain", "2"),
     ("tower", "Nesting dolls", "3"),
     ("unfrozen", "Rule that learns", "4"),
+    ("cpu", "Neural CPU", "5"),
 ]
 
 

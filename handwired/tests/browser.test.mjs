@@ -231,11 +231,42 @@ pages['unfrozen'] = async browser => {
   return { ok: same === fx.sets.length && clicksOk, msg: `sets ${same}/${fx.sets.length} (every weight, every epoch), clicks ${clicksOk ? 'ok' : 'FAIL'}, slowest recompute ${ms} ms`, errors };
 };
 
+pages['cpu'] = async browser => {
+  const fx = json(`${root}tests/cpu.json`);
+  const page = await browser.newPage({ viewport: { width: 1000, height: 1000 } });
+  await page.goto(url('cpu'));
+  const STATE = Object.keys(fx[0].final);
+  const read = () => page.evaluate(STATE => {
+    const steps = [...document.querySelectorAll('.step')];
+    const trace = steps.map(e => +getComputedStyle(e).getPropertyValue('--A'));
+    const s = getComputedStyle(document.querySelector('.ui'));
+    return { trace, final: Object.fromEntries(STATE.map(k => [k, +s.getPropertyValue(`--${k}`)])) };
+  }, STATE);
+  let same = 0; const errors = []; let ms = 0;
+  for (const f of fx) {
+    await page.click(`label[for=prog-${f.program}]`);
+    // every input back to its default chip, then the fixture's inputs
+    for (const el of await page.locator(`.only-${f.program} .chips`).all()) {
+      const name = await el.evaluate(c => c.querySelector('label').htmlFor.replace(/_\d+$/, ''));
+      const def = await page.evaluate(n => [...document.querySelectorAll(`input[name=${n}]`)].find(i => i.defaultChecked).id, name);
+      await page.click(`label[for=${def}]`);
+    }
+    for (const [cell, v] of Object.entries(f.inputs)) await page.click(`label[for=i${f.program}_${cell}_${v}]`);
+    const t0 = Date.now(); const got = await read(); ms = Math.max(ms, Date.now() - t0);
+    const badFinal = STATE.filter(k => got.final[k] !== f.final[k]);
+    const badTick = got.trace.findIndex((a, c) => a !== f.trace[c]);
+    if (!badFinal.length && badTick < 0) same++;
+    else errors.push(`${f.program} ${JSON.stringify(f.inputs)}: ` + (badFinal.length ? `final ${badFinal.map(k => `${k}=${got.final[k]} want ${f.final[k]}`).join(', ')}` : `tick ${badTick + 1}: A=${got.trace[badTick]} want ${f.trace[badTick]}`));
+  }
+  await page.close();
+  return { ok: same === fx.length, msg: `runs ${same}/${fx.length} (every tick's A, final registers, RAM, tape), slowest recompute ${ms} ms`, errors };
+};
+
 // ---------------------------------------------------------------- run
 
 const selected = Object.keys(pages).filter(p => !only || p === only);
 for (const folder of selected) {
-  if (['tic-tac-toe', 'connect-four', 'interpreter'].includes(folder)) {
+  if (['tic-tac-toe', 'connect-four', 'interpreter', 'cpu'].includes(folder)) {
     const bad = pureNetCss(folder);
     console.log(`${folder}: only inputs, sums and ReLU units in the CSS: ${bad.length ? 'FAIL' : 'ok'}`);
     for (const b of bad.slice(0, 5)) console.log('   ' + b);

@@ -11,6 +11,7 @@ Regular code rewritten as ReLU networks, after Cheng Lou's [handwired](https://g
 | 2 | [`interpreter/`](interpreter) | **A network that runs a network.** One fixed net of 13,608 units takes a board *and the 1,801 weights of any 18 → 64 → 9 int8 model* as inputs, and plays like that model. The page loads the trained model, a hand-written one, or random weights into the same CSS. |
 | 3 | [`tower/`](tower) | **A network running a copy of itself.** `interpret(net)` compiles a net that runs `net` from its numbers. I1 = interpret(N) runs a tiny 2 → 2 → 1 net; I2 = interpret(I1) runs I1 running N. |
 | 4 | [`unfrozen/`](unfrozen) | **A rule that keeps learning.** "Red inside the box" compiled into a 2 → 4 → 1 ReLU net, then all 17 numbers trained by backpropagation in CSS, 16 epochs, on the points you place. |
+| 5 | [`cpu/`](cpu) | **A computer made of neurons.** A tiny 8-bit CPU (accumulator, 8 bytes of RAM, 16 instructions of program, a 16-byte output tape) whose clock cycle is one 811-unit ReLU net, run 128 times by nested elements. Programs are data: count to n, Fibonacci, multiply, sum 1…n, powers of two. |
 
 ## The compiler
 
@@ -60,6 +61,16 @@ I1 and I2 equal N exactly for the 5 presets and 400 random N (every weight −4�
 - **From the rule:** the box set has 0 errors at epoch 0. The "wider", "shifted" and "stripe" sets bend the rule to 0 errors within a few epochs.
 - **From random:** the same sets end at 3–8 errors after 16 epochs.
 
+**5. Neural CPU** (`scripts/cpu.py`). One clock cycle as ReLUs:
+- **Fetch:** `[PC = i]` gates line i's opcode and argument.
+- **Decode:** `[op = k]`, AND not halted.
+- **Read:** `arg mod 8` is one integer unit, and `[addr = j]` gates RAM cell j.
+- **ALU:** `A + m`, `A − m` and `A + n`, each wrapped mod 256 with one comparison.
+- **Write:** the result of whichever opcode is on, gated; the same for each RAM cell and the tape's next slot.
+- **Next PC:** the jump target, `PC + 1`, or `PC` (halted).
+
+The program's 16 opcodes and 16 arguments are inputs, so the same net runs any program. Checked against a plain Python emulator on 3,066 programs (the demo programs with every input, and 3,000 random programs), every register at every one of the 128 cycles. In the browser a full run recomputes in about 2–3 ms in Chromium and WebKit, and about 130 ms in Firefox.
+
 ## Rebuild and test
 
 From the repository root:
@@ -75,7 +86,8 @@ The browser test:
 - **Games:** replays the original fixture games (tic-tac-toe, connect four) and each interpreter model's games, move by move.
 - **Tower:** checks both levels for every preset and for custom N's set by clicking.
 - **Unfrozen:** compares all 17 weights at every epoch, and every error count, with the numpy reference.
-- **Static:** checks that the step 1 and 2 stylesheets only contain inputs, sums and ReLU units, with no `clamp()` and no product of two values.
+- **CPU:** runs every demo program with a spread of inputs and compares every tick's A and the final registers, RAM and tape.
+- **Static:** checks that the step 1, 2 and 5 stylesheets only contain inputs, sums and ReLU units, with no `clamp()` and no product of two values.
 
 | Page | Size | Properties | One move (Chromium / Firefox / WebKit) |
 |---|---|---|---|
@@ -84,6 +96,7 @@ The browser test:
 | interpreter | 2.4 MB | 15,673 | ~110 / ~310 / ~190 ms |
 | tower | 1.0 MB | 7,746 | instant |
 | unfrozen | 2.2 MB | 10,956 | ~40 / ~50 / ~50 ms |
+| cpu | 0.3 MB | 918 (×128 cycles) | ~2 / ~130 / ~3 ms per full run |
 
 | File | Purpose |
 |---|---|
@@ -92,6 +105,7 @@ The browser test:
 | `scripts/interpreter.py` | Step 2 net, the three models, checks, fixtures |
 | `scripts/tower.py` | `interpret()`, interval bounds, the tower, checks |
 | `scripts/unfrozen.py` | Step 4 training rule in numpy, demo sets, fixtures |
+| `scripts/cpu.py` | Step 5: the emulator, the cycle net, the programs, checks, fixtures |
 | `scripts/build*.py`, `common.py`, `shell.html` | The pages |
 | `nets/` | Compiled nets as JSON |
 | `tests/` | Browser test and fixtures |

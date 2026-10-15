@@ -12,6 +12,7 @@ import build_games
 import build_interpreter
 import build_tower
 import build_unfrozen
+import build_cpu
 
 
 def overview():
@@ -29,6 +30,8 @@ def overview():
          "A console running a console running a tiny network. Both give the same answers.", "Look →"),
         ("unfrozen", "4", "A rule that keeps learning",
          "A rule written by hand becomes a network, then keeps learning from the points you place.", "Teach it →"),
+        ("cpu", "5", "A computer made of neurons",
+         "A tiny 8-bit computer whose every clock tick is one network. It runs real programs: counting, Fibonacci, multiplying.", "Run it →"),
     ]
     items = "".join(f'<a class="card" href="{f}/"><small>step {n}</small><h2>{t}</h2><p>{d}</p><span>{c}</span></a>'
                     for f, n, t, d, c in cards)
@@ -75,7 +78,7 @@ header a { color: var(--fg); text-underline-offset: 3px; }
 
 def main():
     if "--nets" in sys.argv:
-        for script in ("rules.py", "interpreter.py", "tower.py"):
+        for script in ("rules.py", "interpreter.py", "tower.py", "cpu.py"):
             subprocess.run([sys.executable, str(SCRIPTS / script)], check=True)
         subprocess.run([sys.executable, str(SCRIPTS / "unfrozen.py"), "-q", "--fixtures"], check=True)
     build_games.build_ttt()
@@ -83,6 +86,7 @@ def main():
     build_interpreter.build()
     build_tower.build()
     build_unfrozen.build()
+    build_cpu.build()
     overview()
 
 
